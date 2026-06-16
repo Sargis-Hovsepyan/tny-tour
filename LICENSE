@@ -24,6 +24,6 @@ SOFTWARE.
 
 NOTE: This MIT license covers the page code (HTML/CSS/JS) only. The placeholder
 photographs currently embedded in index.html are from Wikimedia Commons under
-their own licenses (mostly CC BY-SA) — see PHOTO-CREDITS.txt — and must be
+their own licenses (mostly CC BY-SA) — see docs/PHOTO-CREDITS.txt — and must be
 credited or replaced before publishing. Tour content, brand name, and any
 real photos added later are not covered by this license.

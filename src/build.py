@@ -4,16 +4,18 @@ Build step for the Romania student-tour brochure.
 
 Fetches royalty-free PLACEHOLDER photos (Wikimedia Commons) + one display font,
 compresses the photos (macOS `sips`), base64-embeds everything, and injects it
-into template.html -> index.html so the page is a single self-contained file.
+into src/template.html -> index.html so the page is a single self-contained file.
 
-Re-run any time: `python3 build.py`. Nothing here is shipped except index.html.
+Run from anywhere: `python3 src/build.py`. Writes the published index.html to the
+repo root and the photo credits to docs/. Nothing here is shipped except index.html.
 """
 import base64, json, mimetypes, os, re, subprocess, sys, tempfile, urllib.parse, urllib.request
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+HERE = os.path.dirname(os.path.abspath(__file__))   # .../src
+ROOT = os.path.dirname(HERE)                          # repo root
 TEMPLATE = os.path.join(HERE, "template.html")
-OUT = os.path.join(HERE, "index.html")
-CREDITS = os.path.join(HERE, "PHOTO-CREDITS.txt")
+OUT = os.path.join(ROOT, "index.html")
+CREDITS = os.path.join(ROOT, "docs", "PHOTO-CREDITS.txt")
 UA = "TNYTourBrochureBuilder/1.0 (educational tour brochure; contact hello@tnytour.example)"
 
 # key -> (search query, max-dimension px, jpeg quality)

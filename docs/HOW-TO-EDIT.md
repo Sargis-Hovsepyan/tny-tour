@@ -6,17 +6,17 @@ link. Everything below tells you how to change it and send it. No coding experie
 
 ---
 
-## The files in this folder
+## The files in this project
 
 | File | What it is |
 |------|-----------|
-| **`index.html`** | The brochure. This is the only file you actually send. |
-| **`encoder.html`** | A helper to turn your own photos into text you can paste in. |
-| `PHOTO-CREDITS.txt` | Who took the placeholder photos (replace them — see below). |
-| `template.html`, `build.py` | Developer files used to build `index.html`. You can ignore these. |
-| `HOW-TO-EDIT.md` | This guide. |
+| **`index.html`** (root) | The brochure. This is the only file you actually send. |
+| **`tools/encoder.html`** | A helper to turn your own photos into text you can paste in. |
+| `docs/PHOTO-CREDITS.txt` | Who took the placeholder photos (replace them — see below). |
+| `src/template.html`, `src/build.py` | Developer files used to build `index.html`. You can ignore these. |
+| `docs/HOW-TO-EDIT.md` | This guide. |
 
-To preview the brochure: **double-click `index.html`**.
+To preview the brochure: **double-click `index.html`** (in the project root).
 
 ---
 
@@ -45,7 +45,7 @@ is the main green, `--accent:#c9a14a;` is the gold). Save and reload.
 The placeholder photos are stored as text near the bottom of `index.html` (search for
 `window.IMAGES`). To replace one:
 
-1. Open **`encoder.html`** in your browser.
+1. Open **`tools/encoder.html`** in your browser.
 2. Pick which photo slot it's for (e.g. `bran`), drop your photo in — it shrinks and
    compresses it automatically.
 3. Click **Copy the text**.
@@ -96,12 +96,13 @@ real, accurate details:
       have permission to use. (Publishing fake reviews can be illegal.)
 - [ ] **Company** name, licence number, registration number, address
 - [ ] **Photos** — swap the Wikimedia placeholders for your own (or credit them per
-      `PHOTO-CREDITS.txt`)
+      `docs/PHOTO-CREDITS.txt`)
 
 ---
 
 ## Rebuilding (developers only)
 
-`index.html` is generated from `template.html` by `build.py`, which fetches placeholder
-photos and a font. To regenerate: `python3 build.py` (needs internet and macOS `sips`).
-Day-to-day editing does **not** require this — just edit `index.html` directly.
+`index.html` (in the project root) is generated from `src/template.html` by
+`src/build.py`, which fetches placeholder photos and a font. To regenerate, run from the
+project root: `python3 src/build.py` (needs internet and macOS `sips`). Day-to-day editing
+does **not** require this — just edit `index.html` directly.
