@@ -3,331 +3,276 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Discover Romania — Student Tour 2027 | TNY Educational Center</title>
-<meta name="description" content="A fully supervised, all-inclusive 7-day educational tour of Romania for students aged 14-18. Organized by TNY Educational Center, Ejmiatsin & Yerevan. Safe, guided, unforgettable.">
-<meta property="og:title" content="Discover Romania — Student Tour 2027 | TNY Educational Center">
-<meta property="og:description" content="A fully supervised, all-inclusive 7-day educational tour of Romania for students.">
+<title>Discover Romania — TNY Educational Center</title>
+<meta name="description" content="A fully supervised 7-day educational tour of Romania for students. Organized by TNY Educational Center.">
+<meta property="og:title" content="Discover Romania — TNY Educational Center">
 <meta property="og:image" content="assets/img/og-cover.jpg">
-<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" imagesrcset="assets/img/hero-768.jpg 768w, assets/img/hero-1280.jpg 1280w, assets/img/hero-1920.jpg 1920w" imagesizes="100vw">
+<link rel="preload" as="image" imagesrcset="assets/img/hero-768.jpg 768w,assets/img/hero-1280.jpg 1280w,assets/img/hero-1920.jpg 1920w" imagesizes="100vw">
 <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body>
 
-<div class="mesh-bg" aria-hidden="true"></div>
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- ===== NAV ===== -->
-<header class="nav" id="nav">
-  <div class="nav-progress" id="navProgress"></div>
-  <div class="container nav-row">
-    <a class="brand" href="#top">
-      <svg class="brand-mark" viewBox="0 0 38 38" fill="none" aria-hidden="true">
-        <rect width="38" height="38" rx="10" fill="#17A2A2"/>
-        <path d="M7 22 19 12l12 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-        <rect x="11" y="19" width="16" height="11" rx="1.5" stroke="#fff" stroke-width="2" fill="none"/>
-        <text x="19" y="27.5" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="Georgia,serif">TNY</text>
-      </svg>
-      <span>TNY Educational Center</span>
-    </a>
-    <nav aria-label="Primary">
-      <ul class="nav-links" id="navLinks">
-        <li><a href="#why">Why this tour</a></li>
-        <li><a href="#safety">Safety</a></li>
-        <li><a href="#itinerary">Itinerary</a></li>
-        <li><a href="#gallery">Destinations</a></li>
-        <li><a href="#pricing">Pricing</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <div class="nav-cta">
-      <a class="btn btn-dark" href="#pricing">Reserve a Place</a>
-      <a class="nav-wa" href="https://wa.me/37498003861" aria-label="WhatsApp">
-        <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 8.5c.2-.6.4-.6.8-.6h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.1.4 0 .6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.4.4 0 .8-.6 1.6-1 1.7-.5.3-1.4.5-3-.2a9 9 0 0 1-4.3-4.1c-.6-1.2-.4-2.3-.1-3.1Z" fill="currentColor"/></svg>
-      </a>
-      <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-        <svg viewBox="0 0 24 24" id="burgerIcon"><path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-      </button>
-    </div>
+<!-- ===== TOP NAV (minimal, transparent) ===== -->
+<header class="topbar" id="topbar">
+  <a class="logo" href="#hero">
+    <svg viewBox="0 0 38 38" fill="none" width="36" height="36"><rect width="38" height="38" rx="10" fill="#17A2A2"/><path d="M7 22 19 12l12 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="11" y="19" width="16" height="11" rx="1.5" stroke="#fff" stroke-width="2"/><text x="19" y="27.5" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="Georgia,serif">TNY</text></svg>
+  </a>
+  <div class="topbar-r">
+    <a class="tb-link" href="#journey">The Journey</a>
+    <a class="tb-link" href="#trust">Safety</a>
+    <a class="tb-link tb-cta" href="#close">Reserve</a>
+    <button class="tb-info" id="infoBtn" aria-label="Tour details">
+      <svg viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 8h.01M12 11v5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
   </div>
+  <div class="progress-bar" id="progressBar"></div>
 </header>
 
-<!-- ===== HERO ===== -->
-<section class="hero" id="top">
+<!-- ===== CH1: HERO ===== -->
+<section class="ch ch-hero" id="hero">
   <div class="hero-media">
-    <picture>
-      <img src="assets/img/hero-1920.jpg"
-           srcset="assets/img/hero-768.jpg 768w, assets/img/hero-1280.jpg 1280w, assets/img/hero-1920.jpg 1920w"
-           sizes="100vw" alt="The Transfagarasan road winding through the Carpathian Mountains, Romania"
-           width="1920" height="1280" fetchpriority="high" decoding="async">
-    </picture>
+    <img src="assets/img/hero-1920.jpg" srcset="assets/img/hero-768.jpg 768w,assets/img/hero-1280.jpg 1280w,assets/img/hero-1920.jpg 1920w" sizes="100vw" alt="Transfagarasan road, Romania" width="1920" height="1280" fetchpriority="high" decoding="async">
   </div>
-  <div class="hero-scrim"></div>
-  <div class="container">
-    <div class="hero-inner">
-      <span class="eyebrow" style="color:var(--accent-soft)">Educational Student Tour &middot; Spring 2027</span>
-      <h1>7 Days in Romania, Built for Students</h1>
-      <p class="sub">A fully supervised, all-inclusive journey through Transylvania's castles, medieval towns and mountains — with 1 chaperone for every 8 students and 24/7 support.</p>
-      <div class="hero-cta">
-        <a class="btn btn-primary btn-lg" href="#pricing">Reserve a Place</a>
-        <a class="btn btn-ghost btn-lg" href="https://wa.me/37498003861">
-          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 8.5c.2-.6.4-.6.8-.6h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.1.4 0 .6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.4.4 0 .8-.6 1.6-1 1.7-.5.3-1.4.5-3-.2a9 9 0 0 1-4.3-4.1c-.6-1.2-.4-2.3-.1-3.1Z" fill="currentColor"/></svg>
-          Talk to Us on WhatsApp
-        </a>
-      </div>
-      <div class="hero-trust">
-        <span>Limited to 30 students</span><span class="dot">&middot;</span>
-        <span>&euro;150 deposit holds a place</span><span class="dot">&middot;</span>
-        <span>Full refund until 1 Feb 2027</span>
-      </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-kicker">TNY Educational Center &middot; Spring 2027</p>
+    <h1 class="hero-h1">Discover<br>Romania</h1>
+    <p class="hero-sub">7 days across Transylvania. Castles, mountains, medieval towns.<br>Fully supervised. All-inclusive. Built for students.</p>
+    <div class="hero-ctas">
+      <a class="btn btn-coral" href="#close">Reserve a Place</a>
+      <a class="btn btn-glass" href="https://wa.me/37498003861">WhatsApp Us</a>
+    </div>
+    <div class="hero-stats">
+      <span><strong>30</strong> students max</span>
+      <span><strong>1:8</strong> chaperone ratio</span>
+      <span><strong>24/7</strong> support</span>
+      <span>From <strong>&euro;1,290</strong></span>
     </div>
   </div>
-  <a class="scroll-cue" href="#facts" aria-label="Scroll down">
-    <svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
+  <a class="scroll-hint" href="#journey" aria-label="Scroll to explore">
+    <span>Scroll to explore</span>
+    <svg viewBox="0 0 24 24" width="20" height="20"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
   </a>
 </section>
 
-<!-- wave divider -->
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="var(--bg)"><path d="M0,40 C360,80 720,0 1080,40 C1260,60 1380,30 1440,40 L1440,80 L0,80Z"/></svg></div>
+<!-- ===== CH2: THE JOURNEY (horizontal scroll) ===== -->
+<section class="ch ch-journey" id="journey">
+  <div class="journey-track" id="journeyTrack">
 
-<!-- ===== QUICK FACTS ===== -->
-<div class="container facts-wrap" id="facts">
-  <div class="facts" data-reveal>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="17" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 9h18M8 2.5v4M16 2.5v4" stroke="currentColor" stroke-width="1.8" fill="none"/></svg><span class="v">11-17 Apr 2027</span><span class="l">Dates</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span class="v">7 days / 6 nights</span><span class="l">Duration</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5.2a3 3 0 0 1 0 5.6M21.5 20a5.8 5.8 0 0 0-4-5.3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span class="v">Ages 14-18</span><span class="l">For students</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5.2a3 3 0 0 1 0 5.6M21.5 20a5.8 5.8 0 0 0-4-5.3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span class="v">Max 30</span><span class="l">Group size</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2.5 4.5 6v6c0 4.4 3.1 7.7 7.5 9.5 4.4-1.8 7.5-5.1 7.5-9.5V6L12 2.5Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="v">1 : 8</span><span class="l">Chaperone ratio</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M3 12.5 11 4.5h6.5V11l-8 8z" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="14.5" cy="7.5" r="1.3" fill="currentColor"/></svg><span class="v">From &euro;1,290</span><span class="l">Per student</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="M2.5 13.5 21 8l-5 11-3.5-5.5L2.5 13.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="v">Bucharest (OTP)</span><span class="l">Tour starts</span></div>
-    <div class="fact"><svg class="ic" viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span class="v">All-inclusive</span><span class="l">Hotels &middot; meals &middot; guides</span></div>
+    <article class="day-panel" style="--accent:var(--coral-500)">
+      <div class="dp-img"><img src="assets/img/parliament-800.jpg" srcset="assets/img/parliament-400.jpg 400w,assets/img/parliament-800.jpg 800w,assets/img/parliament-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Palace of the Parliament, Bucharest" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">01</span>
+        <h2>Bucharest</h2>
+        <p>Arrive at the capital. Palace of the Parliament, the Old Town, and the Village Museum. Welcome dinner and safety briefing.</p>
+        <div class="dp-tags"><span>Day 1-2</span><span>2 nights</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--teal-300)">
+      <div class="dp-img"><img src="assets/img/peles-800.jpg" srcset="assets/img/peles-400.jpg 400w,assets/img/peles-800.jpg 800w,assets/img/peles-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Peles Castle, Sinaia" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">02</span>
+        <h2>Peles Castle</h2>
+        <p>Drive north through the Prahova Valley to the fairy-tale Peles Castle in Sinaia — Romania's most beautiful royal palace.</p>
+        <div class="dp-tags"><span>Day 3</span><span>Prahova Valley</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--coral-200)">
+      <div class="dp-img"><img src="assets/img/brasov-800.jpg" srcset="assets/img/brasov-400.jpg 400w,assets/img/brasov-800.jpg 800w,assets/img/brasov-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Brasov old town" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">03</span>
+        <h2>Brasov</h2>
+        <p>Your base for three nights. A storybook medieval square, the Gothic Black Church, and Tampa Mountain watching over everything.</p>
+        <div class="dp-tags"><span>Day 3-5</span><span>3-night base</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--coral-400)">
+      <div class="dp-img"><img src="assets/img/bran-800.jpg" srcset="assets/img/bran-400.jpg 400w,assets/img/bran-800.jpg 800w,assets/img/bran-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Bran Castle, Transylvania" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">03</span>
+        <h2>Bran Castle</h2>
+        <p>The legend of Dracula meets the real history of Vlad Tepes. Rasnov fortress. Supervised free time in Brasov's Council Square.</p>
+        <div class="dp-tags"><span>Day 4</span><span>Dracula myth vs history</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--teal-500)">
+      <div class="dp-img"><img src="assets/img/sighisoara-800.jpg" srcset="assets/img/sighisoara-400.jpg 400w,assets/img/sighisoara-800.jpg 800w,assets/img/sighisoara-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Sighisoara citadel" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">04</span>
+        <h2>Sighisoara</h2>
+        <p>A living UNESCO citadel, 850 years old. The Clock Tower, the guild houses, and the birthplace of Vlad Tepes.</p>
+        <div class="dp-tags"><span>Day 5</span><span>UNESCO heritage</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--coral-500)">
+      <div class="dp-img"><img src="assets/img/sibiu-800.jpg" srcset="assets/img/sibiu-400.jpg 400w,assets/img/sibiu-800.jpg 800w,assets/img/sibiu-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Sibiu Grand Square" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">05</span>
+        <h2>Sibiu</h2>
+        <p>Pastel squares, the Bridge of Lies, the famous rooftop 'eyes', and the ASTRA open-air museum.</p>
+        <div class="dp-tags"><span>Day 6</span><span>European Capital of Culture</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--teal-200)">
+      <div class="dp-img"><img src="assets/img/mountains-800.jpg" srcset="assets/img/mountains-400.jpg 400w,assets/img/mountains-800.jpg 800w,assets/img/mountains-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Carpathian Mountains" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">07</span>
+        <h2>Into the Carpathians</h2>
+        <p>Leave the medieval towns behind and climb into the high mountains. Forests, peaks, and air so clean it feels like another world.</p>
+        <div class="dp-tags"><span>Day 7</span><span>The final chapter</span></div>
+      </div>
+    </article>
+
+    <article class="day-panel" style="--accent:var(--teal-300)">
+      <div class="dp-img"><img src="assets/img/transfagarasan-800.jpg" srcset="assets/img/transfagarasan-400.jpg 400w,assets/img/transfagarasan-800.jpg 800w,assets/img/transfagarasan-1200.jpg 1200w" sizes="50vw" loading="lazy" decoding="async" alt="Transfagarasan road and Balea Lake" width="800" height="600"></div>
+      <div class="dp-text">
+        <span class="dp-num">08</span>
+        <h2>Transfagarasan &amp; Farewell</h2>
+        <p>One of the world's most spectacular mountain roads. Balea Lake in the Fagaras mountains. Transfer to airport. A farewell to remember.</p>
+        <div class="dp-tags"><span>Day 7</span><span>Season permitting*</span></div>
+      </div>
+    </article>
+
   </div>
-</div>
-
-<main id="main">
-
-<!-- ===== WHY THIS TOUR ===== -->
-<section class="sec" id="why" aria-labelledby="whyH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">Why families choose us</span>
-      <h2 id="whyH">Everything a parent wants to hear</h2>
-      <p class="lead center">We designed this trip around the two things that matter most to you: your child's safety, and a week of real learning they'll never forget.</p>
-    </div>
-    <div class="cards">
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2.5 4.5 6v6c0 4.4 3.1 7.7 7.5 9.5 4.4-1.8 7.5-5.1 7.5-9.5V6L12 2.5Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>Safe &amp; supervised, always</h3><p>A 1:8 chaperone ratio, a 24/7 on-call coordinator, and nightly check-ins. You get a daily update, so you always know your child is safe.</p></article>
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><path d="M2.5 9 12 5l9.5 4-9.5 4-9.5-4Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M6.5 11v4c0 1.2 2.5 2.5 5.5 2.5s5.5-1.3 5.5-2.5v-4M21.5 9v5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div><h3>Real learning, not just sightseeing</h3><p>Guided history at Bran, Peles and Sighisoara, hands-on culture, and reflection journals — aligned with history and geography curriculum themes.</p></article>
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><rect x="3.5" y="7.5" width="17" height="13" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M8.5 7.5V6a3.5 3.5 0 0 1 7 0v1.5" stroke="currentColor" stroke-width="1.8" fill="none"/></svg></div><h3>Everything handled</h3><p>Hotels, transport, most meals, entrance fees and insurance in one clear price. No nickel-and-diming on the road.</p></article>
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 5.2a3 3 0 0 1 0 5.6M21.5 20a5.8 5.8 0 0 0-4-5.3" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div><h3>Small group, real attention</h3><p>Capped at 30 students so nobody gets lost in the crowd and every student is known by name.</p></article>
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-11.5 7.2L4 20.5l1.8-5.4A8 8 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></div><h3>You stay in the loop</h3><p>A daily WhatsApp update with photos to a private parents' group, plus a dedicated 24/7 emergency line for the whole trip.</p></article>
-      <article class="card" data-reveal><div class="ico"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 4l3-.3.3 3L20 12l-2.2 2.3-.3 3-3-.3L12 18l-2.5-1.3-3 .3-.3-3L4 12l2.2-2.3.3-3 3 .3L12 2.5Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m9.5 12 2 2 3.5-3.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div><h3>A vetted, experienced team</h3><p>Led by licensed local guides and accompanying teachers, with background-checked staff and clear safety protocols. Organizing student tours since 2014.</p></article>
-    </div>
-  </div>
+  <div class="journey-counter" id="journeyCounter"><span id="jcCur">01</span> / <span id="jcTotal">08</span></div>
 </section>
 
-<!-- ===== SAFETY ===== -->
-<section class="sec safety" id="safety" aria-labelledby="safetyH">
-  <div class="container">
-    <div class="sec-head">
-      <span class="eyebrow">Peace of mind first</span>
-      <h2 id="safetyH">Your child is supervised from morning headcount to evening check-in</h2>
-      <p class="lead">Safety isn't a paragraph for us — it's the system the whole trip runs on. Here's exactly how we look after your child.</p>
-    </div>
-    <div class="safety-grid">
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><path d="M12 2.5 4.5 6v6c0 4.4 3.1 7.7 7.5 9.5 4.4-1.8 7.5-5.1 7.5-9.5V6L12 2.5Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><h3>1 adult per 8 students</h3><p>A lead coordinator, licensed Romanian guides and accompanying teachers travel with the group at all times.</p></div>
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><h3>24/7 on-call support</h3><p>A coordinator is reachable around the clock. Evening headcounts and room curfews, every night.</p></div>
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><path d="M21 11.5a8 8 0 0 1-11.5 7.2L4 20.5l1.8-5.4A8 8 0 1 1 21 11.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><h3>Daily updates to parents</h3><p>A private parents' WhatsApp group receives daily photos and a check-in, plus a dedicated emergency number.</p></div>
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><h3>Health &amp; insurance covered</h3><p>Comprehensive travel and medical insurance included. Nearest hospitals pre-mapped for every overnight stop.</p></div>
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><path d="M3 8v11M3 18h18v-4a3 3 0 0 0-3-3H3M7.5 11V8.5A1.5 1.5 0 0 1 9 7h3a1.5 1.5 0 0 1 1.5 1.5V11M21 18v1.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><h3>Vetted accommodation</h3><p>3-4 star hotels, students in same-gender shared rooms, with chaperone rooms on the same floor.</p></div>
-      <div class="safety-item" data-reveal><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 11h18M7 17v2.5M17 17v2.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><h3>Private, insured transport</h3><p>Licensed coach with seatbelts and vetted drivers. No unsupervised public transport.</p></div>
-    </div>
-    <div class="timeline" data-reveal>
-      <div class="tl-step"><span class="n">1</span><h3>Morning</h3><p>Wake-up call &amp; headcount over breakfast</p></div>
-      <div class="tl-step"><span class="n">2</span><h3>Daytime</h3><p>Guided activities in supervised groups</p></div>
-      <div class="tl-step"><span class="n">3</span><h3>Evening</h3><p>Group dinner &amp; free time, always chaperoned</p></div>
-      <div class="tl-step"><span class="n">4</span><h3>Night</h3><p>Room curfew, final headcount, lights-out</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- wave divider (teal → light) -->
-<div class="divider-wave" aria-hidden="true"><svg viewBox="0 0 1440 80" preserveAspectRatio="none" fill="var(--bg-2)"><path d="M0,20 C240,70 480,0 720,35 C960,70 1200,10 1440,45 L1440,80 L0,80Z"/></svg></div>
-
-<!-- ===== ITINERARY ===== -->
-<section class="sec alt" id="itinerary" aria-labelledby="itinH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">Day by day</span>
-      <h2 id="itinH">Seven days across Transylvania</h2>
-      <p class="lead center">A coherent, well-paced route with a three-night base in Brasov — less packing and unpacking, more time exploring.</p>
-    </div>
-    <div class="itinerary-wrap">
-      <div class="itinerary-list">
-        <details class="day" data-reveal open><summary><span class="day-no">DAY<span>1</span></span><span class="day-head"><h3>Arrival in Bucharest</h3><span class="ov">Overnight: Bucharest</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>Arrive at Bucharest (OTP), private transfer to the hotel, welcome dinner and a full safety &amp; group briefing. An easy first day to settle in.</p><div class="chips"><span class="chip">Airport transfer</span><span class="chip">Welcome dinner</span><span class="chip">Group briefing</span><span class="chip meal">Dinner</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>2</span></span><span class="day-head"><h3>Bucharest city day</h3><span class="ov">Overnight: Bucharest</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>The colossal Palace of the Parliament, the Old Town on foot, and the open-air Village Museum — history and orientation in one day.</p><div class="chips"><span class="chip">Palace of the Parliament</span><span class="chip">Old Town</span><span class="chip">Village Museum</span><span class="chip meal">Breakfast</span><span class="chip meal">Lunch</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>3</span></span><span class="day-head"><h3>Peles Castle &amp; on to Brasov</h3><span class="ov">Overnight: Brasov (1/3)</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>Drive north through the Prahova Valley to fairy-tale Peles Castle in Sinaia, then continue to Brasov for an evening walking tour of the old town.</p><div class="chips"><span class="chip">Peles Castle</span><span class="chip">Prahova Valley</span><span class="chip">Brasov old town</span><span class="chip meal">Breakfast</span><span class="chip meal">Dinner</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>4</span></span><span class="day-head"><h3>Bran Castle &amp; Rasnov</h3><span class="ov">Overnight: Brasov (2/3)</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>The legend of Dracula meets the real history of Vlad Tepes at Bran Castle, followed by the hilltop Rasnov fortress. Supervised free time in Brasov's main square.</p><div class="chips"><span class="chip">Bran Castle</span><span class="chip">Rasnov Fortress</span><span class="chip">Council Square</span><span class="chip meal">Breakfast</span><span class="chip meal">Lunch</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>5</span></span><span class="day-head"><h3>Sighisoara day trip</h3><span class="ov">Overnight: Brasov (3/3)</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>A day in the living UNESCO citadel of Sighisoara — the Clock Tower, the guild houses and the birthplace of Vlad Tepes, 850 years of history underfoot.</p><div class="chips"><span class="chip">Sighisoara citadel</span><span class="chip">Clock Tower</span><span class="chip">Guild houses</span><span class="chip meal">Breakfast</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>6</span></span><span class="day-head"><h3>Sibiu</h3><span class="ov">Overnight: Sibiu</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>On to Sibiu — the Grand and Little Squares, the Bridge of Lies, the famous rooftop 'eyes', and the ASTRA open-air museum.</p><div class="chips"><span class="chip">Grand Square</span><span class="chip">Bridge of Lies</span><span class="chip">ASTRA Museum</span><span class="chip meal">Breakfast</span><span class="chip meal">Dinner</span></div></div></details>
-        <details class="day" data-reveal><summary><span class="day-no">DAY<span>7</span></span><span class="day-head"><h3>Carpathian drive &amp; departure</h3><span class="ov">Departure day</span></span><span class="day-chev"><svg viewBox="0 0 24 24"><path d="m5 9 7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></span></summary><div class="day-body"><p>A scenic drive into the Fagaras mountains (the Transfagarasan, season permitting) before transferring to the airport for departure. A farewell to remember.</p><div class="chips"><span class="chip">Fagaras mountains</span><span class="chip">Transfagarasan*</span><span class="chip">Airport transfer</span><span class="chip meal">Breakfast</span></div></div></details>
+<!-- ===== CH3: TRUST (safety + reviews) ===== -->
+<section class="ch ch-trust" id="trust">
+  <div class="trust-split">
+    <div class="trust-left">
+      <span class="kicker">Peace of mind</span>
+      <h2>Your child is safe with us</h2>
+      <div class="trust-grid">
+        <div class="tg"><strong>1 : 8</strong><span>Chaperone ratio</span></div>
+        <div class="tg"><strong>24/7</strong><span>On-call coordinator</span></div>
+        <div class="tg"><strong>Daily</strong><span>WhatsApp updates to parents</span></div>
+        <div class="tg"><strong>Insured</strong><span>Travel &amp; medical coverage</span></div>
+        <div class="tg"><strong>Vetted</strong><span>3-4 star hotels, same-floor chaperones</span></div>
+        <div class="tg"><strong>Private</strong><span>Licensed coach, seatbelts, no public transport</span></div>
       </div>
     </div>
-    <p class="lead center" style="font-size:.85rem;margin-top:1rem">*Transfagarasan road access is seasonal; an equally scenic alternative is arranged when it is closed.</p>
-  </div>
-</section>
-
-<!-- ===== GALLERY ===== -->
-<section class="sec" id="gallery" aria-labelledby="galH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">Where we go</span>
-      <h2 id="galH">The places they'll stand in</h2>
-      <p class="lead center">Real landmarks, real history — the kind of week students talk about for years.</p>
-    </div>
-    <div class="gallery">
-      <figure class="gitem duotone span-2" data-reveal data-i="0" tabindex="0" role="button" aria-label="View Bran Castle"><img loading="lazy" decoding="async" src="assets/img/bran-800.jpg" srcset="assets/img/bran-400.jpg 400w,assets/img/bran-800.jpg 800w,assets/img/bran-1200.jpg 1200w" sizes="(max-width:600px) 90vw,(max-width:1180px) 60vw,520px" width="800" height="600" alt="Bran Castle, Transylvania, Romania"><figcaption>Bran Castle<small>The legend of Dracula, the history of Vlad Tepes.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="1" tabindex="0" role="button" aria-label="View Peles Castle"><img loading="lazy" decoding="async" src="assets/img/peles-800.jpg" srcset="assets/img/peles-400.jpg 400w,assets/img/peles-800.jpg 800w,assets/img/peles-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Peles Castle, Sinaia, Romania"><figcaption>Peles Castle<small>Romania's fairy-tale royal palace in the Carpathians.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="2" tabindex="0" role="button" aria-label="View Brasov"><img loading="lazy" decoding="async" src="assets/img/brasov-800.jpg" srcset="assets/img/brasov-400.jpg 400w,assets/img/brasov-800.jpg 800w,assets/img/brasov-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Brasov old town square, Romania"><figcaption>Brasov<small>A storybook medieval square beneath the mountains.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="3" tabindex="0" role="button" aria-label="View Sighisoara"><img loading="lazy" decoding="async" src="assets/img/sighisoara-800.jpg" srcset="assets/img/sighisoara-400.jpg 400w,assets/img/sighisoara-800.jpg 800w,assets/img/sighisoara-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Sighisoara Clock Tower and citadel, Romania"><figcaption>Sighisoara<small>A living UNESCO citadel, 850 years old.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="4" tabindex="0" role="button" aria-label="View Sibiu"><img loading="lazy" decoding="async" src="assets/img/sibiu-800.jpg" srcset="assets/img/sibiu-400.jpg 400w,assets/img/sibiu-800.jpg 800w,assets/img/sibiu-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Sibiu Grand Square, Romania"><figcaption>Sibiu<small>Pastel squares and the famous rooftop 'eyes'.</small></figcaption></figure>
-      <figure class="gitem duotone span-2" data-reveal data-i="5" tabindex="0" role="button" aria-label="View Transfagarasan"><img loading="lazy" decoding="async" src="assets/img/transfagarasan-800.jpg" srcset="assets/img/transfagarasan-400.jpg 400w,assets/img/transfagarasan-800.jpg 800w,assets/img/transfagarasan-1200.jpg 1200w" sizes="(max-width:600px) 90vw,(max-width:1180px) 60vw,520px" width="800" height="600" alt="Balea Lake and the Transfagarasan road, Romania"><figcaption>Transfagarasan<small>One of the world's most spectacular mountain roads.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="6" tabindex="0" role="button" aria-label="View Palace of the Parliament"><img loading="lazy" decoding="async" src="assets/img/parliament-800.jpg" srcset="assets/img/parliament-400.jpg 400w,assets/img/parliament-800.jpg 800w,assets/img/parliament-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Palace of the Parliament, Bucharest"><figcaption>Palace of the Parliament<small>The world's heaviest building, in Bucharest.</small></figcaption></figure>
-      <figure class="gitem duotone" data-reveal data-i="7" tabindex="0" role="button" aria-label="View the Carpathians"><img loading="lazy" decoding="async" src="assets/img/mountains-800.jpg" srcset="assets/img/mountains-400.jpg 400w,assets/img/mountains-800.jpg 800w,assets/img/mountains-1200.jpg 1200w" sizes="(max-width:600px) 90vw,380px" width="800" height="600" alt="Carpathian Mountains landscape, Romania"><figcaption>The Carpathians<small>Forests, peaks and clean mountain air.</small></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- ===== INCLUDES ===== -->
-<section class="sec alt" id="includes" aria-labelledby="inclH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">No surprises</span>
-      <h2 id="inclH">Exactly what's included — and what's not</h2>
-      <p class="lead center">We spell out both, so there are no surprises once your child is on the road.</p>
-    </div>
-    <div class="incl-grid" data-reveal>
-      <div class="incl-col incl-yes"><h3><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m8 12 2.5 2.5L16 9" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Included in the price</h3><ul><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>6 nights in vetted 3-4 star hotels, shared rooms</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Daily breakfast plus selected lunches &amp; dinners</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Private coach transport throughout the tour</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Licensed English-speaking guides</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>All entrance fees on the itinerary</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Travel &amp; medical insurance</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>24/7 coordinator and airport transfers</span></li></ul></div>
-      <div class="incl-col incl-no"><h3><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg> Not included</h3><ul><li><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span>International flights (land-only package)</span></li><li><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span>Passport and any visa fees</span></li><li><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span>Meals and snacks not listed in the itinerary</span></li><li><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span>Personal spending and souvenirs</span></li><li><svg viewBox="0 0 24 24"><path d="M6 12h12" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg><span>Optional activities and tips (at your discretion)</span></li></ul></div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PRICING ===== -->
-<section class="sec" id="pricing" aria-labelledby="priceH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">Simple, all-inclusive</span>
-      <h2 id="priceH">One clear price, easy to reserve</h2>
-      <p class="lead center">Hold a place with a small deposit today and pay the balance in instalments.</p>
-    </div>
-    <div class="price-card" data-reveal>
-      <div class="price-top"><div class="from">From</div><div class="amt">&euro;1,290</div><div class="unit">per student &middot; land-only &middot; shared room</div></div>
-      <div class="price-body">
-        <ul class="price-incl"><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>6 nights' accommodation &amp; most meals</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>All transport, guides and entrance fees</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Travel &amp; medical insurance</span></li><li><svg viewBox="0 0 24 24"><path d="m4 12.5 5 5 11-11" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg><span>24/7 supervision and support</span></li></ul>
-        <div class="price-callouts"><div class="callout"><b>&euro;150</b>deposit holds a place</div><div class="callout"><b>&euro;100 off</b>early-bird until 30 Nov 2026</div><div class="callout"><b>30 places</b>strictly limited</div></div>
-        <a class="btn btn-primary btn-lg" style="width:100%;justify-content:center" href="#contact">Reserve a Place</a>
-        <p class="price-fine">Balance due by 1 Mar 2027. Pay in up to 3 instalments. Full refund until 1 Feb 2027; 50% until 1 Mar 2027. Prices per student based on shared rooms. All figures are placeholders — confirm before sending.</p>
+    <div class="trust-right">
+      <span class="kicker">From families who travelled with us</span>
+      <div class="review-stack" id="reviewStack">
+        <blockquote class="rev active">
+          <p>"I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos meant I never worried. Worth every penny."</p>
+          <cite>Maria K. &mdash; Parent</cite>
+        </blockquote>
+        <blockquote class="rev">
+          <p>"Standing inside Bran Castle and learning the real story of Vlad was unreal. Best week of my life."</p>
+          <cite>Andrei, 16 &mdash; Student</cite>
+        </blockquote>
+        <blockquote class="rev">
+          <p>"As a teacher I felt completely supported — calm staff, clear protocols, and the students learned enormously."</p>
+          <cite>Ms. Elena R. &mdash; Chaperone</cite>
+        </blockquote>
+        <blockquote class="rev">
+          <p>"Everything organised down to the hour. The guides genuinely cared about the kids."</p>
+          <cite>James P. &mdash; Parent</cite>
+        </blockquote>
       </div>
+      <div class="rev-dots" id="revDots"></div>
     </div>
   </div>
 </section>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="sec alt" id="reviews" aria-labelledby="revH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">From parents &amp; students</span>
-      <div class="agg"><span class="stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></span><span>4.9 / 5 from 80+ families</span></div>
-      <h2 id="revH">Parents who were nervous — and glad they said yes</h2>
-      <p class="lead center">A few words from families and teachers who travelled with us. (Replace with your own genuine reviews.)</p>
+<!-- ===== CH5: THE CLOSE (pricing) ===== -->
+<section class="ch ch-close" id="close">
+  <div class="close-content">
+    <span class="kicker" style="color:var(--accent-soft)">All-inclusive, no surprises</span>
+    <div class="close-price">
+      <span class="close-from">From</span>
+      <span class="close-amt">&euro;1,290</span>
+      <span class="close-unit">per student &middot; land-only &middot; shared room</span>
     </div>
-    <div class="t-track" id="tTrack">
-      <article class="t-card"><div class="t-stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></div><p class="t-quote">I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos and nightly check-ins meant I never worried for a second. Worth every penny.</p><div class="t-who"><span class="t-av">MK</span><span><span class="nm">Maria K.</span><br><span class="rl">Parent, Year-10 student</span></span></div></article>
-      <article class="t-card"><div class="t-stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></div><p class="t-quote">Standing inside Bran Castle and learning the real story of Vlad was unreal. Best week of my life with my friends.</p><div class="t-who"><span class="t-av">A</span><span><span class="nm">Andrei</span><br><span class="rl">Student, 16</span></span></div></article>
-      <article class="t-card"><div class="t-stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></div><p class="t-quote">Everything was organised down to the hour. The guides were knowledgeable and genuinely cared about the kids.</p><div class="t-who"><span class="t-av">JP</span><span><span class="nm">James P.</span><br><span class="rl">Parent</span></span></div></article>
-      <article class="t-card"><div class="t-stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></div><p class="t-quote">As an accompanying teacher I felt completely supported — calm staff, clear protocols, and the students learned an enormous amount.</p><div class="t-who"><span class="t-av">ER</span><span><span class="nm">Ms. Elena R.</span><br><span class="rl">History teacher &amp; chaperone</span></span></div></article>
-      <article class="t-card"><div class="t-stars"><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg><svg viewBox="0 0 24 24"><path d="m12 3 2.6 5.4 5.9.8-4.3 4.1 1 5.9L12 16.9 6.8 19.3l1-5.9L3.5 9.3l5.9-.8L12 3Z" fill="currentColor"/></svg></div><p class="t-quote">The Transfagarasan drive and Sibiu's old town were my favourites. I came home more independent.</p><div class="t-who"><span class="t-av">S</span><span><span class="nm">Sofia</span><br><span class="rl">Student, 17</span></span></div></article>
+    <div class="close-pills">
+      <span class="pill">&euro;150 deposit</span>
+      <span class="pill">&euro;100 off early bird</span>
+      <span class="pill">Only 30 places</span>
+      <span class="pill">Full refund until Feb 2027</span>
     </div>
-    <div class="t-controls"><button id="tPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button><button id="tNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button></div>
+    <div class="close-ctas">
+      <a class="btn btn-coral btn-lg" href="https://wa.me/37498003861">Reserve on WhatsApp</a>
+      <a class="btn btn-glass btn-lg" href="tel:+37498003861">Call +374 98 003861</a>
+      <a class="btn btn-glass btn-lg" href="mailto:info@tnyeducationalcenter.am">Email Us</a>
+    </div>
+    <p class="close-fine">Hotels, meals, transport, guides, entrance fees, insurance included. Flights not included (land-only). Balance by 1 Mar 2027, up to 3 instalments. All figures are placeholders.</p>
   </div>
 </section>
 
-<!-- ===== FAQ ===== -->
-<section class="sec" id="faq" aria-labelledby="faqH">
-  <div class="container">
-    <div class="sec-head center">
-      <span class="eyebrow">Good to know</span>
-      <h2 id="faqH">Questions parents ask us</h2>
-      <p class="lead center">Still unsure about something? Message us — we answer every question personally.</p>
+<!-- ===== COMPACT FOOTER ===== -->
+<footer class="foot">
+  <div class="foot-inner">
+    <div class="foot-col">
+      <strong>TNY Educational Center</strong>
+      <span>English education since 2014</span>
+      <span>Ejmiatsin &middot; Yerevan</span>
     </div>
-    <div class="faq">
-      <details class="q" data-reveal><summary>How closely are the students supervised?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">A 1:8 adult-to-student ratio at all times, with evening headcounts, room curfews and a coordinator on call 24/7. Students are never left to roam unsupervised.</p></details>
-      <details class="q" data-reveal><summary>How will I hear from my child during the trip?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">We run a private parents' WhatsApp group with a daily photo update and check-in, and provide a dedicated emergency number staffed for the duration of the tour. Hotels have Wi-Fi.</p></details>
-      <details class="q" data-reveal><summary>Are flights included?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">This is a land-only package, so international flights are arranged separately — we can advise on a recommended group flight and meeting point.</p></details>
-      <details class="q" data-reveal><summary>What should my child pack?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">Comfortable walking shoes, layers (the mountains are cool even in spring), a light rain jacket, a refillable water bottle, and a Type C/F 230V adapter. A full packing list is sent on booking.</p></details>
-      <details class="q" data-reveal><summary>What about dietary needs and allergies?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">Vegetarian, halal and allergy requirements are accommodated — just tell us on the medical &amp; consent form collected before departure.</p></details>
-      <details class="q" data-reveal><summary>Do you need passports or visas?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">Yes, a passport valid for at least 6 months. Visa requirements depend on nationality; we advise, but families are responsible for securing any visa.</p></details>
-      <details class="q" data-reveal><summary>What's the refund policy?<span class="plus"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg></span></summary><p class="a">Full refund until 1 Feb 2027, 50% until 1 Mar 2027, and non-refundable after that. (Replace with your real, accurate policy before sending.)</p></details>
+    <div class="foot-col">
+      <a href="https://wa.me/37498003861">WhatsApp</a>
+      <a href="tel:+37498003861">+374 98 003861</a>
+      <a href="mailto:info@tnyeducationalcenter.am">Email</a>
     </div>
-  </div>
-</section>
-
-<!-- ===== CONTACT ===== -->
-<section class="sec contact" id="contact" aria-labelledby="contactH">
-  <div class="container">
-    <span class="eyebrow">Get in touch</span>
-    <h2 id="contactH">Ready to reserve your child's place?</h2>
-    <p class="lead center">Talk to a real person before you decide. We answer every question — by WhatsApp, phone or email.</p>
-    <div class="contact-btns">
-      <a class="btn btn-wa btn-lg" href="https://wa.me/37498003861"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 8.5c.2-.6.4-.6.8-.6h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.1.4 0 .6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.4.4 0 .8-.6 1.6-1 1.7-.5.3-1.4.5-3-.2a9 9 0 0 1-4.3-4.1c-.6-1.2-.4-2.3-.1-3.1Z" fill="currentColor"/></svg> Chat on WhatsApp</a>
-      <a class="btn btn-ghost btn-lg" href="tel:+37498003861"><svg viewBox="0 0 24 24"><path d="M6 3.5h3l1.5 4.5-2 1.5a11 11 0 0 0 5 5l1.5-2 4.5 1.5v3a2 2 0 0 1-2.2 2A16 16 0 0 1 4 5.7 2 2 0 0 1 6 3.5Z" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> +374 98 003861</a>
-      <a class="btn btn-ghost btn-lg" href="mailto:info@tnyeducationalcenter.am?subject=Romania%20Student%20Tour%20enquiry"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="m3.5 6.5 8.5 6 8.5-6" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/></svg> info@tnyeducationalcenter.am</a>
+    <div class="foot-col">
+      <a href="https://www.facebook.com/tnyeducationalcenter/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/tny_educational_center/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <p class="reassure">&euro;150 deposit &middot; full refund until 1 Feb 2027 &middot; only 30 places &middot; we reply within 24 hours</p>
-  </div>
-</section>
-
-</main>
-
-<!-- ===== FOOTER ===== -->
-<footer>
-  <div class="container">
-    <div class="foot-grid">
-      <div class="foot-brand">
-        <a class="brand" href="#top"><svg class="brand-mark" viewBox="0 0 38 38" fill="none" aria-hidden="true"><rect width="38" height="38" rx="10" fill="#17A2A2"/><path d="M7 22 19 12l12 10" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/><rect x="11" y="19" width="16" height="11" rx="1.5" stroke="#fff" stroke-width="2" fill="none"/><text x="19" y="27.5" font-size="8.5" font-weight="700" fill="#fff" text-anchor="middle" font-family="Georgia,serif">TNY</text></svg><span>TNY Educational Center</span></a>
-        <p>Online and offline English education for students since 2014. General English, TOEFL, IELTS, career counseling.</p>
-        <p style="margin-top:.6rem"><strong>Ejmiatsin:</strong> Spandaryan St. 1b<br><strong>Yerevan:</strong> Andraniki St. 10/3</p>
-        <p style="font-size:.82rem;color:rgba(255,255,255,.5);margin-top:.4rem">Tour operator licence: [add licence no.] &middot; Company reg: [add reg. no.]</p>
-      </div>
-      <div><h4>Contact</h4><ul><li><a href="https://wa.me/37498003861">WhatsApp</a></li><li><a href="tel:+37498003861">+374 98 003861</a></li><li><a href="tel:+37493739473">+374 93 739473</a></li><li><a href="mailto:info@tnyeducationalcenter.am">info@tnyeducationalcenter.am</a></li></ul></div>
-      <div><h4>Explore</h4><ul><li><a href="#itinerary">Itinerary</a></li><li><a href="#gallery">Destinations</a></li><li><a href="#safety">Safety</a></li><li><a href="#pricing">Pricing</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/tnyeducationalcenter/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/tny_educational_center/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
+    <div class="foot-col">
+      <span>&copy; 2027 TNY Educational Center</span>
+      <span class="fine">Placeholder photos from Wikimedia Commons (CC BY-SA)</span>
     </div>
-    <div class="foot-legal"><span>&copy; 2027 TNY Educational Center. All rights reserved.</span><span><a href="#">Terms &amp; Conditions</a> &middot; <a href="#">Privacy Policy</a> &middot; <a href="#">Cancellation Policy</a></span></div>
-    <p class="credits">Placeholder photography from Wikimedia Commons contributors — see docs/PHOTO-CREDITS.txt. Replace with your own photos before publishing.</p>
   </div>
 </footer>
 
-<!-- ===== MOBILE STICKY CTA ===== -->
-<div class="mobile-cta" id="mobileCta">
-  <a class="btn btn-primary" href="#pricing">Reserve a Place</a>
-  <a class="btn btn-wa" href="https://wa.me/37498003861"><svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.6-1.2A9 9 0 1 0 12 3Z" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M9 8.5c.2-.6.4-.6.8-.6h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .6a6 6 0 0 0 2.7 2.4c.3.1.4 0 .6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.3.1.4.2.4.4 0 .8-.6 1.6-1 1.7-.5.3-1.4.5-3-.2a9 9 0 0 1-4.3-4.1c-.6-1.2-.4-2.3-.1-3.1Z" fill="currentColor"/></svg> WhatsApp</a>
-</div>
+<!-- ===== FLOATING INFO PANEL ===== -->
+<div class="info-panel" id="infoPanel" role="dialog" aria-modal="true" aria-label="Tour details">
+  <button class="ip-close" id="ipClose" aria-label="Close">&times;</button>
+  <div class="ip-body">
+    <h2>Tour Details</h2>
 
-<!-- ===== LIGHTBOX ===== -->
-<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Photo viewer">
-  <button class="lb-btn lb-close" id="lbClose" aria-label="Close"><svg viewBox="0 0 24 24"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-  <button class="lb-btn lb-prev" id="lbPrev" aria-label="Previous"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
-  <img id="lbImg" alt="">
-  <button class="lb-btn lb-next" id="lbNext" aria-label="Next"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg></button>
-  <div class="lb-cap" id="lbCap"></div>
-</div>
+    <h3>What's Included</h3>
+    <ul class="ip-list ip-yes">
+      <li>6 nights in 3-4 star hotels, shared rooms</li>
+      <li>Daily breakfast + selected lunches &amp; dinners</li>
+      <li>Private coach transport throughout</li>
+      <li>Licensed English-speaking guides</li>
+      <li>All entrance fees on the itinerary</li>
+      <li>Travel &amp; medical insurance</li>
+      <li>24/7 coordinator and airport transfers</li>
+    </ul>
 
-<!-- ===== SCRIPTS ===== -->
+    <h3>Not Included</h3>
+    <ul class="ip-list ip-no">
+      <li>International flights (land-only package)</li>
+      <li>Passport and visa fees</li>
+      <li>Meals not listed</li>
+      <li>Personal spending, souvenirs, tips</li>
+    </ul>
+
+    <h3>FAQ</h3>
+    <details><summary>How closely supervised?</summary><p>1:8 ratio, evening headcounts, room curfews, coordinator on call 24/7.</p></details>
+    <details><summary>How will I hear from my child?</summary><p>Daily WhatsApp photo updates to a private parents' group, plus a dedicated emergency number.</p></details>
+    <details><summary>What should they pack?</summary><p>Walking shoes, layers, rain jacket, water bottle, Type C/F adapter. Full list sent on booking.</p></details>
+    <details><summary>Dietary needs?</summary><p>Vegetarian, halal, and allergy accommodated — tell us on the consent form.</p></details>
+    <details><summary>Passport / visa?</summary><p>Passport valid 6+ months. Visa depends on nationality; we advise.</p></details>
+    <details><summary>Refund policy?</summary><p>Full refund until 1 Feb 2027, 50% until 1 Mar, non-refundable after. (Replace with real policy.)</p></details>
+
+    <h3>Dates &amp; Logistics</h3>
+    <p><strong>11-17 April 2027</strong> &middot; 7 days / 6 nights &middot; Ages 14-18 &middot; Max 30 students &middot; Departs Bucharest (OTP)</p>
+  </div>
+</div>
+<div class="info-backdrop" id="infoBackdrop"></div>
+
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
