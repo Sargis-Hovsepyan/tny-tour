@@ -1,108 +1,75 @@
-# Romania Student Tour brochure — how to edit & share
+# Romania Student Tour — how to edit & share
 
-You have a single file, **`index.html`**, that is your whole brochure. It opens in any
-web browser on any computer or phone, works offline, and can be emailed or shared as a
-link. Everything below tells you how to change it and send it. No coding experience needed.
+The site is a multi-file static page hosted on **GitHub Pages**. The live URL is:
+**https://sargis-hovsepyan.github.io/tny-tour/**
 
----
-
-## The files in this project
-
-| File | What it is |
-|------|-----------|
-| **`index.html`** (root) | The brochure. This is the only file you actually send. |
-| **`tools/encoder.html`** | A helper to turn your own photos into text you can paste in. |
-| `docs/PHOTO-CREDITS.txt` | Who took the placeholder photos (replace them — see below). |
-| `src/template.html`, `src/build.py` | Developer files used to build `index.html`. You can ignore these. |
-| `docs/HOW-TO-EDIT.md` | This guide. |
-
-To preview the brochure: **double-click `index.html`** (in the project root).
+To edit, change the files locally, then `git push` to deploy. No build step needed.
 
 ---
 
-## 1. Change the words (dates, prices, itinerary, reviews, contact)
+## Project structure
 
-1. Open `index.html` in a plain-text editor — VS Code, Notepad (Windows), or TextEdit
-   on Mac (use *Format → Make Plain Text* first).
-2. Search (Ctrl/Cmd+F) for **`const CONFIG`**. Everything you read on the page lives in
-   this block.
-3. Change the text **between the quotation marks**. Keep the quotes and the commas.
-   - Example: change `headline:"7 Days in Romania, Built for Students"` to your own line.
-4. To **add** an itinerary day, gallery photo, review, or FAQ: copy one `{ ... }` block
-   (including its trailing comma) and edit the copy. To **remove** one, delete its block.
-5. Save, then re-open `index.html` in your browser to see the change.
+```
+index.html                  the page (edit text here)
+assets/css/styles.css       design tokens, colours, layout
+assets/js/main.js           motion, nav, lightbox, carousel
+assets/js/vendor/           GSAP, ScrollTrigger, Lenis (pinned)
+assets/img/                 responsive JPG images
+assets/fonts/               Fraunces + Inter woff2
+tools/prep-assets.py        regenerate images + fonts from Wikimedia
+docs/HOW-TO-EDIT.md         this file
+docs/PHOTO-CREDITS.txt      placeholder photo attributions
+```
 
-> If something breaks (a blank page), you most likely deleted a quote, comma, or bracket.
-> Undo your last change (Ctrl/Cmd+Z) and try again.
+## 1. Change text (dates, prices, itinerary, reviews, contact)
 
-## 2. Change the colours
+Open `index.html` in a text editor (VS Code, Notepad, etc.). The content is plain HTML
+in labelled sections (look for `<!-- ===== PRICING ===== -->` etc.). Edit the text
+between the tags directly. Save and reload in a browser.
 
-Search for **`:root`** near the top. Change the colour codes (e.g. `--brand:#1f513f;`
-is the main green, `--accent:#c9a14a;` is the gold). Save and reload.
+To **add** an itinerary day, gallery photo, review, or FAQ: copy one block and edit the
+copy. To **remove** one, delete its block.
 
-## 3. Swap in your own photos
+## 2. Change colours
 
-The placeholder photos are stored as text near the bottom of `index.html` (search for
-`window.IMAGES`). To replace one:
+Open `assets/css/styles.css` and find the `:root` block. Change the hex values:
+- `--brand:#17A2A2` is the teal
+- `--accent:#FF6F5E` is the coral (CTAs)
+- `--bg:#FBFAF7` is the page background
 
-1. Open **`tools/encoder.html`** in your browser.
-2. Pick which photo slot it's for (e.g. `bran`), drop your photo in — it shrinks and
-   compresses it automatically.
-3. Click **Copy the text**.
-4. In `index.html`, find that slot name in quotes (e.g. `"bran":`) and replace its line
-   with what you copied. Save and reload.
+## 3. Swap photos
 
-Keep the slot names the same (`hero`, `bran`, `peles`, …). Try to keep each photo under
-~300 KB (the encoder's default settings do this) so the file stays easy to email.
+Drop your optimized image into `assets/img/` using the **same filename** the HTML
+references (e.g. `bran-800.jpg`). If you have multiple sizes, replace all three
+(e.g. `bran-400.jpg`, `bran-800.jpg`, `bran-1200.jpg`).
 
----
+To regenerate all placeholder photos from Wikimedia: `python3 tools/prep-assets.py`
 
-## 4. Sending it — pick the way that suits you
+## 4. Deploy
 
-**The same `index.html` works for all of these.**
+```
+git add -A
+git commit -m "update tour dates"
+git push
+```
 
-### A. As a file (no hosting, simplest)
-- **Email / WhatsApp:** attach `index.html`. The person saves it and double-clicks to open.
-- **Download link (Google Drive, Dropbox, WeTransfer):** upload `index.html`, get a share
-  link, send the link. Note: from these services the person usually has to **download**
-  the file first, then open it — it won't display straight away in the browser.
-
-### B. As a proper clickable web link (opens instantly)
-A link that opens the page the moment someone clicks it requires the file to be placed
-online. Free options, ~5 minutes, no cost, no server to manage:
-- **Netlify Drop** — go to `app.netlify.com/drop` and drag `index.html` onto the page.
-  You instantly get a link like `https://your-name.netlify.app`.
-- **Cloudflare Pages** or **GitHub Pages** work the same way.
-
-(If you want this set up, ask your developer — it's a couple of minutes.)
-
-### C. As a PDF (for printing or formal attachments)
-Open `index.html` in your browser, then **File → Print → Save as PDF**. The page is
-designed to print cleanly (menus hidden, all sections expanded).
-
----
+GitHub Pages republishes in ~1 minute. No build step.
 
 ## 5. Before you send it — replace every placeholder
 
-The brochure is filled with realistic **sample** content. Replace all of it with your
-real, accurate details:
-
 - [ ] Tour **dates**, duration, ages, group size, chaperone ratio
 - [ ] All **prices**, currency, deposit, early-bird, and payment deadlines
-- [ ] The **refund / cancellation policy** (this is legally meaningful — use your real terms)
+- [ ] The **refund / cancellation policy** (legally meaningful)
 - [ ] Whether **flights** are included, departure airport, and meeting point
-- [ ] **Contact details**: WhatsApp number, phone, email, social links
-- [ ] **Testimonials** — the samples are invented. Replace them with genuine reviews you
-      have permission to use. (Publishing fake reviews can be illegal.)
+- [ ] **Contact details**: WhatsApp number, phone, email
+- [ ] **Testimonials** — replace samples with genuine consented reviews
 - [ ] **Company** name, licence number, registration number, address
-- [ ] **Photos** — swap the Wikimedia placeholders for your own (or credit them per
-      `docs/PHOTO-CREDITS.txt`)
+- [ ] **Photos** — swap Wikimedia placeholders for your own
 
----
+## 6. Preview locally
 
-## Rebuilding (developers only)
+```
+python3 -m http.server
+```
 
-`index.html` (in the project root) is generated from `src/template.html` by
-`src/build.py`, which fetches placeholder photos and a font. To regenerate, run from the
-project root: `python3 src/build.py` (needs internet and macOS `sips`). Day-to-day editing
-does **not** require this — just edit `index.html` directly.
+Open `http://localhost:8000/` — all asset paths resolve correctly.

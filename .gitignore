@@ -13,5 +13,8 @@
 __pycache__/
 *.pyc
 
-# Local screenshot / capture scratch (not part of the deliverable)
+# Local screenshot / capture scratch
 .shots/
+
+# Asset pipeline cache (downloaded originals, reused between runs)
+tools/.cache/

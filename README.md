@@ -1,61 +1,55 @@
-# Romania Student Tour — Brochure
+# Romania Student Tour — TNY Educational Center
 
-A single-page marketing brochure for a supervised student group tour to Romania, aimed
-at parents. The published page is a **self-contained `index.html`** — all CSS, JavaScript,
-photos and the display font are inlined, so it works offline, opens by double-click, and
-can be emailed or hosted as-is. No build server or backend.
+A marketing landing page for a supervised student educational tour to Romania, organized
+by **TNY Educational Center** (Ejmiatsin & Yerevan, Armenia). Aimed at parents. Built as
+a multi-file static site on GitHub Pages with scroll-driven animations (GSAP + Lenis),
+responsive images, and self-hosted web fonts.
 
 **Live page:** https://sargis-hovsepyan.github.io/tny-tour/
-*(enable once via repo Settings → Pages → Deploy from a branch → `main` / `root`)*
 
 ## Project structure
 
 ```
-tny-tour/
-├── index.html          # the published brochure (GitHub Pages serves this from root)
-├── README.md
-├── LICENSE
-├── .nojekyll           # tell GitHub Pages to serve files as-is (no Jekyll)
-├── src/
-│   ├── template.html   # editable source (no huge base64) — the brochure's markup/CSS/JS
-│   └── build.py        # regenerates ../index.html (embeds photos + font)
-├── tools/
-│   └── encoder.html    # offline helper: drag a photo → get base64 text to paste in
-└── docs/
-    ├── HOW-TO-EDIT.md  # non-developer guide: edit text, swap photos, share, export PDF
-    └── PHOTO-CREDITS.txt
+index.html                      hand-authored semantic HTML (the page)
+assets/
+  css/styles.css                design system (teal #17A2A2 + coral #FF6F5E)
+  js/main.js                   Lenis smooth scroll, GSAP ScrollTrigger, nav, lightbox, reveals
+  js/vendor/                   pinned: gsap 3.12.5, ScrollTrigger, lenis 1.1.13
+  img/                         responsive JPG (hero 1920/1280/768, gallery 1200/800/400)
+  fonts/                       Fraunces 700 + Inter 400/500/600 woff2
+tools/prep-assets.py           downloads Wikimedia photos, optimizes to assets/img, fetches fonts
+docs/HOW-TO-EDIT.md            non-developer editing & deploy guide
+docs/PHOTO-CREDITS.txt         placeholder photo attributions (CC BY-SA)
 ```
 
-`index.html` is a **generated artifact** (built from `src/template.html`) but is committed
-because GitHub Pages serves it directly. Day-to-day text/price edits can be made straight
-in `index.html`; structural changes go in `src/template.html` followed by a rebuild.
+No build step. Deploy = `git push` to `main`. Pages serves from root.
 
-## Preview
-
-Open `index.html` in any browser (double-click), or visit the live URL above.
-
-## Edit it
-
-Everything on the page is driven by a `CONFIG` block at the top of `index.html` — change
-the text between the quotes. Colours live in the `:root` CSS block. To swap photos, use
-`tools/encoder.html`. Full instructions, including how to share it and export a PDF, are
-in **`docs/HOW-TO-EDIT.md`**.
-
-> All dates, prices, the refund policy, contact details, and reviews are realistic
-> **placeholders** — replace them with real, accurate information before sending.
-
-## Rebuild (developers)
+## Preview locally
 
 ```
-python3 src/build.py
+python3 -m http.server
+# open http://localhost:8000/
 ```
 
-Fetches placeholder photos from Wikimedia Commons + a Playfair Display font, compresses
-them with macOS `sips`, base64-embeds everything, and writes `index.html` to the repo
-root and credits to `docs/PHOTO-CREDITS.txt`. Needs internet and macOS `sips`.
+## Regenerate placeholder assets
+
+```
+python3 tools/prep-assets.py
+```
+
+Downloads photos from Wikimedia Commons, outputs responsive JPEG at multiple widths into
+`assets/img/`, fetches Fraunces + Inter woff2 into `assets/fonts/`, and writes credits
+to `docs/PHOTO-CREDITS.txt`. Run `brew install webp` first to also generate WebP.
+
+## Brand
+
+- **TNY Educational Center** — English school, Ejmiatsin & Yerevan, est. 2014
+- Palette: teal `#17A2A2` + coral `#FF6F5E` on warm paper `#FBFAF7`
+- Display: Fraunces (serif), Body: Inter (sans)
+- TNY house/roof logo in nav and favicon
 
 ## Photo / content notice
 
-The page code is MIT-licensed (see `LICENSE`). The embedded **placeholder photos** are
-from Wikimedia Commons under their own licenses (mostly CC BY-SA, see
-`docs/PHOTO-CREDITS.txt`) and must be credited or replaced before publishing.
+The page code is MIT-licensed (see `LICENSE`). Embedded placeholder photos are from
+Wikimedia Commons under CC BY-SA — see `docs/PHOTO-CREDITS.txt`. All dates, prices,
+reviews, and contact details are **placeholders** to replace before publishing.
