@@ -99,35 +99,52 @@ h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.05;letter-spac
 .ch-journey{position:relative}
 .journey-track{display:flex;flex-direction:column}
 
-.day-panel{min-height:100svh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
-.day-panel:nth-child(even){direction:rtl}
-.day-panel:nth-child(even)>*{direction:ltr}
-@media(max-width:768px){.day-panel{grid-template-columns:1fr;min-height:auto}.day-panel:nth-child(even){direction:ltr}}
+/* photo-dominant panels: image fills viewport, text floats over */
+.day-panel{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
 
-.dp-img{position:relative;overflow:hidden}
-.dp-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s cubic-bezier(.22,.61,.36,1)}
-.day-panel.in-view .dp-img img{transform:scale(1.04)}
+.dp-img{position:absolute;inset:0}
+.dp-img img{width:100%;height:100%;object-fit:cover;transition:transform 1.4s cubic-bezier(.22,.61,.36,1)}
+.day-panel.in-view .dp-img img{transform:scale(1.03)}
 
-.dp-text{display:flex;flex-direction:column;justify-content:center;padding:clamp(2rem,5vw,5rem);background:var(--bg)}
-.dp-num{font-family:var(--display);font-size:clamp(4rem,3rem + 4vw,7rem);font-weight:700;
-  color:var(--accent,var(--coral-500));opacity:.15;line-height:1;margin-bottom:-.5rem}
-.dp-text h2{font-size:clamp(2rem,1.5rem + 2.5vw,3.5rem);margin-bottom:.8rem;color:var(--ink)}
-.dp-text p{color:var(--muted);font-size:1.05rem;max-width:40ch;margin-bottom:1.2rem;line-height:1.6}
+/* scrim: dark at bottom for text, light at top to show the photo */
+.day-panel::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(10,40,40,.05) 0%,rgba(10,40,40,.15) 40%,rgba(10,40,40,.7) 75%,rgba(10,40,40,.88) 100%);
+  pointer-events:none;z-index:1}
+/* alternate: scrim from left on even panels */
+.day-panel:nth-child(even)::after{
+  background:linear-gradient(90deg,rgba(10,40,40,.85) 0%,rgba(10,40,40,.6) 35%,rgba(10,40,40,.1) 70%,transparent 100%)}
+.day-panel:nth-child(even){align-items:center}
+.day-panel:nth-child(even) .dp-text{align-items:flex-start}
+
+.dp-text{position:relative;z-index:2;padding:clamp(2rem,5vw,5rem);max-width:600px;color:#fff;
+  display:flex;flex-direction:column;align-items:flex-start}
+.dp-num{font-family:var(--display);font-size:clamp(5rem,4rem + 5vw,9rem);font-weight:700;
+  color:rgba(255,255,255,.08);line-height:.85;margin-bottom:-.8rem;pointer-events:none}
+.dp-text h2{font-size:clamp(2.2rem,1.8rem + 2.5vw,3.8rem);margin-bottom:.6rem;color:#fff}
+.dp-text p{color:rgba(255,255,255,.85);font-size:1.05rem;max-width:42ch;margin-bottom:1rem;line-height:1.6}
 .dp-tags{display:flex;gap:.5rem;flex-wrap:wrap}
-.dp-tags span{font-size:.78rem;font-weight:600;padding:.35rem .8rem;border-radius:999px;
-  background:var(--teal-50);color:var(--teal-700);border:1px solid var(--teal-100)}
+.dp-tags span{font-size:.78rem;font-weight:500;padding:.35rem .8rem;border-radius:999px;
+  background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border:1px solid rgba(255,255,255,.2);
+  backdrop-filter:blur(6px)}
 
-/* vertical reveal animation */
-.day-panel .dp-text>*{opacity:0;transform:translateY(24px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1)}
+/* staggered reveal */
+.day-panel .dp-text>*{opacity:0;transform:translateY(20px);transition:opacity .7s cubic-bezier(.22,.61,.36,1),transform .7s cubic-bezier(.22,.61,.36,1)}
 .day-panel.in-view .dp-text>*{opacity:1;transform:none}
 .day-panel.in-view .dp-text>:nth-child(1){transition-delay:0s}
-.day-panel.in-view .dp-text>:nth-child(2){transition-delay:.1s}
-.day-panel.in-view .dp-text>:nth-child(3){transition-delay:.2s}
-.day-panel.in-view .dp-text>:nth-child(4){transition-delay:.3s}
+.day-panel.in-view .dp-text>:nth-child(2){transition-delay:.12s}
+.day-panel.in-view .dp-text>:nth-child(3){transition-delay:.22s}
+.day-panel.in-view .dp-text>:nth-child(4){transition-delay:.32s}
 @media(prefers-reduced-motion:reduce){.day-panel .dp-text>*{opacity:1;transform:none;transition:none}}
 
-/* mobile: image height */
-@media(max-width:768px){.dp-img{height:50vh}}
+/* breathing room between panels */
+.day-panel+.day-panel{margin-top:0}
+
+@media(max-width:768px){
+  .day-panel{min-height:85svh}
+  .day-panel:nth-child(even)::after{
+    background:linear-gradient(180deg,rgba(10,40,40,.05) 0%,rgba(10,40,40,.15) 40%,rgba(10,40,40,.7) 75%,rgba(10,40,40,.88) 100%)}
+  .day-panel:nth-child(even){align-items:flex-end}
+}
 
 .journey-counter{display:none}
 
