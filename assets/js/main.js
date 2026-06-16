@@ -63,41 +63,32 @@
     }
   }
 
-  /* ---- HORIZONTAL SCROLL JOURNEY ---- */
+  /* ---- VERTICAL JOURNEY REVEALS ---- */
+  const panels = $$('.day-panel');
   if (HAS_GSAP && !RM) {
-    const track = $('#journeyTrack');
-    const panels = $$('.day-panel');
-    const counter = $('.journey-counter');
-    const curEl = $('#jcCur');
-    const totalPanels = panels.length;
-
-    const journeyTL = gsap.to(track, {
-      x: () => -(track.scrollWidth - window.innerWidth),
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.ch-journey',
-        pin: true,
-        scrub: 0.8,
-        end: () => '+=' + (track.scrollWidth - window.innerWidth),
-        invalidateOnRefresh: true,
-        onUpdate: self => {
-          const idx = Math.min(Math.floor(self.progress * totalPanels), totalPanels - 1);
-          curEl.textContent = String(idx + 1).padStart(2, '0');
-          panels.forEach((p, i) => p.classList.toggle('active', i === idx));
-        },
-        onEnter: () => counter.classList.add('visible'),
-        onLeave: () => counter.classList.remove('visible'),
-        onEnterBack: () => counter.classList.add('visible'),
-        onLeaveBack: () => counter.classList.remove('visible'),
+    panels.forEach(panel => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: 'top 65%',
+        end: 'bottom 35%',
+        onEnter: () => panel.classList.add('in-view'),
+        onLeave: () => panel.classList.remove('in-view'),
+        onEnterBack: () => panel.classList.add('in-view'),
+        onLeaveBack: () => panel.classList.remove('in-view'),
+      });
+      const img = panel.querySelector('.dp-img img');
+      if (img) {
+        gsap.fromTo(img, { yPercent: -8 }, {
+          yPercent: 8, ease: 'none',
+          scrollTrigger: { trigger: panel, start: 'top bottom', end: 'bottom top', scrub: true }
+        });
       }
     });
   } else {
-    const track = $('#journeyTrack');
-    if (track) {
-      track.style.overflowX = 'auto';
-      track.style.scrollSnapType = 'x mandatory';
-      $$('.day-panel').forEach(p => { p.style.scrollSnapAlign = 'start'; p.style.flexShrink = '0'; });
-    }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => e.target.classList.toggle('in-view', e.isIntersecting));
+    }, { threshold: 0.3 });
+    panels.forEach(p => io.observe(p));
   }
 
   /* ---- Trust section reveals ---- */
