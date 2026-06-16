@@ -1,0 +1,41 @@
+PLACEHOLDER PHOTO CREDITS
+These images are placeholders from Wikimedia Commons. If you keep any
+of them in a published page you must credit the author per its licence;
+otherwise replace them with your own photos (see HOW-TO-EDIT.md).
+
+[hero] File:Transfăgărășan (2023-08-28 2).jpg
+  by Olgierd Rudak | CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Transf%C4%83g%C4%83r%C4%83%C8%99an_(2023-08-28_2).jpg
+
+[bran] File:Castul Bran exterior view.jpg
+  by Angelbo at English Wikipedia | CC BY-SA 3.0
+  https://commons.wikimedia.org/wiki/File:Castul_Bran_exterior_view.jpg
+
+[peles] File:Castle Peleş in 2009.jpg
+  by Pudelek (Marcin Szala) | CC BY-SA 3.0
+  https://commons.wikimedia.org/wiki/File:Castle_Pele%C5%9F_in_2009.jpg
+
+[brasov] File:Romania-1766 - Council Square (7664102272).jpg
+  by Dennis G. Jarvis | CC BY-SA 2.0
+  https://commons.wikimedia.org/wiki/File:Romania-1766_-_Council_Square_(7664102272).jpg
+
+[sighisoara] File:Sighisoara Citadel, Romania (5681800100).jpg
+  by yeowatzup | CC BY 2.0
+  https://commons.wikimedia.org/wiki/File:Sighisoara_Citadel,_Romania_(5681800100).jpg
+
+[sibiu] File:Grand Square Sibiu.jpg
+  by Ymblanter | CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Grand_Square_Sibiu.jpg
+
+[transfagarasan] File:RO B Transfagarasan view towards the north from Balea Lake 1.jpg
+  by Andrei Stroe | CC BY-SA 3.0
+  https://commons.wikimedia.org/wiki/File:RO_B_Transfagarasan_view_towards_the_north_from_Balea_Lake_1.jpg
+
+[parliament] File:North Atlantic Council Summit Meeting (2008).jpg
+  by Chris Greenberg | Public domain
+  https://commons.wikimedia.org/wiki/File:North_Atlantic_Council_Summit_Meeting_(2008).jpg
+
+[mountains] File:Snow on the Carpathian Mountains, Romania.JPG
+  by Sb2s3 | CC BY-SA 4.0
+  https://commons.wikimedia.org/wiki/File:Snow_on_the_Carpathian_Mountains,_Romania.JPG
+

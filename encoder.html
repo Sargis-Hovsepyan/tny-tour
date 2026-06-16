@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Photo Encoder — paste your own photos into the brochure</title>
+<style>
+  :root{--brand:#1f513f;--accent:#c9a14a;--bg:#fbf9f4;--line:#e6e1d6;--muted:#5d6b63}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:#16231e;line-height:1.55}
+  .wrap{max-width:780px;margin:0 auto;padding:2.5rem 1.3rem 4rem}
+  h1{font-family:Georgia,serif;font-size:1.9rem;margin:0 0 .3rem}
+  p.lead{color:var(--muted);margin:.2rem 0 1.6rem}
+  .card{background:#fff;border:1px solid var(--line);border-radius:14px;padding:1.4rem;box-shadow:0 10px 30px -20px rgba(20,40,30,.4);margin-bottom:1.3rem}
+  label{font-weight:600;font-size:.92rem;display:block;margin-bottom:.4rem}
+  .row{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+  select,input[type=number]{padding:.5rem .6rem;border:1px solid var(--line);border-radius:8px;font-size:1rem;background:#fff}
+  #drop{border:2px dashed var(--line);border-radius:12px;padding:2.2rem 1rem;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .2s,background .2s}
+  #drop.hover{border-color:var(--brand);background:rgba(31,81,63,.05)}
+  #drop b{color:var(--brand)}
+  .preview{display:none;margin-top:1.2rem}
+  .preview img{max-width:100%;max-height:280px;border-radius:10px;border:1px solid var(--line)}
+  .meta{font-size:.85rem;color:var(--muted);margin-top:.5rem}
+  textarea{width:100%;height:120px;margin-top:.8rem;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.72rem;border:1px solid var(--line);border-radius:8px;padding:.6rem;resize:vertical;background:#fbfaf6}
+  button{background:var(--brand);color:#fff;border:0;border-radius:999px;padding:.7rem 1.3rem;font-size:.95rem;font-weight:600;cursor:pointer;margin-top:.6rem}
+  button:hover{background:#143a2c}
+  code{background:#f1ede3;padding:.1rem .35rem;border-radius:5px;font-size:.85em}
+  ol{padding-left:1.2rem}ol li{margin:.4rem 0}
+  .ok{color:var(--brand);font-weight:600}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Photo Encoder</h1>
+  <p class="lead">A small offline helper to put <b>your own photos</b> into the brochure. It shrinks and compresses the photo, then gives you a block of text to paste into <code>index.html</code>. Nothing is uploaded anywhere — this runs entirely in your browser.</p>
+
+  <div class="card">
+    <label>1. Which photo slot is this for?</label>
+    <div class="row">
+      <select id="key">
+        <option value="hero">hero — the big top banner image</option>
+        <option value="bran">bran — Bran Castle</option>
+        <option value="peles">peles — Peleș Castle</option>
+        <option value="brasov">brasov — Brașov</option>
+        <option value="sighisoara">sighisoara — Sighișoara</option>
+        <option value="sibiu">sibiu — Sibiu</option>
+        <option value="transfagarasan">transfagarasan — Transfăgărășan</option>
+        <option value="parliament">parliament — Palace of the Parliament</option>
+        <option value="mountains">mountains — the Carpathians</option>
+      </select>
+      <span>Max width:
+        <input type="number" id="w" value="1400" min="600" max="2200" step="100"> px
+      </span>
+      <span>Quality:
+        <input type="number" id="q" value="70" min="40" max="95" step="5"> %
+      </span>
+    </div>
+  </div>
+
+  <div class="card">
+    <label>2. Drop your photo here (or click to choose)</label>
+    <div id="drop">Drag a JPG or PNG here, or <b>click to browse</b></div>
+    <input type="file" id="file" accept="image/*" style="display:none">
+    <div class="preview" id="preview">
+      <img id="img" alt="preview">
+      <div class="meta" id="meta"></div>
+      <textarea id="out" readonly placeholder="The text to paste will appear here..."></textarea>
+      <button id="copy">Copy the text</button> <span id="copied"></span>
+    </div>
+  </div>
+
+  <div class="card">
+    <label>3. Paste it into the brochure</label>
+    <ol>
+      <li>Open <code>index.html</code> in a plain text editor (Notepad, TextEdit in plain-text mode, or VS Code).</li>
+      <li>Press <b>Ctrl/Cmd+F</b> and search for the slot name in quotes, e.g. <code>"bran":</code> — it's in the <code>IMAGES</code> block near the bottom.</li>
+      <li>Select everything from <code>"bran":</code> up to (but not including) the next comma, and replace it with the copied text.</li>
+      <li>Save the file and re-open it in your browser. Done.</li>
+    </ol>
+    <p class="meta">Tip: the copied text already includes the slot name and a trailing comma, so you can also just paste it on a new line inside the <code>{ }</code> of the IMAGES block, replacing the old line for that slot.</p>
+  </div>
+</div>
+
+<script>
+const $=id=>document.getElementById(id);
+const drop=$('drop'),file=$('file');
+drop.addEventListener('click',()=>file.click());
+['dragenter','dragover'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.add('hover');}));
+['dragleave','drop'].forEach(e=>drop.addEventListener(e,ev=>{ev.preventDefault();drop.classList.remove('hover');}));
+drop.addEventListener('drop',ev=>{if(ev.dataTransfer.files[0])handle(ev.dataTransfer.files[0]);});
+file.addEventListener('change',()=>{if(file.files[0])handle(file.files[0]);});
+
+function handle(f){
+  if(!f.type.startsWith('image/')){alert('Please choose an image file.');return;}
+  const r=new FileReader();
+  r.onload=()=>{
+    const im=new Image();
+    im.onload=()=>encode(im,f);
+    im.src=r.result;
+  };
+  r.readAsDataURL(f);
+}
+
+function encode(im,f){
+  const maxW=Math.max(600,Math.min(2200,+$('w').value||1400));
+  const q=Math.max(40,Math.min(95,+$('q').value||70))/100;
+  const scale=Math.min(1,maxW/im.naturalWidth);
+  const cw=Math.round(im.naturalWidth*scale), ch=Math.round(im.naturalHeight*scale);
+  const c=document.createElement('canvas'); c.width=cw; c.height=ch;
+  c.getContext('2d').drawImage(im,0,0,cw,ch);
+  const uri=c.toDataURL('image/jpeg',q);
+  const key=$('key').value;
+  const line='"'+key+'": "'+uri+'",';
+  $('img').src=uri;
+  $('meta').textContent=`Slot "${key}" · ${cw}×${ch}px · ${(uri.length/1024).toFixed(0)} KB encoded`;
+  $('out').value=line;
+  $('preview').style.display='block';
+  $('copied').textContent='';
+}
+
+$('copy').addEventListener('click',async()=>{
+  $('out').select();
+  try{await navigator.clipboard.writeText($('out').value);}catch(e){document.execCommand('copy');}
+  $('copied').innerHTML='<span class="ok">Copied!</span>';
+});
+</script>
+</body>
+</html>
