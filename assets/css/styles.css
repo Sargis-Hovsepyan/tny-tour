@@ -43,8 +43,8 @@
   --grad-teal:linear-gradient(155deg,#17A2A2 0%,#0F6E70 58%,#0A4546 100%);
   --grad-coral:linear-gradient(135deg,#FF6F5E 0%,#FF9183 100%);
   --grad-hero-scrim:linear-gradient(180deg,
-    rgba(10,69,70,.10) 0%,rgba(10,69,70,.30) 38%,
-    rgba(10,69,70,.72) 78%,rgba(12,48,46,.90) 100%);
+    rgba(10,69,70,.42) 0%,rgba(10,69,70,.18) 30%,
+    rgba(10,69,70,.50) 65%,rgba(12,48,46,.82) 100%);
 
   /* depth */
   --e1:0 1px 2px rgba(10,69,70,.06),0 2px 6px rgba(10,69,70,.06);
@@ -406,3 +406,99 @@ footer ul{display:flex;flex-direction:column;gap:.5rem}
   [data-reveal]{opacity:1!important;transform:none!important}
   a[href^="http"]::after,a[href^="mailto"]::after,a[href^="tel"]::after{content:" (" attr(href) ")";font-size:9pt;color:#444}
 }
+
+/* ============================================================
+   VISUAL RICHNESS — distinctive effects
+   ============================================================ */
+
+/* --- Ambient gradient mesh (living background) --- */
+.mesh-bg{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+    radial-gradient(ellipse 60% 50% at 15% 20%, rgba(23,162,162,.07), transparent 70%),
+    radial-gradient(ellipse 50% 60% at 85% 15%, rgba(255,111,94,.05), transparent 70%),
+    radial-gradient(ellipse 55% 55% at 60% 85%, rgba(15,110,112,.06), transparent 70%),
+    var(--bg)}
+.js.rich .mesh-bg{animation:meshDrift 28s ease-in-out infinite alternate}
+@keyframes meshDrift{
+  0%{background-position:0 0,100% 0,60% 100%}
+  100%{background-position:10% 10%,90% 5%,50% 90%}
+}
+@media(prefers-reduced-motion:reduce){.mesh-bg{animation:none}}
+
+/* --- SVG wave dividers --- */
+.divider-wave{display:block;width:100%;margin-top:-1px;line-height:0}
+.divider-wave svg{width:100%;height:auto;display:block}
+
+/* --- Hero: richer layering --- */
+.hero{background:#0A4546}
+.hero-media img{filter:saturate(1.1) contrast(1.02)}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;
+  background:radial-gradient(ellipse 80% 60% at 20% 80%, rgba(255,111,94,.12), transparent 70%),
+             radial-gradient(ellipse 60% 50% at 90% 20%, rgba(23,162,162,.15), transparent 70%);
+  pointer-events:none}
+.hero h1{background:linear-gradient(135deg,#fff 60%,var(--accent-soft));-webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;background-clip:text}
+@supports not (-webkit-background-clip:text){.hero h1{color:#fff;background:none}}
+
+/* --- Cards: coral accent border + hover glow --- */
+.card{border-top:3px solid var(--teal-50);transition:transform var(--dur-sm) var(--ease-out-soft),box-shadow var(--dur-sm),border-top-color var(--dur-sm)}
+.card:hover{border-top-color:var(--accent);box-shadow:var(--e3),0 0 0 1px rgba(255,111,94,.1)}
+.card .ico{transition:transform var(--dur-sm) var(--ease-spring)}
+.card:hover .ico{transform:scale(1.08)}
+
+/* --- Safety: glass tiles with glow --- */
+.safety{overflow:hidden}
+.safety::before{content:"";position:absolute;right:-5%;bottom:-10%;width:min(420px,40vw);height:min(420px,40vw);
+  opacity:.04;border:6px solid rgba(255,255,255,.6);border-radius:4px;
+  transform:rotate(-8deg);pointer-events:none;
+  clip-path:polygon(50% 0%,0% 40%,0% 100%,100% 100%,100% 40%)}
+.safety-item{transition:transform var(--dur-sm),background var(--dur-sm)}
+.safety-item:hover{transform:translateY(-3px);background:rgba(255,255,255,.12)}
+
+/* --- Gallery: richer hover, caption slide, corner frame --- */
+.gitem{overflow:hidden;transition:box-shadow var(--dur-sm)}
+.gitem:hover,.gitem:focus-visible{box-shadow:var(--e4)}
+.gitem::before{content:"";position:absolute;top:10px;left:10px;right:10px;bottom:10px;
+  border:2px solid rgba(255,255,255,.3);border-radius:6px;z-index:2;pointer-events:none;
+  opacity:0;transform:scale(1.05);transition:opacity var(--dur-sm),transform var(--dur-sm)}
+.gitem:hover::before,.gitem:focus-visible::before{opacity:1;transform:scale(1)}
+
+/* --- Itinerary: subtle left accent line --- */
+.itinerary-list{position:relative}
+.itinerary-list::before{content:"";position:absolute;left:24px;top:25px;bottom:25px;width:2px;
+  background:linear-gradient(180deg,var(--accent),var(--brand),var(--accent));border-radius:1px;opacity:.3}
+@media(max-width:560px){.itinerary-list::before{left:14px}}
+
+/* --- Pricing: richer card --- */
+.price-card{overflow:visible}
+.price-top::before{content:"";position:absolute;inset:0;
+  background:radial-gradient(circle at 80% 20%, rgba(255,111,94,.2), transparent 60%);pointer-events:none}
+.price-top{position:relative;overflow:hidden}
+.callout{transition:transform var(--dur-xs),box-shadow var(--dur-xs)}
+.callout:hover{transform:translateY(-2px);box-shadow:var(--e2)}
+
+/* --- Testimonials: decorative elements --- */
+.t-card{position:relative;overflow:hidden}
+.t-card::before{content:"";position:absolute;top:-1px;left:0;right:0;height:3px;
+  background:var(--grad-coral);transform:scaleX(0);transform-origin:left;transition:transform var(--dur-sm)}
+.t-card:hover::before{transform:scaleX(1)}
+
+/* --- FAQ: left accent on open --- */
+details.q[open]{border-left:3px solid var(--accent);padding-left:calc(1.2rem - 3px)}
+
+/* --- Contact: mesh orbs --- */
+.contact{overflow:hidden}
+.contact::before{content:"";position:absolute;top:-20%;left:-10%;width:50vw;height:50vw;
+  background:radial-gradient(circle,rgba(255,111,94,.15),transparent 70%);border-radius:50%;pointer-events:none}
+.contact::after{content:"";position:absolute;bottom:-30%;right:-5%;width:40vw;height:40vw;
+  background:radial-gradient(circle,rgba(23,162,162,.2),transparent 70%);border-radius:50%;pointer-events:none}
+
+/* --- Footer: subtle pattern --- */
+footer{background-image:
+  radial-gradient(circle at 20% 50%, rgba(23,162,162,.06), transparent 50%),
+  radial-gradient(circle at 80% 80%, rgba(255,111,94,.04), transparent 50%);
+  background-color:#0A3433}
+
+/* --- Focus ring (visible, coral) --- */
+:focus-visible{outline:none;box-shadow:var(--ring-focus)}
+a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring-focus);border-radius:4px}
