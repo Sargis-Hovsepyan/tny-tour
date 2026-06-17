@@ -157,10 +157,9 @@
 
   /* ---- SHOWCASE 3D PARALLAX ---- */
   if (RICH) {
-    $$('.showcase-panel').forEach((panel, i) => {
+    $$('.showcase-panel').forEach(panel => {
       const img = panel.querySelector('.showcase-img img');
       const txt = panel.querySelector('.showcase-text');
-      const isEven = i % 2 === 1;
 
       if (img) {
         gsap.fromTo(img,
