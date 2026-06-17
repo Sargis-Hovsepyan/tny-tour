@@ -145,7 +145,7 @@ p{margin:0 0 1rem}
 .nav-progress{position:absolute;bottom:0;left:0;height:2px;background:var(--coral);transform-origin:left;transform:scaleX(0);width:100%}
 
 .brand{display:flex;align-items:center;text-decoration:none}
-.brand-logo{height:auto;width:auto;max-height:44px;max-width:160px;object-fit:contain}
+.brand-logo{height:auto;max-height:38px;width:auto}
 
 .nav-links{display:flex;align-items:center;gap:1.6rem}
 .nav-links a{color:rgba(255,255,255,.9);font-weight:500;font-size:.92rem;text-decoration:none;transition:color var(--dur);position:relative}
@@ -197,7 +197,7 @@ p{margin:0 0 1rem}
 .trust-bar{background:var(--card);border-bottom:1px solid var(--line);box-shadow:var(--shadow-sm);position:relative;z-index:3;padding:1.2rem 0}
 .trust-bar .container{display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
 .trust-logos{display:flex;align-items:center;gap:.8rem;flex-shrink:0}
-.trust-logo{height:auto;width:auto;max-height:48px;max-width:180px;object-fit:contain}
+.trust-logo{height:auto;max-height:40px;width:auto}
 .trust-logo.luna{height:28px}
 .trust-x{font-size:1.1rem;color:var(--ink-muted);font-weight:300}
 .trust-facts{display:flex;gap:1.6rem;flex-wrap:wrap}
@@ -385,7 +385,7 @@ footer{background:#0A3433;color:rgba(255,255,255,.7);font-size:.92rem;padding:3r
   background-image:radial-gradient(circle at 20% 50%,rgba(23,162,162,.06),transparent 50%),radial-gradient(circle at 80% 80%,rgba(255,111,94,.03),transparent 50%)}
 .foot-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:2rem}
 .foot-brand{display:flex;flex-direction:column;gap:.8rem}
-.foot-logo{height:auto;width:auto;max-height:56px;max-width:200px;object-fit:contain}
+.foot-logo{height:auto;max-height:46px;width:auto}
 footer h4{color:#fff;font-family:var(--sans);font-size:.92rem;margin:0 0 .85rem;letter-spacing:.04em}
 footer a{color:rgba(255,255,255,.7);transition:color var(--dur-fast)}
 footer a:hover{color:var(--coral)}
