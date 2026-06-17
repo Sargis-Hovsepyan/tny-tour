@@ -189,69 +189,6 @@
     });
   }
 
-  /* ---- DUOTONE GALLERY REVEAL ---- */
-  const duoEls = $$('.duotone');
-  if (duoEls.length) {
-    const duoObs = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('is-live'); duoObs.unobserve(e.target); }
-      });
-    }, {threshold:.2});
-    duoEls.forEach(el => duoObs.observe(el));
-  }
-
-  /* ---- LIGHTBOX ---- */
-  const lb = $('#lightbox'), lbImg = $('#lbImg'), lbCap = $('#lbCap');
-  const gitems = $$('.gitem');
-  let lbCur = 0, lbTrigger = null;
-
-  const galleryData = gitems.map(g => {
-    const img = g.querySelector('img');
-    const cap = g.querySelector('figcaption');
-    const srcset = img.getAttribute('srcset') || '';
-    const largest = srcset.split(',').pop().trim().split(' ')[0] || img.src;
-    return { src: largest, alt: img.alt, caption: cap ? cap.textContent : '' };
-  });
-
-  function lbShow(i){
-    lbCur = ((i % galleryData.length) + galleryData.length) % galleryData.length;
-    const d = galleryData[lbCur];
-    lbImg.src = d.src; lbImg.alt = d.alt; lbCap.textContent = d.caption;
-  }
-  function lbOpen(i, trigger){
-    lbTrigger = trigger;
-    lbShow(i);
-    lb.classList.add('open');
-    document.body.style.overflow = 'hidden';
-    $('#lbClose').focus();
-    lb.addEventListener('keydown', lbTrap);
-  }
-  function lbClose(){
-    lb.classList.remove('open');
-    document.body.style.overflow = '';
-    lb.removeEventListener('keydown', lbTrap);
-    if (lbTrigger) { lbTrigger.focus(); lbTrigger = null; }
-  }
-  function lbTrap(e){
-    const focusable = lb.querySelectorAll('button,img[tabindex]');
-    const first = focusable[0], last = focusable[focusable.length - 1];
-    if (e.key === 'Tab') {
-      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
-      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
-    }
-    if (e.key === 'Escape') lbClose();
-    if (e.key === 'ArrowRight') lbShow(lbCur + 1);
-    if (e.key === 'ArrowLeft') lbShow(lbCur - 1);
-  }
-  gitems.forEach((g, i) => {
-    g.addEventListener('click', () => lbOpen(i, g));
-    g.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); lbOpen(i, g); }});
-  });
-  $('#lbClose').addEventListener('click', lbClose);
-  $('#lbNext').addEventListener('click', () => lbShow(lbCur + 1));
-  $('#lbPrev').addEventListener('click', () => lbShow(lbCur - 1));
-  lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
-
   /* ---- MOBILE STICKY CTA ---- */
   if (RICH) {
     const mobileCta = $('#mobileCta');
