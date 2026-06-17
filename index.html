@@ -53,12 +53,10 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="hero-media">
-    <picture>
-      <img src="assets/img/hero-1920.jpg"
-           srcset="assets/img/hero-768.jpg 768w, assets/img/hero-1280.jpg 1280w, assets/img/hero-1920.jpg 1920w"
-           sizes="100vw" alt="The Carpathian Mountains, Romania"
-           width="1920" height="1280" fetchpriority="high" decoding="async">
-    </picture>
+    <img class="hero-slide active" src="assets/img/hero-1920.jpg" srcset="assets/img/hero-768.jpg 768w, assets/img/hero-1280.jpg 1280w, assets/img/hero-1920.jpg 1920w" sizes="100vw" alt="Brașov Council Square, Romania" width="1920" height="1280" fetchpriority="high" decoding="async">
+    <img class="hero-slide" src="assets/img/peles-wide.jpg" alt="Peleș Castle, Sinaia" loading="lazy" decoding="async">
+    <img class="hero-slide" src="assets/img/bran-wide.jpg" alt="Bran Castle, Transylvania" loading="lazy" decoding="async">
+    <img class="hero-slide" src="assets/img/transfagarasan-wide.jpg" alt="Carpathian Mountains" loading="lazy" decoding="async">
   </div>
   <div class="hero-scrim"></div>
   <div class="container hero-content">
@@ -301,13 +299,58 @@
   </div>
 </section>
 
-<!-- ===== GALLERY ===== -->
-<section class="sec" id="gallery">
+<!-- ===== DESTINATION SHOWCASE ===== -->
+<div class="showcase" id="gallery">
+
+  <div class="showcase-panel" data-reveal>
+    <div class="showcase-img"><img src="assets/img/peles-wide.jpg" alt="Peleș Castle, Sinaia" loading="lazy" decoding="async"></div>
+    <div class="showcase-overlay"></div>
+    <div class="showcase-text">
+      <span class="eyebrow">Day 5</span>
+      <h2>Peleș Castle</h2>
+      <p>Romania's fairy-tale royal palace in the Carpathian mountains. A Neo-Renaissance masterpiece surrounded by ancient forest.</p>
+    </div>
+  </div>
+
+  <div class="showcase-panel" data-reveal>
+    <div class="showcase-img"><img src="assets/img/bran-wide.jpg" alt="Bran Castle, Transylvania" loading="lazy" decoding="async"></div>
+    <div class="showcase-overlay"></div>
+    <div class="showcase-text">
+      <span class="eyebrow">Day 4</span>
+      <h2>Bran Castle</h2>
+      <p>The legend of Dracula meets the real history of Vlad Țepeș. Perched on a cliff between Transylvania and Wallachia.</p>
+    </div>
+  </div>
+
+  <div class="showcase-panel" data-reveal>
+    <div class="showcase-img"><img src="assets/img/parliament-wide.jpg" alt="Palace of the Parliament, Bucharest" loading="lazy" decoding="async"></div>
+    <div class="showcase-overlay"></div>
+    <div class="showcase-text">
+      <span class="eyebrow">Day 6</span>
+      <h2>Palace of the Parliament</h2>
+      <p>The world's heaviest building. Over 1,000 rooms of marble, crystal and carved wood in the heart of Bucharest.</p>
+    </div>
+  </div>
+
+  <div class="showcase-panel" data-reveal>
+    <div class="showcase-img"><img src="assets/img/transfagarasan-wide.jpg" alt="Carpathian Mountains, Romania" loading="lazy" decoding="async"></div>
+    <div class="showcase-overlay"></div>
+    <div class="showcase-text">
+      <span class="eyebrow">The Carpathians</span>
+      <h2>Mountain roads &amp; medieval towns</h2>
+      <p>From the peaks above Sinaia to the cobbled streets of Brașov — Transylvania as it was meant to be seen.</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- ===== GALLERY GRID ===== -->
+<section class="sec" id="destinations">
   <div class="container">
     <div class="sec-head" data-reveal>
-      <span class="eyebrow">Where we go</span>
-      <h2>The places they'll stand in</h2>
-      <p class="lead">Real landmarks, real history — the kind of week students talk about for years.</p>
+      <span class="eyebrow">Photo gallery</span>
+      <h2>More from the route</h2>
+      <p class="lead">Click any photo for a closer look. These are placeholder images — your real trip photos will replace them.</p>
     </div>
     <div class="gallery">
       <figure class="gitem duotone span-2" data-reveal data-i="0" tabindex="0" role="button" aria-label="View Bran Castle"><img loading="lazy" decoding="async" src="assets/img/bran-800.jpg" srcset="assets/img/bran-400.jpg 400w,assets/img/bran-800.jpg 800w,assets/img/bran-1200.jpg 1200w" sizes="(max-width:600px) 90vw,(max-width:1180px) 60vw,520px" width="800" height="600" alt="Bran Castle, Transylvania, Romania"><figcaption>Bran Castle<small>The legend of Dracula, the history of Vlad Țepeș.</small></figcaption></figure>

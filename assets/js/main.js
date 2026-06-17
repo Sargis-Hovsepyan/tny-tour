@@ -96,16 +96,27 @@
     $$('[data-reveal]').forEach(n => io.observe(n));
   }
 
+  /* ---- HERO SLIDESHOW ---- */
+  const heroSlides = $$('.hero-slide');
+  if (heroSlides.length > 1 && !RM) {
+    let cur = 0;
+    setInterval(() => {
+      heroSlides[cur].classList.remove('active');
+      cur = (cur + 1) % heroSlides.length;
+      heroSlides[cur].classList.add('active');
+    }, 5000);
+  }
+
   /* ---- HERO PARALLAX ---- */
   if (RICH) {
-    const heroMedia = $('.hero-media img');
+    const heroSlideAll = $$('.hero-slide');
     const heroContent = $('.hero-content');
-    if (heroMedia) {
-      gsap.to(heroMedia, {
+    heroSlideAll.forEach(img => {
+      gsap.to(img, {
         yPercent: 18, scale: 1,
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 }
       });
-    }
+    });
     if (heroContent) {
       gsap.to(heroContent, {
         yPercent: -30, opacity: 0,
@@ -141,6 +152,40 @@
         scale: 1.12, yPercent: -10,
         scrollTrigger: { trigger: num, start: 'top 85%', end: 'top 20%', scrub: .4 }
       });
+    });
+  }
+
+  /* ---- SHOWCASE 3D PARALLAX ---- */
+  if (RICH) {
+    $$('.showcase-panel').forEach((panel, i) => {
+      const img = panel.querySelector('.showcase-img img');
+      const txt = panel.querySelector('.showcase-text');
+      const isEven = i % 2 === 1;
+
+      if (img) {
+        gsap.fromTo(img,
+          { yPercent: -8, scale: 1.15 },
+          { yPercent: 8, scale: 1.05,
+            scrollTrigger: { trigger: panel, start: 'top bottom', end: 'bottom top', scrub: .3 }
+          }
+        );
+      }
+
+      if (txt) {
+        gsap.fromTo(txt,
+          { y: 80, opacity: 0, rotateX: 4 },
+          { y: 0, opacity: 1, rotateX: 0,
+            scrollTrigger: { trigger: panel, start: 'top 75%', end: 'top 25%', scrub: .4 }
+          }
+        );
+      }
+
+      gsap.fromTo(panel,
+        { clipPath: 'inset(8% 0 8% 0)' },
+        { clipPath: 'inset(0% 0 0% 0)',
+          scrollTrigger: { trigger: panel, start: 'top 90%', end: 'top 40%', scrub: .5 }
+        }
+      );
     });
   }
 
