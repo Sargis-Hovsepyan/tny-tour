@@ -271,9 +271,9 @@ p{margin:0 0 1rem}
 /* ============================================================
    DESTINATION SHOWCASE (full-bleed parallax panels)
    ============================================================ */
-.showcase{position:relative;perspective:1200px;perspective-origin:50% 50%}
+.showcase{position:relative;perspective:1200px;perspective-origin:50% 50%;max-width:var(--maxw);margin-inline:auto;padding-inline:clamp(1.2rem,4vw,2.4rem);display:flex;flex-direction:column;gap:1.2rem;padding-block:var(--section-pad)}
 
-.showcase-panel{position:relative;min-height:50vh;max-height:520px;display:flex;align-items:center;overflow:hidden;transform-style:preserve-3d}
+.showcase-panel{position:relative;min-height:40vh;max-height:420px;display:flex;align-items:center;overflow:hidden;transform-style:preserve-3d;border-radius:var(--radius)}
 .showcase-img{position:absolute;inset:-10% 0;z-index:0}
 .showcase-img img{width:100%;height:100%;object-fit:cover;will-change:transform;transition:transform .1s linear}
 .showcase-overlay{position:absolute;inset:0;z-index:1;
@@ -288,7 +288,7 @@ p{margin:0 0 1rem}
   background:linear-gradient(225deg,rgba(10,69,70,.68) 0%,rgba(10,48,46,.25) 50%,rgba(10,69,70,.60) 100%)}
 
 @media(max-width:600px){
-  .showcase-panel{min-height:40vh;max-height:400px}
+  .showcase-panel{min-height:35vh;max-height:340px}
   .showcase-panel:nth-child(even) .showcase-text{text-align:left;margin-left:0}
   .showcase{perspective:none}
 }
