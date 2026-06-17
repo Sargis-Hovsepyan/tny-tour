@@ -99,26 +99,49 @@
   /* ---- HERO PARALLAX ---- */
   if (RICH) {
     const heroMedia = $('.hero-media img');
-    const heroInner = $('.hero-inner');
+    const heroContent = $('.hero-content');
     if (heroMedia) {
       gsap.to(heroMedia, {
         yPercent: 18, scale: 1,
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 }
       });
     }
-    if (heroInner) {
-      gsap.to(heroInner, {
+    if (heroContent) {
+      gsap.to(heroContent, {
         yPercent: -30, opacity: 0,
         scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 }
       });
     }
-    const cue = $('.scroll-cue');
-    if (cue) {
-      gsap.to(cue, {
+    const scrollInd = $('.hero-scroll');
+    if (scrollInd) {
+      gsap.to(scrollInd, {
         opacity: 0,
         scrollTrigger: { trigger: '.hero', start: 'top top', end: '15% top', scrub: true }
       });
     }
+  }
+
+  /* ---- SCHEDULE ITEM STAGGER ---- */
+  if (RICH) {
+    $$('.day-card').forEach(card => {
+      const items = card.querySelectorAll('.schedule li');
+      if (!items.length) return;
+      gsap.set(items, { opacity: 0, x: -12 });
+      ScrollTrigger.create({
+        trigger: card, start: 'top 75%', once: true,
+        onEnter: () => gsap.to(items, { opacity: 1, x: 0, stagger: .06, duration: .5, ease: 'power2.out' })
+      });
+    });
+  }
+
+  /* ---- DAY NUMBER PARALLAX ---- */
+  if (RICH) {
+    $$('.day-num').forEach(num => {
+      gsap.to(num, {
+        scale: 1.12, yPercent: -10,
+        scrollTrigger: { trigger: num, start: 'top 85%', end: 'top 20%', scrub: .4 }
+      });
+    });
   }
 
   /* ---- DUOTONE GALLERY REVEAL ---- */
@@ -184,14 +207,6 @@
   $('#lbPrev').addEventListener('click', () => lbShow(lbCur - 1));
   lb.addEventListener('click', e => { if (e.target === lb) lbClose(); });
 
-  /* ---- TESTIMONIAL CAROUSEL ---- */
-  const track = $('#tTrack');
-  if (track) {
-    const step = () => Math.min(track.clientWidth * .85, 400);
-    $('#tNext').addEventListener('click', () => track.scrollBy({left: step(), behavior:'smooth'}));
-    $('#tPrev').addEventListener('click', () => track.scrollBy({left: -step(), behavior:'smooth'}));
-  }
-
   /* ---- MOBILE STICKY CTA ---- */
   if (RICH) {
     const mobileCta = $('#mobileCta');
@@ -225,7 +240,7 @@
 
   /* ---- COUNT-UP (price amount) ---- */
   if (RICH) {
-    const amt = $('.price-top .amt');
+    const amt = $('.price-amt');
     if (amt) {
       const target = 1290;
       ScrollTrigger.create({
