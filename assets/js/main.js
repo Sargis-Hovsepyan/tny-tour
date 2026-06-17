@@ -45,16 +45,6 @@
     if (e.key === 'Escape' && links.classList.contains('open')) closeMenu();
   });
 
-  /* ---- SCROLL PROGRESS BAR ---- */
-  if (RICH) {
-    const bar = $('#navProgress');
-    ScrollTrigger.create({
-      trigger: document.documentElement,
-      start: 'top top', end: 'bottom bottom',
-      onUpdate: self => { bar.style.transform = `scaleX(${self.progress})`; }
-    });
-  }
-
   /* ---- ACTIVE NAV LINK ---- */
   if (RICH) {
     const sections = $$('section[id]');
