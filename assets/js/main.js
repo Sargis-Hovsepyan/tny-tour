@@ -190,8 +190,7 @@
         { src: 'bucharest-romanian-athenaeum.jpg', cap: 'The Romanian Athenaeum' },
         { src: 'bucharest-arcul-de-triumf.jpg', cap: 'Arcul de Triumf' },
         { src: 'bucharest-cismigiu-garden.jpg', cap: 'Cișmigiu Garden' },
-        { src: 'bucharest-university-library.jpg', cap: 'Central University Library' },
-        { src: 'hotel-ibis-styles-aerial.jpg', cap: 'Ibis Styles hotel from above' }
+        { src: 'bucharest-university-library.jpg', cap: 'Central University Library' }
       ]
     },
     slanic: {
