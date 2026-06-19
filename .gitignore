@@ -20,4 +20,3 @@ __pycache__/
 tools/.cache/
 .backup-img/
 node_modules/
-images/
