@@ -380,6 +380,8 @@ p{margin:0 0 1rem}
 .accom-row:last-of-type{margin-bottom:0}
 .accom-row.flipped .accom-row-img{order:2}
 .accom-row.flipped .accom-row-body{order:1}
+.accom-row--text-only{grid-template-columns:1fr}
+.accom-row--text-only .accom-row-body{max-width:680px}
 
 /* --- image frame --- */
 .accom-row-img{
