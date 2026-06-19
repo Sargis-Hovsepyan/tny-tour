@@ -364,11 +364,14 @@ p{margin:0 0 1rem}
   .dest-modal.is-open .dest-dialog{opacity:1;transform:none}
 }
 @media(max-width:760px){
-  .dest-modal{padding:0}
+  /* solid base so the area under the status bar is always covered, never the page */
+  .dest-modal{padding:0;background:var(--ink-teal)}
   /* full-screen sheet that scrolls as one column (image, then info) */
   .dest-dialog{display:block;position:absolute;inset:0;width:auto;height:auto;max-height:none;border-radius:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
-  .dest-close{position:fixed;top:.7rem;right:.7rem}
-  .dest-info{padding:1.4rem 1.3rem 2.4rem;overflow:visible}
+  /* push the image below the notch/status bar; teal fills the gap above it */
+  .dest-gallery{padding-top:env(safe-area-inset-top,0px)}
+  .dest-close{position:fixed;top:calc(.7rem + env(safe-area-inset-top,0px));right:calc(.7rem + env(safe-area-inset-right,0px))}
+  .dest-info{padding:1.4rem 1.3rem calc(2.4rem + env(safe-area-inset-bottom,0px));overflow:visible}
 }
 
 /* ============================================================
