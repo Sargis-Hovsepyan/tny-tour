@@ -359,8 +359,10 @@ p{margin:0 0 1rem}
 }
 @media(max-width:760px){
   .dest-modal{padding:0}
-  .dest-dialog{grid-template-columns:1fr;width:100%;max-height:100vh;height:100dvh;border-radius:0;grid-template-rows:auto 1fr}
-  .dest-info{padding:1.4rem 1.3rem 2rem}
+  /* full-screen sheet that scrolls as one column (image, then info) */
+  .dest-dialog{display:block;position:absolute;inset:0;width:auto;height:auto;max-height:none;border-radius:0;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+  .dest-close{position:fixed;top:.7rem;right:.7rem}
+  .dest-info{padding:1.4rem 1.3rem 2.4rem;overflow:visible}
 }
 
 /* ============================================================
