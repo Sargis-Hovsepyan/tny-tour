@@ -18,3 +18,6 @@ __pycache__/
 
 # Asset pipeline cache (downloaded originals, reused between runs)
 tools/.cache/
+.backup-img/
+node_modules/
+images/
