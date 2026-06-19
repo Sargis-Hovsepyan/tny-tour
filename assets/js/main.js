@@ -116,27 +116,18 @@
     $$('[data-reveal]').forEach(n => io.observe(n));
   }
 
-  /* ---- HERO SLIDESHOW ---- */
-  const heroSlides = $$('.hero-slide');
-  if (heroSlides.length > 1 && !RM) {
-    let cur = 0;
-    setInterval(() => {
-      heroSlides[cur].classList.remove('active');
-      cur = (cur + 1) % heroSlides.length;
-      heroSlides[cur].classList.add('active');
-    }, 5000);
+  /* ---- HERO VIDEO: native HTML5, pre-cropped clip, 1.5x speed, native loop ---- */
+  const heroVid = $('video.hero-video');
+  if (heroVid) {
+    heroVid.playbackRate = 1.5;
+    // some browsers need an explicit play() after a muted autoplay element mounts
+    const p = heroVid.play();
+    if (p && p.catch) p.catch(() => {});
   }
 
   /* ---- HERO PARALLAX ---- */
   if (RICH) {
-    const heroSlideAll = $$('.hero-slide');
     const heroContent = $('.hero-content');
-    heroSlideAll.forEach(img => {
-      gsap.to(img, {
-        yPercent: 18, scale: 1,
-        scrollTrigger: { trigger: '.hero', start: 'top top', end: 'bottom top', scrub: .6 }
-      });
-    });
     if (heroContent) {
       gsap.to(heroContent, {
         yPercent: -30, opacity: 0,

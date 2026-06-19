@@ -13,8 +13,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" as="image" href="assets/img/bucharest-aerial-panorama.jpg">
-<link rel="stylesheet" href="assets/css/styles.css?v=17">
+<link rel="stylesheet" href="assets/css/styles.css?v=38">
 </head>
 <body>
 
@@ -56,10 +55,9 @@
 <!-- ===== HERO ===== -->
 <section class="hero" id="top">
   <div class="hero-media" aria-hidden="true">
-    <img class="hero-slide active" src="assets/img/bucharest-aerial-panorama.jpg" alt="Bucharest cityscape at sunset" width="1920" height="2400" fetchpriority="high" decoding="async">
-    <img class="hero-slide" src="assets/img/brasov-council-square-aerial.jpg" alt="Brașov Council Square from above" width="1400" height="788" loading="lazy" decoding="async">
-    <img class="hero-slide" src="assets/img/slanic-salt-mine-main-hall.jpg" alt="Slanic Salt Mine underground hall" width="1400" height="788" loading="lazy" decoding="async">
-    <img class="hero-slide" src="assets/img/brasov-rooftops-panorama.jpg" alt="Brașov rooftops and Carpathian mountains" width="1400" height="929" loading="lazy" decoding="async">
+    <video id="heroVideo" class="hero-video" muted autoplay loop playsinline preload="auto">
+      <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
   </div>
   <div class="hero-scrim"></div>
   <div class="container hero-content">
@@ -396,7 +394,7 @@
     <div class="accom-intro" data-reveal>
       <span class="accom-nights">5 nights &middot; Bucharest base</span>
       <div class="accom-stars"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z" fill="currentColor"/></svg><svg aria-hidden="true" viewBox="0 0 24 24"><path d="m12 2 3.09 6.26L22 9.27l-5 4.87L18.18 21 12 17.27 5.82 21 7 14.14l-5-4.87 6.91-1.01L12 2Z" fill="currentColor"/></svg></div>
-      <h3 class="accom-hotel-name">Ibis Styles Bucharest City Center</h3>
+      <h3 class="accom-hotel-name"><a href="https://www.booking.com/hotel/ro/ibis-styles-bucharest-center.html" target="_blank" rel="noopener">Ibis Styles Bucharest City Center</a></h3>
       <p class="accom-addr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>Strada &#536;tirbei Vod&#259; 146, District 1, Bucharest</p>
       <p class="accom-lead">Your home base for <strong>five of the seven nights</strong>: two on arrival (26&ndash;27 October) and three more after Transylvania (30 October&ndash;1 November). A 3-star superior hotel styled as an "urban village" in central Bucharest, with 152 rooms across six floors.</p>
     </div>
@@ -446,7 +444,7 @@
     <div class="accom-intro" data-reveal>
       <span class="accom-nights">2 nights &middot; Bra&#537;ov base</span>
       <div class="accom-score"><strong>9.6</strong> Exceptional <span>&middot; guest rating</span></div>
-      <h3 class="accom-hotel-name">Pensiunea Casa Bono, Bra&#537;ov</h3>
+      <h3 class="accom-hotel-name"><a href="https://www.booking.com/hotel/ro/pensiunea-casa-bono.html" target="_blank" rel="noopener">Pensiunea Casa Bono, Bra&#537;ov</a></h3>
       <p class="accom-addr"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Z" stroke="currentColor" stroke-width="1.8" fill="none"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8" fill="none"/></svg>Centrul Nou, Bra&#537;ov &middot; a short walk from Council Square</p>
       <p class="accom-lead">Your Transylvanian base for the <strong>two nights in the middle of the trip</strong> (28&ndash;29 October). A recently renovated, family-run guesthouse of just eight rooms, rated 9.6 by guests on Booking.com. From here you explore Bran Castle, R&acirc;&#537;nov Fortress and Bra&#537;ov's medieval old town.</p>
     </div>
@@ -606,7 +604,6 @@
       <div><h4>Follow</h4><ul><li><a href="https://www.facebook.com/tnyeducationalcenter/" target="_blank" rel="noopener">Facebook</a></li><li><a href="https://www.instagram.com/tny_educational_center/" target="_blank" rel="noopener">Instagram</a></li></ul></div>
     </div>
     <div class="foot-legal"><span>&copy; 2026 TNY Educational Center</span></div>
-    <p class="credits">Photography from Pexels, Wikimedia Commons and tour venues</p>
   </div>
 </footer>
 
@@ -649,6 +646,6 @@
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
-<script defer src="assets/js/main.js?v=17"></script>
+<script defer src="assets/js/main.js?v=38"></script>
 </body>
 </html>
