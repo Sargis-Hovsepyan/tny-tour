@@ -1,0 +1,508 @@
+/* ============================================================
+   TNY Romania Tour - i18n (EN default, AM toggle)
+   Translates by exact English text node, so no HTML markup
+   needs restructuring. Choice persists in localStorage.
+   ============================================================ */
+(function () {
+  'use strict';
+
+  /* Normalize Romanian diacritic codepoint variants (comma-below vs
+     cedilla) so lookups match regardless of which form the source used. */
+  function norm(s) {
+    return s
+      .replace(/ș/g, 'ş').replace(/Ș/g, 'Ş')   // ș Ș
+      .replace(/ț/g, 'ţ').replace(/Ț/g, 'Ţ');  // ț Ț
+  }
+
+  /* AM dictionary: key = exact English (as rendered), value = Armenian. */
+  var AM_RAW = {
+    /* --- nav / global --- */
+    "Skip to content": "Անցնել բովանդակությանը",
+    "About": "Մեր մասին",
+    "Agenda": "Ծրագիր",
+    "Destinations": "Ուղղություններ",
+    "Stay": "Կեցություն",
+    "Safety": "Անվտանգություն",
+    "Pricing": "Գին",
+    "FAQ": "ՀՏՀ",
+    "Contact": "Կապ",
+    "Reserve a Place": "Ամրագրել տեղ",
+    "View Agenda": "Տեսնել ծրագիրը",
+    "Explore": "Բացահայտել",
+    "Follow": "Հետևեք",
+
+    /* --- hero --- */
+    "Discover": "Բացահայտի՛ր",
+    "Romania": "Ռումինիան",
+    "8 days of castles, mountains and unforgettable memories.": "Ամրոցների, լեռների և անմոռանալի հիշողությունների 8 օր։",
+    "Fully supervised. October 26 – November 2, 2026.": "Լիարժեք հսկողությամբ։ 2026 թ. հոկտեմբերի 26 – նոյեմբերի 2։",
+
+    /* --- trust bar --- */
+    "26 Oct – 2 Nov": "հոկտ. 26 – նոյ. 2",
+    "8 days": "8 օր",
+    "7 nights": "7 գիշեր",
+    "Flights incl.": "Թռիչքները ներառված",
+    "Yerevan ⇄ Bucharest": "Երևան ⇄ Բուխարեստ",
+    "All-inclusive": "Ամեն ինչ ներառված",
+    "Hotels, meals, guides": "Հյուրանոցներ, սնունդ, գիդեր",
+
+    /* --- about --- */
+    "Why this tour": "Ինչու՞ այս ճամփորդությունը",
+    "Supervised dawn to curfew. Memorable in between.": "Հսկողություն առավոտից մինչև երեկո։ Անմոռանալի՝ դրանց միջև։",
+    "We designed this trip around the two things that matter most: your child's safety, and a week of real learning they'll never forget. TNY Educational Center has organized student programs since 2014. This tour is our most ambitious yet.": "Մենք այս ճամփորդությունը կառուցել ենք ամենակարևոր երկու բանի շուրջ՝ ձեր երեխայի անվտանգությունը և իրական ուսման մեկ շաբաթ, որը նա երբեք չի մոռանա։ TNY Educational Center-ը 2014 թվականից կազմակերպում է աշակերտական ծրագրեր։ Այս ճամփորդությունը մեր ամենահավակնոտն է մինչ օրս։",
+    "From the Dracula legend at Bran Castle to the underground world of Slanic Salt Mine, from the fairy-tale Peleș Castle to the colossal Parliament in Bucharest. Every day is structured, supervised, and designed to inspire.": "Բրանի ամրոցի Դրակուլայի լեգենդից մինչև Սլանիկի աղահանքի ստորգետնյա աշխարհը, հեքիաթային Պելեշի ամրոցից մինչև Բուխարեստի վիթխարի Խորհրդարանը։ Ամեն օրը կառուցված է, հսկվող և ոգեշնչելու համար մտածված։",
+    "Safe & supervised": "Ապահով և հսկվող",
+    "Dedicated chaperones, 24/7 on-call coordinator, nightly headcounts. Daily photo updates to a private parents' group.": "Հատուկ ուղեկցողներ, 24/7 հասանելի համակարգող, ամենգիշերյա հաշվառում։ Ամենօրյա լուսանկարներ ծնողների փակ խմբում։",
+    "Real learning": "Իրական ուսում",
+    "Guided history at Bran Castle, Peleș Castle and Parliament. Underground science at the salt mine. Culture at Europe's most beautiful bookstore.": "Ուղեկցվող պատմություն Բրանի ամրոցում, Պելեշի ամրոցում և Խորհրդարանում։ Ստորգետնյա գիտություն աղահանքում։ Մշակույթ Եվրոպայի ամենագեղեցիկ գրախանութում։",
+    "Everything handled": "Ամեն ինչ հոգացված",
+    "Flights, hotels, transport, meals, entrance fees and insurance in one clear price. No surprises on the road.": "Թռիչքներ, հյուրանոցներ, փոխադրում, սնունդ, մուտքի վճարներ և ապահովագրություն՝ մեկ հստակ գնով։ Ոչ մի անակնկալ ճանապարհին։",
+    "You stay in the loop": "Դուք միշտ տեղյակ եք",
+    "Private WhatsApp group with daily photos and check-ins, plus a dedicated 24/7 emergency line for the entire trip.": "Փակ WhatsApp խումբ՝ ամենօրյա լուսանկարներով և կապով, գումարած ողջ ճամփորդության համար հատուկ 24/7 արտակարգ իրավիճակների գիծ։",
+
+    /* --- itinerary header --- */
+    "The complete agenda": "Ամբողջական ծրագիր",
+    "Eight days, hour by hour": "Ութ օր՝ ժամ առ ժամ",
+    "Bucharest, Transylvania and back. Every hour planned, every detail covered. Here's exactly what your child will be doing.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն ժամը պլանավորված է, ամեն մանրուքը՝ հոգացված։ Ահա թե կոնկրետ ինչ է անելու ձեր երեխան։",
+
+    /* --- itinerary day titles --- */
+    "Arrival in Bucharest": "Ժամանում Բուխարեստ",
+    "Bucharest guided city tour": "Բուխարեստի ուղեկցվող քաղաքային շրջայց",
+    "Slanic Salt Mine & transfer to Brașov": "Սլանիկի աղահանք և տեղափոխում Բրաշով",
+    "Bran Castle & Râșnov Fortress": "Բրանի ամրոց և Ռըշնովի ամրոց",
+    "Peleș Castle & Sinaia": "Պելեշի ամրոց և Սինայա",
+    "Parliament, art & culture": "Խորհրդարան, արվեստ և մշակույթ",
+    "Presidential Palace & Old Town": "Նախագահական պալատ և Հին քաղաք",
+    "Departure": "Մեկնում",
+
+    /* --- itinerary day metas --- */
+    "Monday, October 26 · Overnight: Ibis Styles Bucharest City Center": "Երկուշաբթի, հոկտեմբերի 26 · Գիշերակաց՝ Ibis Styles Bucharest City Center",
+    "Tuesday, October 27 · Overnight: Ibis Styles Bucharest City Center": "Երեքշաբթի, հոկտեմբերի 27 · Գիշերակաց՝ Ibis Styles Bucharest City Center",
+    "Wednesday, October 28 · Overnight: Pensiunea Casa Bono, Brașov": "Չորեքշաբթի, հոկտեմբերի 28 · Գիշերակաց՝ Pensiunea Casa Bono, Բրաշով",
+    "Thursday, October 29 · Overnight: Pensiunea Casa Bono, Brașov": "Հինգշաբթի, հոկտեմբերի 29 · Գիշերակաց՝ Pensiunea Casa Bono, Բրաշով",
+    "Friday, October 30 · Overnight: Ibis Styles Bucharest City Center": "Ուրբաթ, հոկտեմբերի 30 · Գիշերակաց՝ Ibis Styles Bucharest City Center",
+    "Saturday, October 31 · Overnight: Ibis Styles Bucharest City Center": "Շաբաթ, հոկտեմբերի 31 · Գիշերակաց՝ Ibis Styles Bucharest City Center",
+    "Sunday, November 1 · Overnight: Ibis Styles Bucharest City Center": "Կիրակի, նոյեմբերի 1 · Գիշերակաց՝ Ibis Styles Bucharest City Center",
+    "Monday, November 2 · Flight home": "Երկուշաբթի, նոյեմբերի 2 · Թռիչք տուն",
+
+    /* --- itinerary schedule items --- */
+    "Flight to Bucharest (2.5 hours, local times)": "Թռիչք դեպի Բուխարեստ (2.5 ժամ, տեղական ժամանակ)",
+    "Passport control": "Անձնագրային հսկողություն",
+    "Transfer to hotel (Ibis Styles Bucharest City Center)": "Տեղափոխում հյուրանոց (Ibis Styles Bucharest City Center)",
+    "Check in": "Գրանցում",
+    "Lunch and rest at hotel": "Ճաշ և հանգիստ հյուրանոցում",
+    "Evening walk (Cișmigiu Garden, Revolution Square) and dinner": "Երեկոյան զբոսանք (Չիշմիջիու այգի, Հեղափոխության հրապարակ) և ընթրիք",
+    "Lights out": "Քնելու ժամ",
+    "Breakfast": "Նախաճաշ",
+    "Guided city excursion with licensed guide": "Քաղաքային էքսկուրսիա լիցենզավորված գիդով",
+    "Lunch": "Ճաշ",
+    "Rest at hotel": "Հանգիստ հյուրանոցում",
+    "Walk": "Զբոսանք",
+    "Dinner and shopping at AFI Shopping Center": "Ընթրիք և գնումներ AFI Shopping Center-ում",
+    "Depart Bucharest for Slanic Salt Mine and planetarium": "Մեկնում Բուխարեստից՝ Սլանիկի աղահանք և մոլորակացույց",
+    "Arrive in Brașov": "Ժամանում Բրաշով",
+    "Hotel check-in (Pensiunea Casa Bono)": "Հյուրանոցում գրանցում (Pensiunea Casa Bono)",
+    "Dinner and evening walk": "Ընթրիք և երեկոյան զբոսանք",
+    "Transfer to Bran Castle": "Տեղափոխում Բրանի ամրոց",
+    "Excursion at Bran (Dracula's) Castle": "Էքսկուրսիա Բրանի (Դրակուլայի) ամրոցում",
+    "Picnic lunch": "Պիկնիկ-ճաշ",
+    "Râșnov Fortress": "Ռըշնովի ամրոց",
+    "Return to Brașov": "Վերադարձ Բրաշով",
+    "City walking tour of Brașov": "Բրաշովի քայլող շրջայց",
+    "Dinner": "Ընթրիք",
+    "Transfer to Sinaia": "Տեղափոխում Սինայա",
+    "Peleș Castle tour": "Պելեշի ամրոցի շրջայց",
+    "Lunch (Restaurant Avalanche)": "Ճաշ (Restaurant Avalanche)",
+    "City tour of Sinaia": "Սինայայի քաղաքային շրջայց",
+    "Return to Bucharest": "Վերադարձ Բուխարեստ",
+    "Hotel check-in": "Հյուրանոցում գրանցում",
+    "Dinner and walk": "Ընթրիք և զբոսանք",
+    "Bucharest National Art Gallery": "Բուխարեստի Ազգային արվեստի պատկերասրահ",
+    "Guided tour of the Palace of the Parliament": "Խորհրդարանի պալատի ուղեկցվող շրջայց",
+    "Lunch (Unirea Shopping Center)": "Ճաշ (Unirea Shopping Center)",
+    "Cărturești Carusel, Europe's most beautiful bookstore": "Cărturești Carusel՝ Եվրոպայի ամենագեղեցիկ գրախանութը",
+    "Return to hotel": "Վերադարձ հյուրանոց",
+    "Rest and games night (dinner in rooms)": "Հանգիստ և խաղերի երեկո (ընթրիքը՝ սենյակներում)",
+    "Visit to the Romanian President's residence (Cotroceni Palace)": "Այցելություն Ռումինիայի նախագահի նստավայր (Կոտրոչենի պալատ)",
+    "Shopping at AFI Shopping Center": "Գնումներ AFI Shopping Center-ում",
+    "Lunch (AFI Shopping Center)": "Ճաշ (AFI Shopping Center)",
+    "Old Town walk and farewell dinner": "Հին քաղաքի զբոսանք և հրաժեշտի ընթրիք",
+    "Pack and check out": "Հավաքվել և դուրս գրվել",
+    "Transfer to airport": "Տեղափոխում օդանավակայան",
+    "Flight home (2.5 hours, local times)": "Թռիչք տուն (2.5 ժամ, տեղական ժամանակ)",
+
+    /* --- itinerary tags --- */
+    "Cișmigiu Garden": "Չիշմիջիու այգի",
+    "Revolution Square": "Հեղափոխության հրապարակ",
+    "Guided city tour": "Քաղաքային շրջայց",
+    "Slanic Salt Mine": "Սլանիկի աղահանք",
+    "Planetarium": "Մոլորակացույց",
+    "Brașov": "Բրաշով",
+    "Bran Castle": "Բրանի ամրոց",
+    "Brașov walking tour": "Բրաշովի շրջայց",
+    "Peleș Castle": "Պելեշի ամրոց",
+    "Sinaia": "Սինայա",
+    "National Art Gallery": "Ազգային արվեստի պատկերասրահ",
+    "Parliament": "Խորհրդարան",
+    "Games night": "Խաղերի երեկո",
+    "Cotroceni Palace": "Կոտրոչենի պալատ",
+    "Old Town": "Հին քաղաք",
+    "Farewell dinner": "Հրաժեշտի ընթրիք",
+    "Airport transfer": "Օդանավակայան տեղափոխում",
+    "Flight home": "Թռիչք տուն",
+
+    /* --- destinations panels --- */
+    "Days 1–2, 5–8": "Օրեր 1–2, 5–8",
+    "Day 3": "Օր 3",
+    "Days 3–5": "Օրեր 3–5",
+    "Day 5": "Օր 5",
+    "Day 4": "Օր 4",
+    "Day 6": "Օր 6",
+    "Day 7": "Օր 7",
+    "Bucharest": "Բուխարեստ",
+    "Palace of the Parliament": "Խորհրդարանի պալատ",
+    "Bucharest Old Town": "Բուխարեստի Հին քաղաք",
+    "View gallery": "Տեսնել պատկերասրահը",
+    "Belle Époque boulevards, the colossal Parliament and a café-filled Old Town. Your base for five of the eight nights.": "Belle Époque-ի պողոտաներ, վիթխարի Խորհրդարանը և սրճարաններով լի Հին քաղաք։ Ձեր կացարանը ութ գիշերից հինգի համար։",
+    "A cathedral of salt 200 metres underground, with a planetarium, sculptures and an illuminated lake.": "Աղի տաճար՝ 200 մետր ընդհատակ, մոլորակացույցով, քանդակներով և լուսավորված լճով։",
+    "A medieval Saxon town under Tâmpa mountain. Pastel squares, Gothic spires and a lively promenade.": "Միջնադարյան սաքսոնական քաղաք Թամպա լեռան ստորոտին։ Պաստելային հրապարակներ, գոթական աշտարակներ և աշխույժ զբոսայգի։",
+    "Romania's fairy-tale royal palace in the Carpathian forests above Sinaia.": "Ռումինիայի հեքիաթային արքայական պալատը Կարպատների անտառներում՝ Սինայայից վեր։",
+    "The cliff-top fortress the world knows as Dracula's Castle.": "Ժայռի գագաթին կանգնած ամրոցը, որն աշխարհը ճանաչում է որպես Դրակուլայի ամրոց։",
+    "The heaviest building on Earth. Over 1,000 rooms of marble, crystal and carved wood.": "Երկրի ամենածանր շենքը։ Ավելի քան 1000 սենյակ՝ մարմարից, բյուրեղից և փորագրված փայտից։",
+    "Cobbled Lipscani lanes, grand arcades and the ornate CEC Palace. The farewell-night setting.": "Lipscani-ի սալարկված նրբանցքները, շքեղ սրահները և զարդարուն CEC պալատը։ Հրաժեշտի երեկոյի վայրը։",
+
+    /* --- accommodation --- */
+    "Where you'll stay": "Որտեղ եք մնալու",
+    "Comfortable, central, vetted": "Հարմարավետ, կենտրոնում, ստուգված",
+    "Seven nights across two cities, both central, comfortable and fully vetted.": "Յոթ գիշեր երկու քաղաքում՝ երկուսն էլ կենտրոնում, հարմարավետ և լիովին ստուգված։",
+    "Five nights in Bucharest": "Հինգ գիշեր Բուխարեստում",
+    "(26–27 October on arrival, then 30 October–1 November) and": "(հոկտեմբերի 26–27 ժամանելիս, ապա հոկտեմբերի 30 – նոյեմբերի 1) և",
+    "two nights in Brașov": "երկու գիշեր Բրաշովում",
+    "in between (28–29 October).": "միջանկյալ (հոկտեմբերի 28–29)։",
+    "5 nights · Bucharest base": "5 գիշեր · Բուխարեստի կացարան",
+    "2 nights · Brașov base": "2 գիշեր · Բրաշովի կացարան",
+    "Strada Știrbei Vodă 146, District 1, Bucharest": "Strada Știrbei Vodă 146, 1-ին շրջան, Բուխարեստ",
+    "Centrul Nou, Brașov · a short walk from Council Square": "Centrul Nou, Բրաշով · մի քանի քայլ Խորհրդի հրապարակից",
+    "Your home base for": "Ձեր գլխավոր կացարանը",
+    "five of the seven nights": "յոթ գիշերից հինգի համար",
+    ": two on arrival (26–27 October) and three more after Transylvania (30 October–1 November). A 3-star superior hotel styled as an \"urban village\" in central Bucharest, with 152 rooms across six floors.": "՝ երկուսը ժամանելիս (հոկտեմբերի 26–27) և երեքը՝ Տրանսիլվանիայից հետո (հոկտեմբերի 30 – նոյեմբերի 1)։ 3 աստղանի բարձրակարգ հյուրանոց՝ «քաղաքային գյուղ» ոճով, Բուխարեստի կենտրոնում, 152 սենյակ՝ վեց հարկում։",
+    "Your Transylvanian base for the": "Ձեր տրանսիլվանյան կացարանը",
+    "two nights in the middle of the trip": "ճամփորդության կեսին երկու գիշերվա համար",
+    "(28–29 October). A recently renovated, family-run guesthouse of just eight rooms, rated 9.6 by guests on Booking.com. From here you explore Bran Castle, Râșnov Fortress and Brașov's medieval old town.": "(հոկտեմբերի 28–29)։ Վերջերս նորոգված, ընտանեկան հյուրատուն՝ ընդամենը ութ սենյակով, Booking.com-ում հյուրերի կողմից գնահատված 9.6։ Այստեղից կբացահայտեք Բրանի ամրոցը, Ռըշնովի ամրոցը և Բրաշովի միջնադարյան հին քաղաքը։",
+    "Exceptional": "Գերազանց",
+    "· guest rating": "· հյուրերի գնահատական",
+    "The hotel": "Հյուրանոցը",
+    "Guest room": "Հյուրասենյակ",
+    "The guesthouse": "Հյուրատունը",
+    "The hotel and location": "Հյուրանոցը և տեղադիրքը",
+    "The guesthouse and location": "Հյուրատունը և տեղադիրքը",
+    "The rooms": "Սենյակները",
+    "Set in District 1 between Gara de Nord and the Old Town. The hotel has a restaurant, gym, lobby bar and underground parking. Chaperone rooms are on the same floor as students, and all rooms have keycard access. Free Wi-Fi throughout, so students can call home every evening.": "Գտնվում է 1-ին շրջանում՝ Gara de Nord-ի և Հին քաղաքի միջև։ Հյուրանոցն ունի ռեստորան, մարզասրահ, լոբբի-բար և ստորգետնյա կայանատեղ։ Ուղեկցողների սենյակները նույն հարկում են, ինչ աշակերտներինը, և բոլոր սենյակները բանալի-քարտով են։ Անվճար Wi-Fi ամենուր, որպեսզի աշակերտները կարողանան ամեն երեկո զանգահարել տուն։",
+    "Modern rooms with exposed concrete ceilings, hand-drawn Romanian folk patterns and warm purple accents. Each room has air conditioning, a flat-screen TV, an in-room safe and a private bathroom with free toiletries. Shared rooms for students, with chaperone rooms on the same floor and nightly headcounts.": "Ժամանակակից սենյակներ՝ բաց բետոնե առաստաղներով, ձեռքով նկարված ռումինական ժողովրդական նախշերով և տաք մանուշակագույն շեշտադրումներով։ Յուրաքանչյուր սենյակ ունի օդորակիչ, հարթ էկրանով հեռուստացույց, սենյակային սեյֆ և առանձին սանհանգույց՝ անվճար հիգիենայի պարագաներով։ Ընդհանուր սենյակներ աշակերտների համար՝ ուղեկցողների սենյակները նույն հարկում և ամենգիշերյա հաշվառմամբ։",
+    "A family-run guesthouse of just eight rooms in Centrul Nou, a short walk from Council Square. The building has a shared lounge, a quiet terrace and a kitchen for the group. The owner lives on site, and chaperone rooms are adjacent to student rooms. Free Wi-Fi throughout so students can call home every evening.": "Ընտանեկան հյուրատուն՝ ընդամենը ութ սենյակով Centrul Nou-ում, մի քանի քայլ Խորհրդի հրապարակից։ Շենքն ունի ընդհանուր հանգստի սրահ, հանգիստ տեռաս և խոհանոց՝ խմբի համար։ Տերը ապրում է տեղում, իսկ ուղեկցողների սենյակները կից են աշակերտների սենյակներին։ Անվճար Wi-Fi ամենուր, որպեսզի աշակերտները կարողանան ամեն երեկո զանգահարել տուն։",
+    "Parquet floors, soundproofed windows, rainfall showers and garden or mountain views. Each room has air conditioning, a wardrobe and a private bathroom with free toiletries. A hot continental breakfast is served every morning in the dining room.": "Մանրահատակ, ձայնամեկուսիչ պատուհաններ, անձրևային ցնցուղներ և այգու կամ լեռան տեսարան։ Յուրաքանչյուր սենյակ ունի օդորակիչ, պահարան և առանձին սանհանգույց՝ անվճար հիգիենայի պարագաներով։ Ամեն առավոտ ճաշասրահում մատուցվում է տաք կոնտինենտալ նախաճաշ։",
+    "Breakfast included": "Նախաճաշը ներառված է",
+    "Free Wi-Fi": "Անվճար Wi-Fi",
+    "Keycard rooms": "Բանալի-քարտով սենյակներ",
+    "Chaperones same floor": "Ուղեկցողները նույն հարկում",
+    "Central, walkable area": "Կենտրոնական, քայլելու հարմար տարածք",
+    "Air conditioning": "Օդորակիչ",
+    "Flat-screen TV": "Հարթ էկրանով հեռուստացույց",
+    "In-room safe": "Սենյակային սեյֆ",
+    "Private bathroom": "Առանձին սանհանգույց",
+    "Owner on site": "Տերը տեղում է",
+    "Walkable to Old Town": "Քայլելու հեռավորության վրա Հին քաղաքից",
+    "Free parking": "Անվճար կայանատեղ",
+    "Chaperones adjacent": "Ուղեկցողները կից սենյակներում",
+    "Shared kitchen & terrace": "Ընդհանուր խոհանոց և տեռաս",
+    "The Transylvania stay": "Տրանսիլվանիայի կեցությունը",
+
+    /* --- safety --- */
+    "Peace of mind": "Հոգեկան անդորր",
+    "Your child is supervised from morning headcount to evening check-in": "Ձեր երեխան հսկվում է առավոտյան հաշվառումից մինչև երեկոյան վերադարձ",
+    "Safety isn't a paragraph for us. It's the system the whole trip runs on.": "Անվտանգությունը մեզ համար պարզապես պարբերություն չէ։ Դա այն համակարգն է, որի վրա հենվում է ողջ ճամփորդությունը։",
+    "Dedicated chaperones": "Հատուկ ուղեկցողներ",
+    "A lead coordinator, licensed Romanian guides and accompanying teachers travel with the group at all times.": "Գլխավոր համակարգողը, լիցենզավորված ռումինացի գիդերը և ուղեկցող ուսուցիչները միշտ խմբի հետ են։",
+    "24/7 on-call support": "24/7 հասանելի աջակցություն",
+    "A coordinator is reachable around the clock. Evening headcounts and room curfews, every night.": "Համակարգողը հասանելի է շուրջօրյա։ Երեկոյան հաշվառում և սենյակային ռեժիմ՝ ամեն գիշեր։",
+    "Daily updates to parents": "Ամենօրյա տեղեկություն ծնողներին",
+    "A private parents' WhatsApp group receives daily photos, plus a dedicated emergency number.": "Ծնողների փակ WhatsApp խումբը ստանում է ամենօրյա լուսանկարներ, գումարած հատուկ արտակարգ համար։",
+    "Health & insurance": "Առողջություն և ապահովագրություն",
+    "Comprehensive travel and medical insurance included. Nearest hospitals pre-mapped for every stop.": "Ներառված է համապարփակ ճանապարհորդական և բժշկական ապահովագրություն։ Մոտակա հիվանդանոցները նախապես նշված են ամեն կանգառի համար։",
+    "Vetted accommodation": "Ստուգված կացարան",
+    "Hotel and guesthouse, students in shared rooms, chaperone rooms on the same floor.": "Հյուրանոց և հյուրատուն, աշակերտները՝ ընդհանուր սենյակներում, ուղեկցողների սենյակները՝ նույն հարկում։",
+    "Private transport": "Մասնավոր փոխադրում",
+    "Licensed coach with seatbelts and vetted drivers. No unsupervised public transport.": "Լիցենզավորված ավտոբուս՝ անվտանգության գոտիներով և ստուգված վարորդներով։ Ոչ մի անհսկելի հանրային տրանսպորտ։",
+
+    /* --- includes --- */
+    "No surprises": "Առանց անակնկալների",
+    "What's included, and what's not": "Ինչ է ներառված և ինչ՝ ոչ",
+    "Included": "Ներառված է",
+    "Not included": "Ներառված չէ",
+    "Return flights (Armenia – Bucharest)": "Հետադարձ թռիչքներ (Հայաստան – Բուխարեստ)",
+    "7 nights (Ibis Styles Bucharest & Casa Bono Brașov)": "7 գիշեր (Ibis Styles Bucharest և Casa Bono Brașov)",
+    "Daily breakfast + lunches & dinners per itinerary": "Ամենօրյա նախաճաշ + ճաշ և ընթրիք ըստ ծրագրի",
+    "Private coach transport & airport transfers": "Մասնավոր ավտոբուսային փոխադրում և օդանավակայանի տեղափոխումներ",
+    "Licensed guides and all entrance fees": "Լիցենզավորված գիդեր և բոլոր մուտքի վճարները",
+    "Travel & medical insurance": "Ճանապարհորդական և բժշկական ապահովագրություն",
+    "24/7 coordination and supervision": "24/7 համակարգում և հսկողություն",
+    "Passport and any visa fees": "Անձնագիր և վիզայի վճարներ",
+    "Meals not listed in the itinerary": "Ծրագրում չնշված սնունդ",
+    "Personal spending and souvenirs": "Անձնական ծախսեր և հուշանվերներ",
+    "Optional activities and tips": "Լրացուցիչ զբաղմունքներ և թեյավճարներ",
+
+    /* --- pricing --- */
+    "One clear price": "Մեկ հստակ գին",
+    "Simple, all-inclusive": "Պարզ, ամեն ինչ ներառված",
+    "From": "Սկսած",
+    "per student · flights included · shared room": "մեկ աշակերտի համար · թռիչքները ներառված · ընդհանուր սենյակ",
+    "all-inclusive": "ամեն ինչ ներառված",
+    "deposit holds a place": "կանխավճարը պահում է տեղը",
+    "Supervised": "Հսկվող",
+    "the entire trip": "ողջ ճամփորդության ընթացքում",
+    "Contact us for the full payment schedule and cancellation policy. Price is indicative; confirm final amount when reserving.": "Կապվեք մեզ հետ վճարման ամբողջական ժամանակացույցի և չեղարկման քաղաքականության համար։ Գինը մոտավոր է. վերջնական գումարը հաստատվում է ամրագրելիս։",
+
+    /* --- testimonials --- */
+    "From parents & students": "Ծնողներից և աշակերտներից",
+    "Parents who were nervous, and glad they said yes": "Ծնողներ, ովքեր անհանգստանում էին, բայց ուրախ են, որ համաձայնեցին",
+    "I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos and nightly check-ins meant I never worried for a second. Worth every penny.": "Անհանգստանում էի 15-ամյա երեխայիս արտերկիր ուղարկելու համար, բայց ամենօրյա WhatsApp լուսանկարներն ու ամենգիշերյա կապը նշանակում էին, որ ոչ մի վայրկյան չանհանգստացա։ Արժե յուրաքանչյուր կոպեկը։",
+    "Standing inside Bran Castle and learning the real story of Vlad was unreal. Best week of my life with my friends.": "Բրանի ամրոցի ներսում կանգնելն ու Վլադի իրական պատմությունը սովորելն անհավատալի էր։ Կյանքիս լավագույն շաբաթը՝ ընկերներիս հետ։",
+    "Everything was organised down to the hour. The guides were knowledgeable and genuinely cared about the kids.": "Ամեն ինչ կազմակերպված էր ժամ առ ժամ։ Գիդերը գիտակ էին և անկեղծորեն հոգ էին տանում երեխաների մասին։",
+    "Parent": "Ծնող",
+    "Student, 16": "Աշակերտ, 16",
+
+    /* --- faq --- */
+    "Good to know": "Օգտակար տեղեկություն",
+    "Questions parents ask us": "Հարցեր, որ ծնողները տալիս են",
+    "How closely are the students supervised?": "Որքա՞ն խստորեն են հսկվում աշակերտները",
+    "Dedicated chaperones at all times, with evening headcounts, room curfews and a coordinator on call 24/7.": "Հատուկ ուղեկցողներ՝ մշտապես, երեկոյան հաշվառմամբ, սենյակային ռեժիմով և 24/7 հասանելի համակարգողով։",
+    "How will I hear from my child during the trip?": "Ինչպե՞ս եմ կապ պահելու երեխայիս հետ ճամփորդության ընթացքում",
+    "We run a private parents' WhatsApp group with a daily photo update, plus a dedicated emergency number. Hotels have Wi-Fi.": "Մենք վարում ենք ծնողների փակ WhatsApp խումբ՝ ամենօրյա լուսանկարներով, գումարած հատուկ արտակարգ համարով։ Հյուրանոցներն ունեն Wi-Fi։",
+    "Are flights included?": "Թռիչքները ներառվա՞ծ են",
+    "Yes, return flights from Armenia to Bucharest are included. The group flies together with chaperones on both legs.": "Այո, Հայաստանից Բուխարեստ հետադարձ թռիչքները ներառված են։ Խումբը թռչում է միասին՝ ուղեկցողների հետ, երկու ուղղություններով։",
+    "What should my child pack?": "Ի՞նչ պետք է հավաքի երեխաս",
+    "Comfortable walking shoes, warm layers (late October in Romania can be 5-15 C), a rain jacket, and a Type C/F 230V adapter. A full packing list is sent on booking.": "Հարմարավետ կոշիկներ, տաք հագուստ (հոկտեմբերի վերջը Ռումինիայում կարող է լինել 5-15 °C), անձրևանոց և Type C/F 230Վ ադապտեր։ Ամբողջական ցուցակն ուղարկվում է ամրագրումից հետո։",
+    "What about dietary needs and allergies?": "Իսկ սննդային կարիքներն ու ալերգիանե՞րը",
+    "Vegetarian, halal and allergy requirements are accommodated. Just tell us on the consent form before departure.": "Բուսակերական, հալալ և ալերգիկ պահանջները հաշվի են առնվում։ Պարզապես նշեք համաձայնության ձևում մեկնելուց առաջ։",
+    "Do students need a passport or visa?": "Աշակերտներին անձնագիր կամ վիզա պե՞տք է",
+    "A passport valid for at least 6 months is required. Visa requirements depend on nationality; we advise on this.": "Պահանջվում է առնվազն 6 ամիս վավեր անձնագիր։ Վիզայի պահանջները կախված են քաղաքացիությունից. մենք խորհրդատվություն ենք տալիս այս հարցում։",
+    "What's the refund policy?": "Ո՞րն է վերադարձման քաղաքականությունը",
+    "Contact us for full cancellation terms. We aim to be fair. Exact deadlines and percentages are shared when you reserve.": "Կապվեք մեզ հետ չեղարկման ամբողջական պայմանների համար։ Մենք ձգտում ենք արդար լինել։ Ճշգրիտ ժամկետներն ու տոկոսները տրամադրվում են ամրագրելիս։",
+
+    /* --- contact --- */
+    "Get in touch": "Կապ հաստատեք",
+    "Ready to reserve your child's place?": "Պատրա՞ստ եք ամրագրել ձեր երեխայի տեղը",
+    "Talk to a real person before you decide. We answer every question.": "Որոշելուց առաջ խոսեք իրական մարդու հետ։ Մենք պատասխանում ենք յուրաքանչյուր հարցի։",
+    "Chat on WhatsApp": "Զրուցել WhatsApp-ով",
+
+    /* --- footer --- */
+    "Online and offline English education for students since 2014. Tour organized in partnership with Luna Tour.": "Առցանց և առկա անգլերենի կրթություն աշակերտների համար 2014 թվականից։ Ճամփորդությունը կազմակերպվում է Luna Tour-ի հետ համագործակցությամբ։",
+    "Ejmiatsin:": "Էջմիածին՝",
+    "Spandaryan St. 1b": "Սպանդարյան փ. 1բ",
+    "Yerevan:": "Երևան՝",
+    "Andraniki St. 10/3": "Անդրանիկի փ. 10/3",
+
+    /* --- destination modal (built dynamically) --- */
+    "Highlights": "Տեսարժան վայրեր",
+    "Days 1–2 & 5–8": "Օրեր 1–2 և 5–8",
+    "Romania's capital and your base for five of the eight nights. Belle Époque boulevards once earned it the nickname “Little Paris”; today grand institutions sit beside a lively, café-filled Old Town.": "Ռումինիայի մայրաքաղաքը և ձեր կացարանը ութ գիշերից հինգի համար։ Belle Époque-ի պողոտաները ժամանակին նրան բերել են «Փոքրիկ Փարիզ» մականունը. այսօր շքեղ շինությունները հարևանում են աշխույժ, սրճարաններով լի Հին քաղաքին։",
+    "An immense salt mine more than 200 metres underground, on the road from Bucharest to Brașov. Vast cathedral-like chambers carved from rock salt, with a planetarium, sculptures, an illuminated lake and famously pure air.": "Հսկայական աղահանք՝ ավելի քան 200 մետր ընդհատակ, Բուխարեստից Բրաշով տանող ճանապարհին։ Ժայռային աղից փորված տաճարանման ընդարձակ դահլիճներ՝ մոլորակացույցով, քանդակներով, լուսավորված լճով և հանրահայտ մաքուր օդով։",
+    "A medieval Saxon town at the foot of Tâmpa mountain, and your base for two nights in Transylvania. Pastel merchant houses, Gothic spires and one of Europe's liveliest pedestrian streets.": "Միջնադարյան սաքսոնական քաղաք Թամպա լեռան ստորոտին և ձեր կացարանը Տրանսիլվանիայում երկու գիշերվա համար։ Պաստելային վաճառականական տներ, գոթական աշտարակներ և Եվրոպայի ամենաաշխույժ հետիոտնային փողոցներից մեկը։",
+    "Romania's fairy-tale royal palace, built for King Carol I in the Carpathian forests above Sinaia. A Neo-Renaissance masterpiece of carved wood, stained glass and more than 160 rooms.": "Ռումինիայի հեքիաթային արքայական պալատը՝ կառուցված Կարոլ I թագավորի համար Կարպատների անտառներում՝ Սինայայից վեր։ Նեո-Վերածննդի գլուխգործոց՝ փորագրված փայտով, վիտրաժներով և ավելի քան 160 սենյակով։",
+    "The cliff-top fortress known the world over as “Dracula's Castle.” The legend of Bram Stoker's count meets the real history of Vlad Țepeș and Queen Marie, perched between Transylvania and Wallachia.": "Ժայռի գագաթին կանգնած ամրոցը, որն ամբողջ աշխարհում հայտնի է որպես «Դրակուլայի ամրոց»։ Բրեմ Սթոքերի կոմսի լեգենդն այստեղ հանդիպում է Վլադ Ցեպեշի և Մարիա թագուհու իրական պատմությանը՝ Տրանսիլվանիայի և Վալախիայի սահմանին։",
+    "The heaviest building on earth and one of the largest, with over 1,000 rooms of marble, crystal and carved wood. A guided tour reveals a fraction of its staggering scale.": "Երկրի ամենածանր և ամենամեծ շենքերից մեկը՝ ավելի քան 1000 սենյակով՝ մարմարից, բյուրեղից և փորագրված փայտից։ Ուղեկցվող շրջայցը բացահայտում է նրա ապշեցուցիչ մասշտաբի միայն մի մասը։",
+    "Bucharest's historic Lipscani quarter: cobblestone lanes of cafés, bookshops and 19th-century arcades, crowned by the ornate dome of the CEC Palace. The setting for the farewell dinner walk.": "Բուխարեստի պատմական Lipscani թաղամասը՝ սրճարանների, գրախանութների և 19-րդ դարի սրահների սալարկված նրբանցքներ՝ պսակված CEC պալատի զարդարուն գմբեթով։ Հրաժեշտի ընթրիքի զբոսանքի վայրը։",
+    "Guided city tour with a licensed guide": "Քաղաքային շրջայց լիցենզավորված գիդով",
+    "The Romanian Athenaeum & Revolution Square": "Ռումինական Աթենեումը և Հեղափոխության հրապարակը",
+    "Cișmigiu Garden in the city centre": "Չիշմիջիու այգին քաղաքի կենտրոնում",
+    "National Art Gallery & Cărturești Carusel": "Ազգային արվեստի պատկերասրահը և Cărturești Carusel-ը",
+    "Cathedral-sized salt chambers": "Տաճարի չափ աղի դահլիճներ",
+    "An underground planetarium": "Ստորգետնյա մոլորակացույց",
+    "Salt sculptures & an illuminated lake": "Աղի քանդակներ և լուսավորված լիճ",
+    "Famously pure, salty air": "Հանրահայտ մաքուր, աղի օդ",
+    "Council Square (Piața Sfatului)": "Խորհրդի հրապարակ (Piața Sfatului)",
+    "The Gothic Black Church": "Գոթական Սև եկեղեցին",
+    "The Strada Republicii promenade": "Strada Republicii զբոսայգին",
+    "Mountain views from Tâmpa": "Լեռնային տեսարաններ Թամպայից",
+    "Guided tour of the state rooms": "Պետական դահլիճների ուղեկցվող շրջայց",
+    "Built for King Carol I, 1873–1914": "Կառուցված Կարոլ I թագավորի համար, 1873–1914",
+    "Among the first castles with its own electricity": "Առաջին ամրոցներից, որ ունեցել է սեփական էլեկտրականություն",
+    "The forests and town of Sinaia": "Սինայայի անտառներն ու քաղաքը",
+    "Guided tour of the castle": "Ամրոցի ուղեկցվող շրջայց",
+    "The Dracula legend & the real history": "Դրակուլայի լեգենդը և իրական պատմությունը",
+    "Once Queen Marie's residence": "Ժամանակին Մարիա թագուհու նստավայրն էր",
+    "Râșnov Fortress the same day": "Ռըշնովի ամրոցը՝ նույն օրը",
+    "Guided tour of the interior": "Ներսի ուղեկցվող շրջայց",
+    "Marble halls & crystal chandeliers": "Մարմարե դահլիճներ և բյուրեղյա ջահեր",
+    "Around 1,100 rooms": "Շուրջ 1100 սենյակ",
+    "Sweeping views from the terrace": "Լայն տեսարաններ տեռասից",
+    "Strada Covaci & the Lipscani lanes": "Strada Covaci-ն և Lipscani-ի նրբանցքները",
+    "The ornate CEC Palace": "Զարդարուն CEC պալատը",
+    "Cafés and the farewell dinner": "Սրճարաններ և հրաժեշտի ընթրիք",
+    "The Old Town after dark": "Հին քաղաքը մթնշաղից հետո",
+    /* facts keys */
+    "Region": "Տարածաշրջան",
+    "On the tour": "Ճամփորդության ընթացքում",
+    "Good for": "Հարմար է",
+    "Type": "Տեսակ",
+    "Typical visit": "Սովորական այց",
+    "Built": "Կառուցված",
+    "Completed": "Ավարտված",
+    "Area": "Տարածք",
+    /* facts values */
+    "Wallachia · capital": "Վալախիա · մայրաքաղաք",
+    "Days 1, 2, 5–8": "Օրեր 1, 2, 5–8",
+    "History, architecture, shopping": "Պատմություն, ճարտարապետություն, գնումներ",
+    "Salt mine · natural site": "Աղահանք · բնական վայր",
+    "About 2½ hours": "Մոտ 2½ ժամ",
+    "Transylvania": "Տրանսիլվանիա",
+    "Medieval history, walking": "Միջնադարյան պատմություն, զբոսանք",
+    "Royal castle": "Արքայական ամրոց",
+    "Medieval castle": "Միջնադարյան ամրոց",
+    "14th century": "14-րդ դար",
+    "Civic landmark": "Քաղաքային խորհրդանիշ",
+    "Lipscani · Old Town": "Lipscani · Հին քաղաք",
+    "Dining, strolling": "Ճաշ, զբոսանք",
+    /* captions */
+    "The skyline at dusk": "Համայնապատկերը մթնշաղին",
+    "The Romanian Athenaeum": "Ռումինական Աթենեումը",
+    "Central University Library": "Կենտրոնական համալսարանական գրադարան",
+    "The main underground hall": "Գլխավոր ստորգետնյա դահլիճը",
+    "The planetarium dome": "Մոլորակացույցի գմբեթը",
+    "Salt sculptures": "Աղի քանդակներ",
+    "The illuminated lake": "Լուսավորված լիճը",
+    "Council Square from above": "Խորհրդի հրապարակը վերևից",
+    "Pastel merchant facades": "Պաստելային վաճառականական ճակատներ",
+    "The Black Church": "Սև եկեղեցին",
+    "The Black Church at sunset": "Սև եկեղեցին մայրամուտին",
+    "Tampa mountain and the BRASOV sign": "Թամպա լեռը և BRASOV ցուցանակը",
+    "Red rooftops below the hills": "Կարմիր տանիքները բլուրների ստորոտին",
+    "Cobbled old-town lanes": "Հին քաղաքի սալարկված նրբանցքներ",
+    "The old town in winter": "Հին քաղաքը ձմռանը",
+    "Peleș Castle, Sinaia": "Պելեշի ամրոցը, Սինայա",
+    "Bran Castle on its cliff": "Բրանի ամրոցը իր ժայռի վրա",
+    "The Palace of the Parliament": "Խորհրդարանի պալատը",
+    "Detail of the facade": "Ճակատի մանրամասն",
+    "Unirii Boulevard from the Parliament terrace": "Unirii պողոտան Խորհրդարանի տեռասից",
+    "The CEC Palace dome at dusk": "CEC պալատի գմբեթը մթնշաղին",
+    "Old-town cafés": "Հին քաղաքի սրճարաններ",
+    "The CEC Palace": "CEC պալատը",
+
+    /* --- control labels (aria) --- */
+    "Menu": "Մենյու",
+    "Close menu": "Փակել մենյուն",
+    "Close gallery": "Փակել պատկերասրահը",
+    "Previous photo": "Նախորդ լուսանկարը",
+    "Next photo": "Հաջորդ լուսանկարը"
+  };
+
+  /* Build a normalized lookup so diacritic codepoint variants still match. */
+  var DICT = {};
+  Object.keys(AM_RAW).forEach(function (k) { DICT[norm(k)] = AM_RAW[k]; });
+
+  function translate(s) {
+    var key = norm(s.trim());
+    var t = DICT[key];
+    if (t === undefined) return null;
+    var lead = (s.match(/^\s*/) || [''])[0];
+    var trail = (s.match(/\s*$/) || [''])[0];
+    return lead + t + trail;
+  }
+
+  var SKIP = { SCRIPT: 1, STYLE: 1, NOSCRIPT: 1 };
+
+  function walkText(root, toAm) {
+    var tw = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+      acceptNode: function (n) {
+        if (!n.nodeValue || !n.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+        var p = n.parentNode;
+        if (!p || SKIP[p.nodeName]) return NodeFilter.FILTER_REJECT;
+        if (p.classList && p.classList.contains('lang-toggle')) return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var nodes = [], n;
+    while ((n = tw.nextNode())) nodes.push(n);
+    nodes.forEach(function (node) {
+      if (toAm) {
+        if (node.__en === undefined) {
+          var t = translate(node.nodeValue);
+          if (t !== null) { node.__en = node.nodeValue; node.nodeValue = t; }
+        }
+      } else if (node.__en !== undefined) {
+        node.nodeValue = node.__en;
+        delete node.__en;
+      }
+    });
+  }
+
+  var ATTRS = ['aria-label', 'alt', 'title'];
+  function walkAttrs(root, toAm) {
+    var els = [root].concat([].slice.call(root.querySelectorAll('*')));
+    els.forEach(function (el) {
+      if (!el.getAttribute) return;
+      ATTRS.forEach(function (a) {
+        var key = '__en_' + a;
+        if (toAm) {
+          if (el[key] === undefined && el.hasAttribute(a)) {
+            var v = el.getAttribute(a), t = translate(v);
+            if (t !== null) { el[key] = v; el.setAttribute(a, t); }
+          }
+        } else if (el[key] !== undefined) {
+          el.setAttribute(a, el[key]);
+          delete el[key];
+        }
+      });
+    });
+  }
+
+  var lang = (function () {
+    try { return localStorage.getItem('tny-lang') === 'am' ? 'am' : 'en'; }
+    catch (e) { return 'en'; }
+  })();
+
+  var btn = null;
+  function apply() {
+    var toAm = lang === 'am';
+    document.documentElement.lang = toAm ? 'hy' : 'en';
+    walkText(document.body, toAm);
+    walkAttrs(document.body, toAm);
+    if (btn) {
+      btn.textContent = toAm ? 'EN' : 'ՀԱՅ';
+      btn.setAttribute('aria-label', toAm ? 'Switch to English' : 'Անցնել հայերենի');
+    }
+  }
+
+  function setLang(l) {
+    lang = l;
+    try { localStorage.setItem('tny-lang', l); } catch (e) {}
+    apply();
+  }
+
+  function init() {
+    btn = document.getElementById('langToggle');
+    if (btn) btn.addEventListener('click', function () { setLang(lang === 'am' ? 'en' : 'am'); });
+
+    // dynamic gallery modal: translate freshly built content while in AM
+    var modal = document.getElementById('destModal');
+    if (modal && 'MutationObserver' in window) {
+      new MutationObserver(function (muts) {
+        if (lang !== 'am') return;
+        muts.forEach(function (m) {
+          [].forEach.call(m.addedNodes, function (node) {
+            if (node.nodeType === 1) { walkText(node, true); walkAttrs(node, true); }
+            else if (node.nodeType === 3 && node.parentNode) {
+              var t = translate(node.nodeValue);
+              if (t !== null && node.__en === undefined) { node.__en = node.nodeValue; node.nodeValue = t; }
+            }
+          });
+        });
+      }).observe(modal, { childList: true, subtree: true });
+    }
+
+    apply();
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+  else init();
+})();

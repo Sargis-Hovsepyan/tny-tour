@@ -158,6 +158,11 @@ p{margin:0 0 1rem}
 
 .nav-cta{display:flex;align-items:center;gap:.6rem}
 .nav-cta .btn-coral{font-size:.88rem;padding:.7rem 1.3rem}
+.lang-toggle{font-family:var(--sans);font-weight:600;font-size:.78rem;letter-spacing:.04em;color:#fff;border:1.5px solid rgba(255,255,255,.55);background:rgba(255,255,255,.12);padding:.4rem .7rem;border-radius:999px;cursor:pointer;flex:none;-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);transition:background var(--dur),color var(--dur),border-color var(--dur),transform var(--dur-fast)}
+.lang-toggle:hover{background:rgba(255,255,255,.22);transform:translateY(-1px)}
+.nav.scrolled .lang-toggle{color:var(--ink);border-color:var(--line);background:var(--card)}
+.nav.scrolled .lang-toggle:hover{border-color:var(--brand);color:var(--brand-deep)}
+.lang-toggle:focus-visible{outline:none;box-shadow:var(--ring)}
 .nav-wa{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--wa);color:#06351c;flex:none;transition:transform var(--dur-fast)}
 .nav-wa:hover{transform:scale(1.08)}
 .nav-wa svg{width:20px;height:20px}
