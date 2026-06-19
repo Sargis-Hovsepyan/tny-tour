@@ -229,8 +229,7 @@
       highlights: ['Guided tour of the state rooms', 'Built for King Carol I, 1873–1914', 'Among the first castles with its own electricity', 'The forests and town of Sinaia'],
       facts: { Type: 'Royal castle', Built: '1873–1914', 'On the tour': 'Day 5' },
       images: [
-        { src: 'peles-wide.jpg', cap: 'Peleș Castle, Sinaia' },
-        { src: 'transfagarasan-wide.jpg', cap: 'The Carpathians around Sinaia' }
+        { src: 'peles-wide.jpg', cap: 'Peleș Castle, Sinaia' }
       ]
     },
     bran: {
