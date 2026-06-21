@@ -34,31 +34,26 @@
     /* --- hero --- */
     "Discover": "Բացահայտի՛ր",
     "Romania": "Ռումինիան",
-    "8 days of castles, mountains and unforgettable memories.": "Ամրոցների, լեռների և անմոռանալի հիշողությունների 8 օր։",
-    "Fully supervised. October 26 – November 2, 2026.": "Լիարժեք հսկողությամբ։ 2026 թ. հոկտեմբերի 26 – նոյեմբերի 2։",
 
     /* --- trust bar --- */
     "26 Oct – 2 Nov": "հոկտ. 26 – նոյ. 2",
     "8 days": "8 օր",
     "7 nights": "7 գիշեր",
-    "Flights incl.": "Թռիչքները ներառված",
-    "Yerevan ⇄ Bucharest": "Երևան ⇄ Բուխարեստ",
-    "All-inclusive": "Ամեն ինչ ներառված",
-    "Hotels, meals, guides": "Հյուրանոցներ, սնունդ, գիդեր",
 
     /* --- about --- */
     "Why this tour": "Ինչո՞ւ այս ճամփորդությունը",
-    "Supervised dawn to curfew. Memorable in between.": "Հսկվող՝ առավոտից մինչև գիշեր։ Իսկ արանքում՝ անմոռանալի։",
-    "We designed this trip around the two things that matter most: your child's safety, and a week of real learning they'll never forget. TNY Educational Center has organized student programs since 2014. This tour is our most ambitious yet.": "Մենք այս ճամփորդությունը մշակել ենք ամենակարևոր երկու բանի շուրջ՝ ձեր երեխայի անվտանգությունը և իրական ուսման մեկ շաբաթ, որը նա երբեք չի մոռանա։ TNY Educational Center-ը 2014 թվականից կազմակերպում է աշակերտական ծրագրեր։ Այս ճամփորդությունը մեր ամենահավակնոտն է մինչ օրս։",
-    "From the Dracula legend at Bran Castle to the underground world of Slanic Salt Mine, from the fairy-tale Peleș Castle to the colossal Parliament in Bucharest. Every day is structured, supervised, and designed to inspire.": "Բրանի ամրոցի Դրակուլայի լեգենդից մինչև Սլանիկի աղահանքի ստորգետնյա աշխարհը, հեքիաթային Պելեշի ամրոցից մինչև Բուխարեստի վիթխարի Խորհրդարանը։ Ամեն օրը պլանավորված է, հսկվող և ոգեշնչելու համար մտածված։",
-    "Safe & supervised": "Ապահով և հսկվող",
-    "Dedicated chaperones, 24/7 on-call coordinator, nightly headcounts. Daily photo updates to a private parents' group.": "Հատուկ ուղեկցողներ, 24/7 հասանելի համակարգող, ամենգիշերյա հաշվառում։ Ամենօրյա լուսանկարներ ծնողների փակ խմբում։",
-    "Real learning": "Իրական ուսում",
-    "Guided history at Bran Castle, Peleș Castle and Parliament. Underground science at the salt mine. Culture at Europe's most beautiful bookstore.": "Ուղեկցվող պատմություն Բրանի ամրոցում, Պելեշի ամրոցում և Խորհրդարանում։ Ստորգետնյա գիտություն աղահանքում։ Մշակույթ Եվրոպայի ամենագեղեցիկ գրախանութում։",
-    "Everything handled": "Ամեն ինչ հոգացված",
-    "Flights, hotels, transport, meals, entrance fees and insurance in one clear price. No surprises on the road.": "Թռիչքներ, հյուրանոցներ, փոխադրում, սնունդ, մուտքի վճարներ և ապահովագրություն՝ մեկ հստակ գնով։ Ոչ մի անակնկալ ճանապարհին։",
-    "You stay in the loop": "Դուք միշտ տեղյակ եք",
-    "Private WhatsApp group with daily photos and check-ins, plus a dedicated 24/7 emergency line for the entire trip.": "Փակ WhatsApp խումբ՝ ամենօրյա լուսանկարներով և կապով, գումարած ողջ ճամփորդության համար հատուկ 24/7 արտակարգ իրավիճակների գիծ։",
+    "Discover Romania with us 🇷🇴": "Բացահայտե՛ք Ռումինիան մեզ հետ 🇷🇴",
+    "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Միացե՛ք հետաքրքիր կրթաճանաչողական ճամփորդությանը դեպի Ռումինիա։ Ծրագրի ընթացքում կայցելենք Բուխարեստ, Բրասով և Սինայա քաղաքներ, կբացահայտենք Դրակուլայի և Պելեշի հայտնի ամրոցները, Սլանիկի աղի հանքը, Ռաշնովի ամրոցը և բազմաթիվ այլ տեսարժան վայրեր։",
+    "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, ժամանց, գնումներ և անմոռանալի հիշողություններ՝ եվրոպական յուրահատուկ միջավայրում։",
+    "What you gain": "Ի՞նչ եք ստանում",
+    "International experience": "Միջազգային փորձառություն",
+    "Discover Europe's culture, history and everyday life through real travel.": "Բացահայտեք Եվրոպայի մշակույթը, պատմությունը և առօրյանը՝ իրական ճամփորդության միջոցով։",
+    "Educational value": "Կրթական արժեք",
+    "Visits to museums, historic castles and science centers, turning learning into a living experience.": "Այցեր թանգարաններ, պատմական ամրոցներ և գիտական կենտրոններ՝ ուսուցումը դարձնելով կենդանի փորձառություն։",
+    "New friendships": "Նոր ընկերություններ",
+    "A chance to connect, collaborate and share memorable moments with peers.": "Հնարավորություն՝ շփվելու, համագործակցելու և հիշարժան պահեր կիսելու հասակակիցների հետ։",
+    "Safe and organized": "Անվտանգ և կազմակերպված",
+    "Experienced guides, a clear program and constant support throughout the journey.": "Փորձառու ուղեկցողներ, հստակ ծրագիր և մշտական աջակցություն ամբողջ ճամփորդության ընթացքում։",
 
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
