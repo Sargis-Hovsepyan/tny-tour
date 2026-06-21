@@ -196,7 +196,9 @@
         { src: 'slanic-salt-mine-main-hall.jpg', cap: 'The main underground hall' },
         { src: 'slanic-salt-mine-planetarium.jpg', cap: 'The planetarium dome' },
         { src: 'slanic-salt-mine-sculptures.jpg', cap: 'Salt sculptures' },
-        { src: 'slanic-salt-mine-illuminated.jpg', cap: 'The illuminated lake' }
+        { src: 'slanic-salt-mine-illuminated.jpg', cap: 'The illuminated lake' },
+        { src: 'slanic-salt-mine-chamber.jpg', cap: 'The vertical shaft' },
+        { src: 'slanic-salt-mine-tunnel.jpg', cap: 'Walkways deep underground' }
       ]
     },
     brasov: {
@@ -222,7 +224,12 @@
       highlights: ['Guided tour of the state rooms', 'Built for King Carol I, 1873–1914', 'Among the first castles with its own electricity', 'The forests and town of Sinaia'],
       facts: { Type: 'Royal castle', Built: '1873–1914', 'On the tour': 'Day 5' },
       images: [
-        { src: 'peles-wide.jpg', cap: 'Peleș Castle, Sinaia' }
+        { src: 'peles-wide.jpg', cap: 'Peleș Castle, Sinaia' },
+        { src: 'peles-castle-hilltop.jpg', cap: 'The castle from the hillside' },
+        { src: 'peles-aerial-forest.jpg', cap: 'Aerial view amid the Carpathian forest' },
+        { src: 'peles-castle-towers.jpg', cap: 'The Neo-Renaissance towers' },
+        { src: 'peles-autumn-view.jpg', cap: 'Peleș in early autumn' },
+        { src: 'peles-garden-path.jpg', cap: 'The castle from the garden' }
       ]
     },
     bran: {
@@ -231,7 +238,12 @@
       highlights: ['Guided tour of the castle', 'The Dracula legend & the real history', 'Once Queen Marie’s residence', 'Râșnov Fortress the same day'],
       facts: { Type: 'Medieval castle', Built: '14th century', 'On the tour': 'Day 4' },
       images: [
-        { src: 'bran-wide.jpg', cap: 'Bran Castle on its cliff' }
+        { src: 'bran-wide.jpg', cap: 'Bran Castle on its cliff' },
+        { src: 'bran-castle-front.jpg', cap: 'The castle from below' },
+        { src: 'bran-castle-approach.jpg', cap: 'Bran Castle at dusk' },
+        { src: 'bran-castle-tower.jpg', cap: 'Drone view of the tower' },
+        { src: 'bran-castle-courtyard.jpg', cap: 'Inside the courtyard' },
+        { src: 'bran-castle-walls.jpg', cap: 'The castle in clear sky' }
       ]
     },
     parliament: {
@@ -242,7 +254,9 @@
       images: [
         { src: 'bucharest-parliament-wide.jpg', cap: 'The Palace of the Parliament' },
         { src: 'bucharest-parliament-close.jpg', cap: 'Detail of the facade' },
-        { src: 'parliament-wide.jpg', cap: 'Unirii Boulevard from the Parliament terrace' }
+        { src: 'parliament-wide.jpg', cap: 'Unirii Boulevard from the Parliament terrace' },
+        { src: 'parliament-boulevard.jpg', cap: 'The Parliament from the boulevard' },
+        { src: 'parliament-night.jpg', cap: 'Unirii fountain and the Palace' }
       ]
     },
     oldtown: {
@@ -254,7 +268,9 @@
         { src: 'bucharest-old-town-cec-dusk.jpg', cap: 'The CEC Palace dome at dusk' },
         { src: 'bucharest-strada-covaci.jpg', cap: 'Strada Covaci' },
         { src: 'bucharest-old-town-street.jpg', cap: 'Old-town cafés' },
-        { src: 'bucharest-cec-palace.jpg', cap: 'The CEC Palace' }
+        { src: 'bucharest-cec-palace.jpg', cap: 'The CEC Palace' },
+        { src: 'bucharest-old-town-walk.jpg', cap: 'The CEC dome from the lanes' },
+        { src: 'bucharest-old-town-night.jpg', cap: 'Evening on the cobblestones' }
       ]
     }
   };

@@ -146,6 +146,11 @@
     "Airport transfer": "Տեղափոխում օդանավակայան",
     "Flight home": "Թռիչք տուն",
 
+    /* --- destinations heading --- */
+    "Where you'll go": "Ուր էք գնալու",
+    "Seven destinations across two regions": "Յոթ ուղղություն երկու տարածաշրջանում",
+    "From the grand avenues of Bucharest to the medieval heart of Transylvania. Click any destination to explore its gallery and learn what awaits.": "Բուխարեստի շքեղ պողոտաներից մինչեվ Տրանսիլվանիայի միջնադարյան սիրտը։ Սեղմեք ցանկացած ուղղությունը՝ բացահայտելու նրա պատկերասրահը և իմանալու՝ թե ինչ է սպասում։",
+
     /* --- destinations panels --- */
     "Days 1–2, 5–8": "Օրեր 1–2, 5–8",
     "Day 3": "Օր 3",
@@ -382,6 +387,22 @@
     "The CEC Palace dome at dusk": "CEC պալատի գմբեթը մթնշաղին",
     "Old-town cafés": "Հին քաղաքի սրճարաններ",
     "The CEC Palace": "CEC պալատը",
+    "The castle from the hillside": "Ամրոցը լեռից",
+    "Aerial view amid the Carpathian forest": "Օդային տեսարանը Կարպատների անտառում",
+    "The Neo-Renaissance towers": "Նեո-Վերածնունդյան աշտարակները",
+    "Peleș in early autumn": "Պելեշը վաղ աշունին",
+    "The castle from the garden": "Ամրոցը այգից",
+    "The castle from below": "Ամրոցը ներքեվից",
+    "Bran Castle at dusk": "Բրանի ամրոցը մթնշաղին",
+    "Drone view of the tower": "Օդային տեսարանը աշտարակից",
+    "Inside the courtyard": "Բակումի ներսը",
+    "The castle in clear sky": "Ամրոցը պայծառ երկինքի տակ",
+    "The Parliament from the boulevard": "Խորհրդարանը պողոտայից",
+    "Unirii fountain and the Palace": "Unirii շատրվանը և պալատը",
+    "The CEC dome from the lanes": "CEC գմբեթը նրբանցքներից",
+    "Evening on the cobblestones": "Երեկո սալարկի վրա",
+    "The vertical shaft": "Խոր շախտան",
+    "Walkways deep underground": "Խոր ստորգետնյա անցքներ",
 
     /* --- control labels (aria) --- */
     "Menu": "Մենյու",
