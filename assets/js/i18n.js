@@ -58,7 +58,8 @@
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
     "Eight days, hour by hour": "Ութ օր՝ ժամ առ ժամ",
-    "Bucharest, Transylvania and back. Every hour planned, every detail covered. Here's exactly what your child will be doing.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն ժամը պլանավորված է, ամեն մանրուքը՝ հոգացված։ Ահա թե կոնկրետ ինչ է անելու ձեր երեխան։",
+    "Bucharest, Transylvania and back. Every day planned, every detail covered.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն օրը պլանավորված, ամեն մանրուքը՝ հոգացված։",
+    "The meal which is included in our tour package is only a breakfast.": "Մեր տուրային փաթեթում ներառված միակ սնունդը նախաճաշն է։",
 
     /* --- itinerary day titles --- */
     "Arrival in Bucharest": "Ժամանում Բուխարեստ",
