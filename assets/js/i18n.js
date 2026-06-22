@@ -184,6 +184,7 @@
     "Free Wi-Fi": "Անվճար Wi-Fi",
     "Central, walkable area": "Կենտրոնական, քայլելու հարմար տարածք",
     "Walkable to Old Town": "Քայլելու հեռավորության վրա Հին քաղաքից",
+    "*Hotels may change depending on availability or group size. Any replacement will be of equal or higher standard.": "*Հյուրանոցները կարող են փոխվել կախված հասանելիությունից կամ խմբի չափից։ Փոխարինող կլինի հավասար կամ ավելի բարձր մակարդակի։",
 
         /* --- safety --- */
     "Safety": "Անվտանգություն",
