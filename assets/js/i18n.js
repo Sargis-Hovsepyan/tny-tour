@@ -39,9 +39,9 @@
     "7 nights": "7 գիշեր",
 
     /* --- about --- */
-    "Discover Romania with us 🇷🇴": "Բացահայտե՛ք Ռումինիան մեզ հետ 🇷🇴",
-    "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Միացե՛ք հետաքրքիր կրթաճանաչողական ճամփորդությանը դեպի Ռումինիա։ Ծրագրի ընթացքում կայցելենք Բուխարեստ, Բրասով և Սինայա քաղաքներ, կբացահայտենք Դրակուլայի և Պելեշի հայտնի ամրոցները, Սլանիկի աղի հանքը, Ռաշնովի ամրոցը և բազմաթիվ այլ տեսարժան վայրեր։",
-    "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, ժամանց, գնումներ և անմոռանալի հիշողություններ՝ եվրոպական յուրահատուկ միջավայրում։",
+    "Discover Romania with us 🇷🇴": "Բացահայտե՛ք Ռումինիան TNY-ի հետ։ 🇷🇴",
+    "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Այս յուրահատուկ կրթաճանաչողական ճամփորդության ընթացքում կայցելենք Ռումինիայի ամենահայտնի քաղաքներն ու տեսարժան վայրերը՝ Բուխարեստ, Բրասով, Սինայա, Դրակուլայի ամրոց, Պելեշի պալատ և Սլանիկի աղի հանք։ Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, նոր ընկերներ և անմոռանալի փորձառություններ՝ TNY-ի փորձառու թիմի ուղեկցությամբ։",
+    "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Այս ճամփորդությունը հիանալի հնարավորություն է համատեղելու ուսուցումը, ժամանցը և եվրոպական միջավայրի բացահայտումը։ ✨",
     "From our previous tours": "Մեր նախորդ տուրերից",
     "View more from previous tours": "Տեսնել ավելին նախորդ տուրերից",
 
