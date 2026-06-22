@@ -448,9 +448,7 @@ p{margin:0 0 1rem}
 .price-card{max-width:540px;margin-inline:auto;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lg);overflow:hidden;text-align:center}
 .price-top{background:var(--grad-teal);color:#fff;padding:2.4rem 1.8rem;position:relative;overflow:hidden}
 .price-top::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,111,94,.18),transparent 60%);pointer-events:none}
-.price-from{display:block;font-size:.82rem;text-transform:uppercase;letter-spacing:.14em;opacity:.85}
 .price-amt{display:block;font-family:var(--display);font-size:clamp(3rem,9vw,4.2rem);line-height:1;margin:.3rem 0;font-variant-numeric:tabular-nums lining-nums}
-.price-unit{display:block;opacity:.88;font-size:.92rem}
 .price-body{padding:2rem 1.8rem}
 .price-highlights{display:flex;flex-wrap:wrap;gap:.7rem;justify-content:center;margin-bottom:1.6rem}
 .ph{background:var(--bg-alt);border:1px solid var(--line);border-radius:var(--radius-sm);padding:.7rem 1.1rem;font-size:.88rem;flex:1 1 140px;transition:transform var(--dur-fast),box-shadow var(--dur-fast)}
