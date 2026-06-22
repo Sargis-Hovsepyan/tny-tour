@@ -254,7 +254,7 @@ p{margin:0 0 1rem}
 
 .tg-overlay{position:fixed;inset:0;z-index:9999;background:rgba(10,52,51,.8);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center}
 .tg-overlay[hidden]{display:none}
-.tg-panel{background:var(--bg);width:min(960px,94vw);max-height:92vh;border-radius:var(--radius);display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden}
+.tg-panel{background:var(--bg);width:min(960px,94vw);height:90vh;border-radius:var(--radius);display:flex;flex-direction:column;box-shadow:var(--shadow-lg);overflow:hidden}
 .tg-head{display:flex;align-items:center;justify-content:space-between;padding:1.2rem 1.8rem;border-bottom:1px solid var(--line);flex-shrink:0}
 .tg-title{font-family:var(--display);font-size:var(--fs-h3);margin:0;color:var(--ink)}
 .tg-close{background:var(--card);border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);transition:background var(--dur-fast)}
