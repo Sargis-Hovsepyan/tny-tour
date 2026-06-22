@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=73">
+<link rel="stylesheet" href="assets/css/styles.css?v=74">
 </head>
 <body>
 
@@ -98,18 +98,15 @@
       </div>
       <div class="about-photos">
         <h3 class="cards-heading">From our previous tours</h3>
-        <div class="tour-strip">
-          <img src="assets/img/tour/01-castle-ruins.jpg" alt="Group at castle ruins" loading="lazy">
-          <img src="assets/img/tour/02-palace.jpg" alt="Group at palace" loading="lazy">
-          <img src="assets/img/tour/03-castle-grounds.jpg" alt="Castle grounds" loading="lazy">
-          <img src="assets/img/tour/04-scenic-town.jpg" alt="Scenic European town" loading="lazy">
-          <img src="assets/img/tour/05-town-square.jpg" alt="Town square" loading="lazy">
-          <img src="assets/img/tour/06-viewpoint.jpg" alt="Viewpoint selfie" loading="lazy">
-          <img src="assets/img/tour/07-rooftops.jpg" alt="European rooftops" loading="lazy">
-          <img src="assets/img/tour/08-town-bridge.jpg" alt="Town bridge" loading="lazy">
-          <img src="assets/img/tour/09-museum.jpg" alt="Museum visit" loading="lazy">
-          <img src="assets/img/tour/10-friends.jpg" alt="Friends" loading="lazy">
+        <div class="tour-mosaic">
+          <img src="assets/img/tour/01.jpg" alt="Group at castle ruins" loading="lazy">
+          <img src="assets/img/tour/02.jpg" alt="Group at palace" loading="lazy">
+          <img src="assets/img/tour/04.jpg" alt="Scenic European town" loading="lazy">
+          <img src="assets/img/tour/07.jpg" alt="European rooftops" loading="lazy">
+          <img src="assets/img/tour/12.jpg" alt="Friends" loading="lazy">
+          <img src="assets/img/tour/05.jpg" alt="Town square" loading="lazy">
         </div>
+        <button class="btn btn-ghost tour-gallery-btn" id="tourGalleryBtn"><svg aria-hidden="true" viewBox="0 0 24 24" style="width:18px;height:18px"><rect x="3" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="14" y="3" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="3" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8" fill="none"/><rect x="14" y="14" width="7" height="7" rx="1" stroke="currentColor" stroke-width="1.8" fill="none"/></svg> View more from previous tours</button>
       </div>
     </div>
   </div>
@@ -534,6 +531,43 @@
   </div>
 </section>
 
+<!-- Tour gallery modal -->
+<dialog class="tour-gallery" id="tourGallery">
+  <button class="tour-gallery-close" id="tourGalleryClose" aria-label="Close gallery"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/></svg></button>
+  <h2 class="tour-gallery-title">From our previous tours</h2>
+  <div class="tour-gallery-grid">
+    <img src="assets/img/tour/01.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/02.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/03.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/04.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/05.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/06.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/07.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/08.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/09.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/10.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/11.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/12.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/13.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/14.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/15.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/16.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/17.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/18.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/19.jpg" alt="" loading="lazy">
+    <img src="assets/img/tour/20.jpg" alt="" loading="lazy">
+  </div>
+</dialog>
+<script>
+(function(){
+  var d=document.getElementById('tourGallery'),b=document.getElementById('tourGalleryBtn'),c=document.getElementById('tourGalleryClose');
+  if(!d||!b)return;
+  b.addEventListener('click',function(){d.showModal()});
+  c.addEventListener('click',function(){d.close()});
+  d.addEventListener('click',function(e){if(e.target===d)d.close()});
+})();
+</script>
+
 </main>
 
 <!-- ===== FOOTER ===== -->
@@ -591,7 +625,7 @@
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
-<script defer src="assets/js/main.js?v=73"></script>
-<script defer src="assets/js/i18n.js?v=73"></script>
+<script defer src="assets/js/main.js?v=74"></script>
+<script defer src="assets/js/i18n.js?v=74"></script>
 </body>
 </html>

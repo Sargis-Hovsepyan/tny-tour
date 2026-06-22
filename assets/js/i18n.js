@@ -44,6 +44,7 @@
     "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Միացե՛ք հետաքրքիր կրթաճանաչողական ճամփորդությանը դեպի Ռումինիա։ Ծրագրի ընթացքում կայցելենք Բուխարեստ, Բրասով և Սինայա քաղաքներ, կբացահայտենք Դրակուլայի և Պելեշի հայտնի ամրոցները, Սլանիկի աղի հանքը, Ռաշնովի ամրոցը և բազմաթիվ այլ տեսարժան վայրեր։",
     "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, ժամանց, գնումներ և անմոռանալի հիշողություններ՝ եվրոպական յուրահատուկ միջավայրում։",
     "From our previous tours": "Մեր նախորդ տուրերից",
+    "View more from previous tours": "Տեսնել ավելին նախորդ տուրերից",
 
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
