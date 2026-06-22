@@ -138,9 +138,9 @@
     "Flight home": "Թռիչք տուն",
 
     /* --- destinations heading --- */
-    "Where you'll go": "Ուր էք գնալու",
-    "Seven destinations across two regions": "Յոթ ուղղություն երկու տարածաշրջանում",
-    "From the grand avenues of Bucharest to the medieval heart of Transylvania. Click any destination to explore its gallery and learn what awaits.": "Բուխարեստի շքեղ պողոտաներից մինչեվ Տրանսիլվանիայի միջնադարյան սիրտը։ Սեղմեք ցանկացած ուղղությունը՝ բացահայտելու նրա պատկերասրահը և իմանալու՝ թե ինչ է սպասում։",
+    "Where you'll go": "ՈՒՐ ԷՔ ԳՆԱԼՈՒ",
+    "Seven destinations across two regions": "",
+    "From the grand avenues of Bucharest to the medieval heart of Transylvania. Click any destination to explore its gallery and learn what awaits.": "",
 
     /* --- destinations panels --- */
     "Days 1–2, 5–8": "Օրեր 1–2, 5–8",
@@ -154,13 +154,13 @@
     "Palace of the Parliament": "Խորհրդարանի պալատ",
     "Bucharest Old Town": "Բուխարեստի Հին քաղաք",
     "View gallery": "Տեսնել պատկերասրահը",
-    "Belle Époque boulevards, the colossal Parliament and a café-filled Old Town. Your base for five of the eight nights.": "Belle Époque-ի պողոտաներ, վիթխարի Խորհրդարանը և սրճարաններով լի Հին քաղաք։ Ձեր կացարանը ութ գիշերից հինգի համար։",
-    "A cathedral of salt 200 metres underground, with a planetarium, sculptures and an illuminated lake.": "Աղի տաճար՝ 200 մետր ընդհատակ, մոլորակացույցով, քանդակներով և լուսավորված լճով։",
-    "A medieval Saxon town under Tâmpa mountain. Pastel squares, Gothic spires and a lively promenade.": "Միջնադարյան սաքսոնական քաղաք Թամպա լեռան ստորոտին։ Պաստելային հրապարակներ, գոթական աշտարակներ և աշխույժ զբոսավայր։",
-    "Romania's fairy-tale royal palace in the Carpathian forests above Sinaia.": "Ռումինիայի հեքիաթային արքայական պալատը Կարպատների անտառներում՝ Սինայայից վեր։",
-    "The cliff-top fortress the world knows as Dracula's Castle.": "Ժայռի գագաթին կանգնած ամրոցը, որն աշխարհը ճանաչում է որպես Դրակուլայի ամրոց։",
-    "The heaviest building on Earth. Over 1,000 rooms of marble, crystal and carved wood.": "Երկրի ամենածանր շենքը։ Ավելի քան 1000 սենյակ՝ մարմարից, բյուրեղից և փորագրված փայտից։",
-    "Cobbled Lipscani lanes, grand arcades and the ornate CEC Palace. The farewell-night setting.": "Lipscani-ի սալարկված նրբանցքները, շքեղ սրահները և զարդարուն CEC պալատը։ Հրաժեշտի երեկոյի վայրը։",
+    "Belle Époque boulevards, the colossal Parliament and a café-filled Old Town. Your base for five of the eight nights.": "«Belle Époque»-ի նրբաճաշակ ճարտարապետությունը, լայն պողոտաները և աշխուժ եվրոպական մթնոլորտը Բուխարեստը դարձնում են Ռումինիայի ամենահմայիճ քաղաքներից մեկը։",
+    "A cathedral of salt 200 metres underground, with a planetarium, sculptures and an illuminated lake.": "Սլանիկի աղի հանքը — Եվրոպայի ամենատպավորիճ ստորգետնյա հրաշալիքներից մեկը, որտեղ հսկայական աղե սրահները, յուրահատուկ միկրոկլիման և անսովոր տեսարանները ստեղծում են անմոռանալի փորձառություն։",
+    "A medieval Saxon town under Tâmpa mountain. Pastel squares, Gothic spires and a lively promenade.": "Բրասով — Ռումինիայի ամենագեղեցիկ քաղաքներից մեկը, որտեղ միջնադարյան ճարտարապետությունը, սալահատակ փողոցներն ու Կարպատյան լեռների հիասքանչ տեսարանները ստեղծում են յուրահատուկ եվրոպական մթնոլորտ։",
+    "Romania's fairy-tale royal palace in the Carpathian forests above Sinaia.": "Պելեշ ամրոց — Ռումինիայի թագավորական գոհարը։ Կարպատյան լեռների գրկում գտնվող այս շքեղ պալատը հիացնում է իր նրբաճաշակ ճարտարապետությամբ, հարուստ պատմությամբ և հեքիաթային գեղեցկությամբ։",
+    "The cliff-top fortress the world knows as Dracula's Castle.": "Բրան ամրոց — պատմության և առեղծվածի կատարյալ համադրություն։ Ամպերին հասնող աշտարակներով և դարավոր լեգենդներով այն բացահայտում է Ռումինիայի ամենահետաքրքիր պատմություններից մեկը։",
+    "The heaviest building on Earth. Over 1,000 rooms of marble, crystal and carved wood.": "Խորհրդարանի պալատ — ուժի, ճարտարապետության և պատմության տպավորիչ խորհրդանիշ։ Աշխարհի ամենամեծ վարչական շենքերից մեկը, որը հիացնում է իր հսկայական չափերով և շքեղ ինտերիերով։",
+    "Cobbled Lipscani lanes, grand arcades and the ornate CEC Palace. The farewell-night setting.": "Բուխարեստի Հին Քաղաք — քաղաքի ամենահետաքրքիր և գունեղ անկյունը։ Սալահատակ փողոցները, պատմական շենքերն ու հարմարավետ սրճարանները ստեղծում են յուրահատուկ եվրոպական մթնոլորտ։",
 
     /* --- accommodation --- */
     "Where you'll stay": "Որտեղ եք մնալու",
