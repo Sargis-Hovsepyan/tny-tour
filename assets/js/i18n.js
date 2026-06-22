@@ -47,18 +47,18 @@
 
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
-    "Eight days, hour by hour": "Ութ օր՝ ժամ առ ժամ",
+    "Eight days, hour by hour": "",
     "Bucharest, Transylvania and back. Every day planned, every detail covered.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն օրը պլանավորված, ամեն մանրուքը՝ հոգացված։",
     "The meal which is included in our tour package is only a breakfast.": "Մեր տուրային փաթեթում ներառված միակ սնունդը նախաճաշն է։",
 
     /* --- itinerary day titles --- */
     "Arrival in Bucharest": "Ժամանում Բուխարեստ",
-    "Bucharest guided city tour": "Բուխարեստի ուղեկցվող քաղաքային շրջայց",
-    "Slanic Salt Mine & transfer to Brașov": "Սլանիկի աղահանք և տեղափոխում Բրաշով",
-    "Bran Castle & Râșnov Fortress": "Բրանի ամրոց և Ռըշնովի բերդ",
+    "Bucharest guided city tour": "Բուխարեստի քաղաքային տուր",
+    "Slanic Salt Mine & transfer to Brașov": "Սլանիկի աղւ հանք և Բրաշով",
+    "Bran Castle & Râșnov Fortress": "Բրանի ամրոց և Ռաշովի բերդ",
     "Peleș Castle & Sinaia": "Պելեշի ամրոց և Սինայա",
-    "Parliament, art & culture": "Խորհրդարան, արվեստ և մշակույթ",
-    "Presidential Palace & Old Town": "Նախագահական պալատ և Հին քաղաք",
+    "Parliament, art & culture": "Խորհրդարանի շենք, արվեստի թանգարան",
+    "Presidential Palace & Old Town": "Նախագահական պալատ և հին քաղաք",
     "Departure": "Մեկնում",
 
     /* --- itinerary day metas --- */
