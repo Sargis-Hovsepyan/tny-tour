@@ -19,4 +19,5 @@ __pycache__/
 # Asset pipeline cache (downloaded originals, reused between runs)
 tools/.cache/
 .backup-img/
+assets/img/tour-raw/
 node_modules/
