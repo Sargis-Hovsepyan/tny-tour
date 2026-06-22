@@ -43,15 +43,7 @@
     "Discover Romania with us 🇷🇴": "Բացահայտե՛ք Ռումինիան մեզ հետ 🇷🇴",
     "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Միացե՛ք հետաքրքիր կրթաճանաչողական ճամփորդությանը դեպի Ռումինիա։ Ծրագրի ընթացքում կայցելենք Բուխարեստ, Բրասով և Սինայա քաղաքներ, կբացահայտենք Դրակուլայի և Պելեշի հայտնի ամրոցները, Սլանիկի աղի հանքը, Ռաշնովի ամրոցը և բազմաթիվ այլ տեսարժան վայրեր։",
     "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, ժամանց, գնումներ և անմոռանալի հիշողություններ՝ եվրոպական յուրահատուկ միջավայրում։",
-    "What you gain": "Ի՞նչ եք ստանում",
-    "International experience": "Միջազգային փորձառություն",
-    "Discover Europe's culture, history and everyday life through real travel.": "Բացահայտեք Եվրոպայի մշակույթը, պատմությունը և առօրյանը՝ իրական ճամփորդության միջոցով։",
-    "Educational value": "Կրթական արժեք",
-    "Visits to museums, historic castles and science centers, turning learning into a living experience.": "Այցեր թանգարաններ, պատմական ամրոցներ և գիտական կենտրոններ՝ ուսուցումը դարձնելով կենդանի փորձառություն։",
-    "New friendships": "Նոր ընկերություններ",
-    "A chance to connect, collaborate and share memorable moments with peers.": "Հնարավորություն՝ շփվելու, համագործակցելու և հիշարժան պահեր կիսելու հասակակիցների հետ։",
-    "Safe and organized": "Անվտանգ և կազմակերպված",
-    "Experienced guides, a clear program and constant support throughout the journey.": "Փորձառու ուղեկցողներ, հստակ ծրագիր և մշտական աջակցություն ամբողջ ճամփորդության ընթացքում։",
+    "From our previous tours": "Մեր նախորդ տուրերից",
 
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
