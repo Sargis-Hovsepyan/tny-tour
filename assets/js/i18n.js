@@ -209,30 +209,21 @@
     "Tour Organiser": "Տուրի կազմակերպիչ",
     "Tourism Specialist": "Տուրիզմի մասնագետ",
 
-        /* --- includes --- */
-    "No surprises": "Առանց անակնկալների",
-    "What's included, and what's not": "Ինչ է ներառված և ինչ՝ ոչ",
+        /* --- pricing & includes --- */
+    "Price": "Արժեք",
+    "8 days / 7 nights. €300 deposit *non-refundable": "8օր/7գիշեր. €300 կանխավճար *վերադարձի ենթակա չէ",
     "Included": "Ներառված է",
     "Not included": "Ներառված չէ",
     "Round-trip flights": "երկկողմանի ավիատոմս",
     "Visa support": "վիզայի աջակցություն",
     "Hotel": "հյուրանոց",
-    "Breakfast": "նախաճաշ",
+    "Breakfast": "Նախաճաշ",
     "Private transport": "անհատական ուղևորապոխադրում",
     "Entrance fees per programme": "մուտքավճարներ ըստ ծրագրի",
     "Medical insurance": "բժշկական ապահովագրություն",
     "Lunch and dinner ~€30/day": "ճաշ և ընթրիք ~30 euro / օր",
     "Consular service fee ~€35": "հյուպատոսական ծառայության վճար ~35 euro",
     "Entrance fees and transport for off-programme visits": "ծրագրից դուրս վայրեր այցելությունների մուտքավճարներ և տրանսպորտ",
-
-        /* --- pricing --- */
-    "Price": "Արժեք",
-    "One clear price": "Մեկ հստակ գին",
-    "Simple, everything included": "պարզ, ամեն ինչ ներառված",
-    "8 days / 7 nights": "8օր/7գիշեր",
-    "deposit *non-refundable": "կանխավճար *վերադարձի ենթակա չէ",
-    "Supervision": "Վերահսկողություն",
-    "by experienced specialists": "փորձառու մասնագետների կողմից",
     "Reserve a Place": "Ամրագրել տեղ",
     "Contact us for the full payment schedule and cancellation policy.": "Կապվեք մեզ հետ վճարման ամբողճական ժամանակացույցի և չեղարկման քաղաքականության համար։",
 
