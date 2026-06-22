@@ -182,7 +182,7 @@
     "Why trust us with your child's journey?": "Ինչու՞ վստահել ձեր երեխայի ճանապարհորդություննը մեզ",
     "Your child's safety and your peace of mind are our top priority.": "",
     "Experienced supervisors": "Փորձառու ուղեկցողներ",
-    "Specialists working with children, ensuring constant supervision and support throughout the journey.": "Երեխաների հետ աշխատոգ մասնագետներ, որոնք ապահովում են մշտական վերահսկողություն և աջակցություն ամբողջ ուղևորության ընթացքում։",
+    "Specialists working with children, ensuring constant supervision and support throughout the journey.": "Երեխաների հետ աշխատող մասնագետներ, որոնք ապահովում են մշտական վերահսկողություն և աջակցություն ամբողջ ուղևորության ընթացքում։",
     "Safe and vetted programme": "Անվտանգ և ստուգված ծրագիր",
     "A carefully planned itinerary, trusted partners and pre-vetted services for children's safety.": "Մանրակրկիտ պլանավորված երթուղի, վստահելի գործընկերներ և նախապես ստուգված ծառայություններ՝ երեխաների անվտանգության համար։",
     "24/7 parent updates": "24/7 կապ ծնողների հետ",
