@@ -264,12 +264,17 @@ p{margin:0 0 1rem}
 .tg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem}
 .tg-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;transition:transform var(--dur),box-shadow var(--dur)}
 .tg-grid img:hover{transform:scale(1.03);box-shadow:var(--shadow-md)}
-.tg-lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem}
+.tg-lightbox{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);display:flex;flex-direction:column;padding:1rem}
 .tg-lightbox[hidden]{display:none}
-.tg-lightbox img{max-width:90vw;max-height:80vh;object-fit:contain;border-radius:var(--radius-sm)}
-.tg-lb-back{margin-top:1.2rem;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.6rem 1.4rem;border-radius:999px;cursor:pointer;font-size:.92rem;display:inline-flex;align-items:center;gap:.5rem;transition:background var(--dur-fast)}
-.tg-lb-back:hover{background:rgba(255,255,255,.22)}
-.tg-lb-back svg{width:18px;height:18px}
+.tg-lb-back{align-self:flex-start;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.3);color:#fff;padding:.5rem 1.1rem;border-radius:999px;cursor:pointer;font-size:.88rem;display:inline-flex;align-items:center;gap:.4rem;transition:background var(--dur-fast);margin-bottom:.8rem}
+.tg-lb-back:hover{background:rgba(255,255,255,.25)}
+.tg-lb-back svg{width:16px;height:16px}
+.tg-lb-stage{flex:1;display:flex;align-items:center;justify-content:center;gap:1rem;min-height:0}
+.tg-lb-stage img{max-width:calc(100vw - 120px);max-height:calc(100vh - 100px);object-fit:contain;border-radius:var(--radius-sm)}
+.tg-lb-arrow{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.25);color:#fff;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;cursor:pointer;flex-shrink:0;transition:background var(--dur-fast)}
+.tg-lb-arrow:hover{background:rgba(255,255,255,.25)}
+.tg-lb-arrow svg{width:22px;height:22px}
+@media(max-width:600px){.tg-lb-arrow{width:36px;height:36px}.tg-lb-arrow svg{width:18px;height:18px}.tg-lb-stage img{max-width:calc(100vw - 90px)}}
 @media(max-width:800px){.about-layout{grid-template-columns:1fr}.about-text{position:static}}
 
 /* ============================================================
