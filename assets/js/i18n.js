@@ -39,7 +39,6 @@
     "7 nights": "7 գիշեր",
 
     /* --- about --- */
-    "Why this tour": "Ինչո՞ւ այս ճամփորդությունը",
     "Discover Romania with us 🇷🇴": "Բացահայտե՛ք Ռումինիան մեզ հետ 🇷🇴",
     "Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.": "Միացե՛ք հետաքրքիր կրթաճանաչողական ճամփորդությանը դեպի Ռումինիա։ Ծրագրի ընթացքում կայցելենք Բուխարեստ, Բրասով և Սինայա քաղաքներ, կբացահայտենք Դրակուլայի և Պելեշի հայտնի ամրոցները, Սլանիկի աղի հանքը, Ռաշնովի ամրոցը և բազմաթիվ այլ տեսարժան վայրեր։",
     "Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.": "Մասնակիցներին սպասում են հետաքրքիր էքսկուրսիաներ, մշակութային բացահայտումներ, ժամանց, գնումներ և անմոռանալի հիշողություններ՝ եվրոպական յուրահատուկ միջավայրում։",
@@ -277,14 +276,6 @@
     "Cafés and the farewell dinner": "Սրճարաններ և հրաժեշտի ընթրիք",
     "The Old Town after dark": "Հին քաղաքը մթնշաղից հետո",
     /* facts keys */
-    "Region": "Տարածաշրջան",
-    "On the tour": "Ճամփորդության ընթացքում",
-    "Good for": "Հարմար է",
-    "Type": "Տեսակ",
-    "Typical visit": "Սովորական այց",
-    "Built": "Կառուցված",
-    "Completed": "Ավարտված",
-    "Area": "Տարածք",
     /* facts values */
     "Wallachia · capital": "Վալախիա · մայրաքաղաք",
     "Days 1, 2, 5–8": "Օրեր 1, 2, 5–8",

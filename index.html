@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=84">
+<link rel="stylesheet" href="assets/css/styles.css?v=85">
 </head>
 <body>
 
@@ -91,7 +91,6 @@
   <div class="container">
     <div class="about-layout" data-reveal>
       <div class="about-text">
-        <span class="eyebrow">Why this tour</span>
         <h2>Discover Romania with us &#x1F1F7;&#x1F1F4;</h2>
         <p class="lead">Join us on a fascinating educational tour to Romania. We will visit Bucharest, Brasov and Sinaia, explore the legendary castles of Dracula and Peles, the Slanic salt mine, Rasnov fortress and many other remarkable landmarks.</p>
         <p>Participants can look forward to exciting excursions, cultural discoveries, entertainment, shopping and unforgettable memories in a unique European setting.</p>
@@ -615,6 +614,8 @@
     panel.hidden=false;
   }
 
+  overlay.addEventListener('wheel',function(e){e.stopPropagation()},{passive:true});
+  overlay.addEventListener('touchmove',function(e){e.stopPropagation()},{passive:true});
   btn.addEventListener('click',open);
   closeBtn.addEventListener('click',close);
   overlay.addEventListener('click',function(e){if(e.target===overlay)close()});
@@ -686,7 +687,7 @@
       <p class="dest-desc" id="destDesc"></p>
       <h3 class="dest-h">Highlights</h3>
       <ul class="dest-highlights" id="destHighlights"></ul>
-      <dl class="dest-facts" id="destFacts"></dl>
+
     </div>
   </div>
 </div>
@@ -695,7 +696,7 @@
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
-<script defer src="assets/js/main.js?v=84"></script>
-<script defer src="assets/js/i18n.js?v=84"></script>
+<script defer src="assets/js/main.js?v=85"></script>
+<script defer src="assets/js/i18n.js?v=85"></script>
 </body>
 </html>

@@ -179,7 +179,6 @@
       day: 'Days 1–2 & 5–8', title: 'Bucharest',
       desc: "Romania's capital and your base for five of the eight nights. Belle Époque boulevards once earned it the nickname “Little Paris”; today grand institutions sit beside a lively, café-filled Old Town.",
       highlights: ['Guided city tour with a licensed guide', 'The Romanian Athenaeum & Revolution Square', 'Cișmigiu Garden in the city centre', 'National Art Gallery & Cărturești Carusel'],
-      facts: { Region: 'Wallachia · capital', 'On the tour': 'Days 1, 2, 5–8', 'Good for': 'History, architecture, shopping' },
       images: [
         { src: 'bucharest-aerial-panorama.jpg', cap: 'The skyline at dusk' },
         { src: 'bucharest-romanian-athenaeum.jpg', cap: 'The Romanian Athenaeum' },
@@ -192,7 +191,6 @@
       day: 'Day 3', title: 'Slanic Salt Mine',
       desc: 'An immense salt mine more than 200 metres underground, on the road from Bucharest to Brașov. Vast cathedral-like chambers carved from rock salt, with a planetarium, sculptures, an illuminated lake and famously pure air.',
       highlights: ['Cathedral-sized salt chambers', 'An underground planetarium', 'Salt sculptures & an illuminated lake', 'Famously pure, salty air'],
-      facts: { Type: 'Salt mine · natural site', 'On the tour': 'Day 3', 'Typical visit': 'About 2½ hours' },
       images: [
         { src: 'slanic-salt-mine-main-hall.jpg', cap: 'The main underground hall' },
         { src: 'slanic-salt-mine-planetarium.jpg', cap: 'The planetarium dome' },
@@ -206,7 +204,6 @@
       day: 'Days 3–5', title: 'Brașov',
       desc: "A medieval Saxon town at the foot of Tâmpa mountain, and your base for two nights in Transylvania. Pastel merchant houses, Gothic spires and one of Europe's liveliest pedestrian streets.",
       highlights: ['Council Square (Piața Sfatului)', 'The Gothic Black Church', 'The Strada Republicii promenade', 'Mountain views from Tâmpa'],
-      facts: { Region: 'Transylvania', 'On the tour': 'Days 3–5', 'Good for': 'Medieval history, walking' },
       images: [
         { src: 'brasov-council-square-aerial.jpg', cap: 'Council Square from above' },
         { src: 'brasov-council-square-facades.jpg', cap: 'Pastel merchant facades' },
@@ -223,7 +220,6 @@
       day: 'Day 5', title: 'Peleș Castle',
       desc: "Romania's fairy-tale royal palace, built for King Carol I in the Carpathian forests above Sinaia. A Neo-Renaissance masterpiece of carved wood, stained glass and more than 160 rooms.",
       highlights: ['Guided tour of the state rooms', 'Built for King Carol I, 1873–1914', 'Among the first castles with its own electricity', 'The forests and town of Sinaia'],
-      facts: { Type: 'Royal castle', Built: '1873–1914', 'On the tour': 'Day 5' },
       images: [
         { src: 'peles-wide.jpg', cap: 'Peleș Castle, Sinaia' },
         { src: 'peles-castle-hilltop.jpg', cap: 'The castle from the hillside' },
@@ -237,7 +233,6 @@
       day: 'Day 4', title: 'Bran Castle',
       desc: "The cliff-top fortress known the world over as “Dracula’s Castle.” The legend of Bram Stoker’s count meets the real history of Vlad Țepeș and Queen Marie, perched between Transylvania and Wallachia.",
       highlights: ['Guided tour of the castle', 'The Dracula legend & the real history', 'Once Queen Marie’s residence', 'Râșnov Fortress the same day'],
-      facts: { Type: 'Medieval castle', Built: '14th century', 'On the tour': 'Day 4' },
       images: [
         { src: 'bran-wide.jpg', cap: 'Bran Castle on its cliff' },
         { src: 'bran-castle-front.jpg', cap: 'The castle from below' },
@@ -251,7 +246,6 @@
       day: 'Day 6', title: 'Palace of the Parliament',
       desc: 'The heaviest building on earth and one of the largest, with over 1,000 rooms of marble, crystal and carved wood. A guided tour reveals a fraction of its staggering scale.',
       highlights: ['Guided tour of the interior', 'Marble halls & crystal chandeliers', 'Around 1,100 rooms', 'Sweeping views from the terrace'],
-      facts: { Type: 'Civic landmark', Completed: '1997', 'On the tour': 'Day 6' },
       images: [
         { src: 'bucharest-parliament-wide.jpg', cap: 'The Palace of the Parliament' },
         { src: 'bucharest-parliament-close.jpg', cap: 'Detail of the facade' },
@@ -264,7 +258,6 @@
       day: 'Day 7', title: 'Bucharest Old Town',
       desc: "Bucharest's historic Lipscani quarter: cobblestone lanes of cafés, bookshops and 19th-century arcades, crowned by the ornate dome of the CEC Palace. The setting for the farewell dinner walk.",
       highlights: ['Strada Covaci & the Lipscani lanes', 'The ornate CEC Palace', 'Cafés and the farewell dinner', 'The Old Town after dark'],
-      facts: { Area: 'Lipscani · Old Town', 'On the tour': 'Day 7', 'Good for': 'Dining, strolling' },
       images: [
         { src: 'bucharest-old-town-cec-dusk.jpg', cap: 'The CEC Palace dome at dusk' },
         { src: 'bucharest-strada-covaci.jpg', cap: 'Strada Covaci' },
@@ -281,7 +274,7 @@
     const dialog = modal.querySelector('.dest-dialog');
     const elImg = $('#destImg'), elCap = $('#destCaption'), elCount = $('#destCount');
     const elThumbs = $('#destThumbs'), elDay = $('#destDay'), elTitle = $('#destTitle');
-    const elDesc = $('#destDesc'), elHi = $('#destHighlights'), elFacts = $('#destFacts');
+    const elDesc = $('#destDesc'), elHi = $('#destHighlights');
     const btnClose = $('#destClose'), btnPrev = $('#destPrev'), btnNext = $('#destNext');
     let cur = null, idx = 0, lastFocus = null, closeTimer = null;
 
@@ -307,12 +300,6 @@
       elDesc.textContent = cur.desc;
       elHi.innerHTML = '';
       cur.highlights.forEach(h => { const li = document.createElement('li'); li.textContent = h; elHi.appendChild(li); });
-      elFacts.innerHTML = '';
-      Object.entries(cur.facts).forEach(([k, v]) => {
-        const dt = document.createElement('dt'); dt.textContent = k;
-        const dd = document.createElement('dd'); dd.textContent = v;
-        elFacts.append(dt, dd);
-      });
       elThumbs.innerHTML = '';
       elThumbs.style.display = cur.images.length > 1 ? '' : 'none';
       cur.images.forEach((im, i) => {
