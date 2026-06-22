@@ -249,7 +249,8 @@ p{margin:0 0 1rem}
 .tour-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
 .tour-mosaic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);transition:transform var(--dur),box-shadow var(--dur)}
 .tour-mosaic img:hover{transform:scale(1.03);box-shadow:var(--shadow-md);z-index:1;position:relative}
-.tour-gallery-btn{margin-top:.8rem;align-self:center;display:inline-flex;align-items:center;gap:.5rem}
+.tour-gallery-btn{margin-top:.8rem;align-self:center;display:inline-flex;align-items:center;gap:.5rem;background:var(--card);color:var(--brand-deep);border:1px solid var(--line);backdrop-filter:none}
+.tour-gallery-btn:hover{background:var(--teal-50);border-color:var(--brand);color:var(--brand)}
 
 .tour-gallery{border:none;background:var(--bg);max-width:960px;width:92vw;max-height:90vh;border-radius:var(--radius);padding:2rem;overflow-y:auto;box-shadow:var(--shadow-lg)}
 .tour-gallery::backdrop{background:rgba(10,52,51,.75);backdrop-filter:blur(4px);-webkit-backdrop-filter:blur(4px)}
