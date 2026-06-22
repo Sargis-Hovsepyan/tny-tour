@@ -91,6 +91,7 @@
     lenisRef.on('scroll', ScrollTrigger.update);
     gsap.ticker.add(t => lenisRef.raf(t * 1000));
     gsap.ticker.lagSmoothing(0);
+    window._lenis = lenisRef;
   }
 
   /* ---- KEEP SCROLLTRIGGER POSITIONS IN SYNC ----
