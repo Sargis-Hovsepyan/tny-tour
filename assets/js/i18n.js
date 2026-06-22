@@ -228,31 +228,11 @@
     "Contact us for the full payment schedule and cancellation policy.": "Կապվեք մեզ հետ վճարման ամբողճական ժամանակացույցի և չեղարկման քաղաքականության համար։",
 
         /* --- testimonials --- */
-    "From parents & students": "Ծնողներից և աշակերտներից",
+    "From parents": "Ծնողներից",
     "Parents who were nervous, and glad they said yes": "Ծնողներ, ովքեր անհանգստանում էին, բայց ուրախ են, որ համաձայնեցին",
     "I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos and nightly check-ins meant I never worried for a second. Worth every penny.": "Անհանգստանում էի 15-ամյա երեխայիս արտերկիր ուղարկելու համար, բայց ամենօրյա WhatsApp լուսանկարներն ու ամենգիշերյա կապը նշանակում էին, որ ոչ մի վայրկյան չանհանգստացա։ Արժե յուրաքանչյուր կոպեկը։",
-    "Standing inside Bran Castle and learning the real story of Vlad was unreal. Best week of my life with my friends.": "Բրանի ամրոցի ներսում կանգնելն ու Վլադի իրական պատմությունը սովորելն անհավատալի էր։ Կյանքիս լավագույն շաբաթը՝ ընկերներիս հետ։",
     "Everything was organised down to the hour. The guides were knowledgeable and genuinely cared about the kids.": "Ամեն ինչ կազմակերպված էր ժամ առ ժամ։ Գիդերը գիտակ էին և անկեղծորեն հոգ էին տանում երեխաների մասին։",
     "Parent": "Ծնող",
-    "Student, 16": "Աշակերտ, 16",
-
-    /* --- faq --- */
-    "Good to know": "Օգտակար տեղեկություն",
-    "Questions parents ask us": "Հարցեր, որ ծնողները տալիս են",
-    "How closely are the students supervised?": "Որքա՞ն խստորեն են հսկվում աշակերտները",
-    "Dedicated chaperones at all times, with evening headcounts, room curfews and a coordinator on call 24/7.": "Հատուկ ուղեկցողներ՝ մշտապես, երեկոյան հաշվառմամբ, սենյակային ռեժիմով և 24/7 հասանելի համակարգողով։",
-    "How will I hear from my child during the trip?": "Ինչպե՞ս եմ կապ պահելու երեխայիս հետ ճամփորդության ընթացքում",
-    "We run a private parents' WhatsApp group with a daily photo update, plus a dedicated emergency number. Hotels have Wi-Fi.": "Մենք վարում ենք ծնողների փակ WhatsApp խումբ՝ ամենօրյա լուսանկարներով, գումարած հատուկ արտակարգ համարով։ Հյուրանոցներն ունեն Wi-Fi։",
-    "Are flights included?": "Թռիչքները ներառվա՞ծ են",
-    "Yes, return flights from Armenia to Bucharest are included. The group flies together with chaperones on both legs.": "Այո, Հայաստանից Բուխարեստ հետադարձ թռիչքները ներառված են։ Խումբը թռչում է միասին՝ ուղեկցողների հետ, երկու ուղղություններով։",
-    "What should my child pack?": "Ի՞նչ պետք է հավաքի երեխաս",
-    "Comfortable walking shoes, warm layers (late October in Romania can be 5-15 C), a rain jacket, and a Type C/F 230V adapter. A full packing list is sent on booking.": "Հարմարավետ կոշիկներ, տաք հագուստ (հոկտեմբերի վերջը Ռումինիայում կարող է լինել 5-15 °C), անձրևանոց և Type C/F 230Վ ադապտեր։ Ամբողջական ցուցակն ուղարկվում է ամրագրումից հետո։",
-    "What about dietary needs and allergies?": "Իսկ սննդային կարիքներն ու ալերգիանե՞րը",
-    "Vegetarian, halal and allergy requirements are accommodated. Just tell us on the consent form before departure.": "Բուսակերական, հալալ և ալերգիկ պահանջները հաշվի են առնվում։ Պարզապես նշեք համաձայնության ձևում մեկնելուց առաջ։",
-    "Do students need a passport or visa?": "Աշակերտներին անձնագիր կամ վիզա պե՞տք է",
-    "A passport valid for at least 6 months is required. Visa requirements depend on nationality; we advise on this.": "Պահանջվում է առնվազն 6 ամիս վավեր անձնագիր։ Վիզայի պահանջները կախված են քաղաքացիությունից. մենք խորհրդատվություն ենք տալիս այս հարցում։",
-    "What's the refund policy?": "Ո՞րն է գումարի վերադարձման քաղաքականությունը",
-    "Contact us for full cancellation terms. We aim to be fair. Exact deadlines and percentages are shared when you reserve.": "Կապվեք մեզ հետ չեղարկման ամբողջական պայմանների համար։ Մենք ձգտում ենք արդար լինել։ Ճշգրիտ ժամկետներն ու տոկոսները տրամադրվում են ամրագրելիս։",
 
     /* --- contact --- */
     "Get in touch": "Կապ հաստատեք",
