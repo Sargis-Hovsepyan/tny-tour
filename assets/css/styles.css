@@ -260,7 +260,10 @@ p{margin:0 0 1rem}
 .tg-close{background:var(--card);border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);transition:background var(--dur-fast)}
 .tg-close:hover{background:var(--teal-50)}
 .tg-close svg{width:18px;height:18px}
-.tg-scroll{overflow-y:auto;padding:1.5rem 1.8rem 2rem;flex:1 1 0;-webkit-overflow-scrolling:touch;overscroll-behavior:contain}
+.tg-scroll{overflow-y:scroll;padding:1.5rem 1.8rem 2rem;flex:1 1 0;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:thin;scrollbar-color:var(--brand) transparent}
+.tg-scroll::-webkit-scrollbar{width:6px}
+.tg-scroll::-webkit-scrollbar-thumb{background:var(--brand);border-radius:3px}
+.tg-scroll::-webkit-scrollbar-track{background:transparent}
 .tg-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem}
 .tg-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;transition:transform var(--dur),box-shadow var(--dur)}
 .tg-grid img:hover{transform:scale(1.03);box-shadow:var(--shadow-md)}
