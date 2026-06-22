@@ -49,7 +49,7 @@
     "The complete agenda": "Ամբողջական ծրագիր",
     "Eight days, hour by hour": "",
     "Bucharest, Transylvania and back. Every day planned, every detail covered.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն օրը պլանավորված, ամեն մանրուքը՝ հոգացված։",
-    "The meal which is included in our tour package is only a breakfast.": "Մեր տուրային փաթեթում ներառված միակ սնունդը նախաճաշն է։",
+    "The meal which is included in our tour package is only a breakfast.": "Մեր փաթեթում ներառված է միայն նախաճաշը։",
 
     /* --- itinerary day titles --- */
     "Arrival in Bucharest": "Ժամանում Բուխարեստ",
