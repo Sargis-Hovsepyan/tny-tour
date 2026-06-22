@@ -163,9 +163,6 @@ p{margin:0 0 1rem}
 .nav.scrolled .lang-toggle{color:var(--ink);border-color:var(--line);background:var(--card)}
 .nav.scrolled .lang-toggle:hover{border-color:var(--brand);color:var(--brand-deep)}
 .lang-toggle:focus-visible{outline:none;box-shadow:var(--ring)}
-.nav-wa{width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--wa);color:#06351c;flex:none;transition:transform var(--dur-fast)}
-.nav-wa:hover{transform:scale(1.08)}
-.nav-wa svg{width:20px;height:20px}
 .hamburger{display:none;color:#fff;padding:4px}
 .nav.scrolled .hamburger{color:var(--ink)}
 .hamburger svg{width:28px;height:28px}
@@ -232,7 +229,7 @@ p{margin:0 0 1rem}
 .sec:first-of-type{padding-top:clamp(5rem,9vw,9rem)}
 .sec-alt{background:var(--bg-alt)}
 .sec-head{max-width:680px;margin-bottom:3rem}
-.sec-head .eyebrow,.about-text>.eyebrow{font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);letter-spacing:.15em}
+.sec-head .eyebrow{font-size:clamp(1.05rem,.95rem + .4vw,1.3rem);letter-spacing:.15em}
 .sec-head h2{margin:.4rem 0 .8rem}
 .itinerary-note{display:inline-block;margin-top:.6rem;padding:.5rem 1rem;font-size:var(--fs-small);color:var(--brand);background:var(--teal-50);border-left:3px solid var(--brand);border-radius:0 var(--radius-sm) var(--radius-sm) 0}
 
@@ -430,7 +427,6 @@ p{margin:0 0 1rem}
    ============================================================ */
 .safety{background:var(--grad-teal);color:#fff;position:relative;overflow:hidden}
 .safety .eyebrow{color:var(--coral-soft)}
-.safety .lead{color:rgba(255,255,255,.85)}
 .safety h2{color:#fff}
 .safety-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.1rem}
 .safety-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:var(--radius-sm);padding:1.4rem;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);transition:transform var(--dur),background var(--dur)}
@@ -548,7 +544,7 @@ a:focus-visible,button:focus-visible{outline:none;box-shadow:var(--ring);border-
    PRINT
    ============================================================ */
 @media print{
-  .nav,.hamburger,.hero-scroll,.mobile-cta,.nav-wa,.contact-btns,.mesh-bg{display:none!important}
+  .nav,.hamburger,.hero-scroll,.mobile-cta,.contact-btns,.mesh-bg{display:none!important}
   body{background:#fff;color:#000;font-size:11pt}
   body::before{display:none}
   .hero{min-height:auto;color:#000}

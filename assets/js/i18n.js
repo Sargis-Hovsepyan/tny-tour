@@ -47,7 +47,6 @@
 
     /* --- itinerary header --- */
     "The complete agenda": "Ամբողջական ծրագիր",
-    "Eight days, hour by hour": "",
     "Bucharest, Transylvania and back. Every day planned, every detail covered.": "Բուխարեստ, Տրանսիլվանիա և վերադարձ։ Ամեն օրը պլանավորված, ամեն մանրուքը՝ հոգացված։",
     "Breakfast is included daily. All other meals are at your own arrangement.": "Մեր փաթեթում ներառված է միայն նախաճաշը։",
 
@@ -139,8 +138,6 @@
 
     /* --- destinations heading --- */
     "Where you'll go": "ՈՒՐ ԷՔ ԳՆԱԼՈՒ",
-    "Seven destinations across two regions": "",
-    "From the grand avenues of Bucharest to the medieval heart of Transylvania. Click any destination to explore its gallery and learn what awaits.": "",
 
     /* --- destinations panels --- */
     "Days 1–2, 5–8": "Օրեր 1–2, 5–8",
@@ -164,7 +161,6 @@
 
     /* --- accommodation --- */
     "Where you'll stay": "ՈՐՏԵՂ ԷՔ ՄՆԱԼՈՒ",
-    "Both properties are central, personally vetted, and include daily breakfast.": "",
     "5 nights": "5 գիշեր",
     "2 nights": "2 գիշեր",
     "District 1, central Bucharest": "1-ին շրջան, կենտրոնական Բուխարեստ",
@@ -178,9 +174,7 @@
     "*Hotels may change depending on availability or group size. Any replacement will be of equal or higher standard.": "*Հյուրանոցները կարող են փոխվել կախված խմբի չափից։ Փոխարինող հյուրանոցը կլինի հավասար կամ ավելի բարձր մակարդակի։",
 
         /* --- safety --- */
-    "Safety": "Անվտանգություն",
     "Why trust us with your child's journey?": "Ինչու՞ վստահել ձեր երեխայի ճանապարհորդություննը մեզ",
-    "Your child's safety and your peace of mind are our top priority.": "",
     "Experienced supervisors": "Փորձառու ուղեկցողներ",
     "Specialists working with children, ensuring constant supervision and support throughout the journey.": "Երեխաների հետ աշխատող մասնագետներ, որոնք ապահովում են մշտական վերահսկողություն և աջակցություն ամբողջ ուղևորության ընթացքում։",
     "Safe and vetted programme": "Անվտանգ և ստուգված ծրագիր",
@@ -209,18 +203,15 @@
     "Round-trip flights": "երկկողմանի ավիատոմս",
     "Visa support": "վիզայի աջակցություն",
     "Hotel": "հյուրանոց",
-    "Breakfast": "Նախաճաշ",
     "Private transport": "անհատական ուղևորապոխադրում",
     "Entrance fees per programme": "մուտքավճարներ ըստ ծրագրի",
     "Medical insurance": "բժշկական ապահովագրություն",
     "Lunch and dinner ~€30/day": "ճաշ և ընթրիք ~30 euro / օր",
     "Consular service fee ~€35": "հյուպատոսական ծառայության վճար ~35 euro",
     "Entrance fees and transport for off-programme visits": "ծրագրից դուրս վայրեր այցելությունների մուտքավճարներ և տրանսպորտ",
-    "Reserve a Place": "Ամրագրել տեղ",
     "Contact us for the full payment schedule and cancellation policy.": "Կապվեք մեզ հետ վճարման ամբողճական ժամանակացույցի և չեղարկման քաղաքականության համար։",
 
         /* --- testimonials --- */
-    "From parents": "Ծնողներից",
     "Parents who were nervous, and glad they said yes": "Կարծիքներ մեր նախորդ տուրի մասնակիցներից",
     "I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos and nightly check-ins meant I never worried for a second. Worth every penny.": "Անհանգստանում էի 15-ամյա երեխայիս արտերկիր ուղարկելու համար, բայց ամենօրյա WhatsApp լուսանկարներն ու ամենգիշերյա կապը նշանակում էին, որ ոչ մի վայրկյան չանհանգստացա։ Արժե յուրաքանչյուր կոպեկը։",
     "Everything was organised down to the hour. The guides were knowledgeable and genuinely cared about the kids.": "Ամեն ինչ կազմակերպված էր ժամ առ ժամ։ Գիդերը գիտակ էին և անկեղծորեն հոգ էին տանում երեխաների մասին։",
