@@ -246,9 +246,11 @@ p{margin:0 0 1rem}
 .about-text p:last-child{color:var(--ink-light);margin:0}
 .about-photos{display:flex;flex-direction:column;gap:.6rem}
 .cards-heading{font-size:var(--fs-small);font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--brand);margin:0 0 .4rem}
-.tour-mosaic{display:grid;grid-template-columns:1fr 1fr;gap:.5rem}
-.tour-mosaic img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);transition:transform var(--dur),box-shadow var(--dur)}
-.tour-mosaic img:hover{transform:scale(1.03);box-shadow:var(--shadow-md);z-index:1;position:relative}
+.tour-strip{display:flex;gap:.5rem;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:.5rem;scrollbar-width:thin;scrollbar-color:var(--brand) transparent}
+.tour-strip::-webkit-scrollbar{height:4px}
+.tour-strip::-webkit-scrollbar-thumb{background:var(--brand);border-radius:2px}
+.tour-strip img{height:180px;width:auto;flex:none;object-fit:cover;border-radius:var(--radius-sm);scroll-snap-align:start;transition:transform var(--dur)}
+.tour-strip img:hover{transform:scale(1.04)}
 @media(max-width:800px){.about-layout{grid-template-columns:1fr}.about-text{position:static}}
 
 /* ============================================================
