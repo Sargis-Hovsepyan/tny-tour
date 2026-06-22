@@ -260,7 +260,7 @@ p{margin:0 0 1rem}
 .tour-gallery-close{background:var(--card);border:1px solid var(--line);border-radius:50%;width:36px;height:36px;display:grid;place-items:center;cursor:pointer;box-shadow:var(--shadow-sm);flex:none;transition:background var(--dur-fast)}
 .tour-gallery-close:hover{background:var(--teal-50)}
 .tour-gallery-close svg{width:18px;height:18px}
-.tour-gallery-scroll{overflow-y:auto;padding:1.5rem 2rem 2rem;-webkit-overflow-scrolling:touch}
+.tour-gallery-scroll{overflow-y:auto;padding:1.5rem 2rem 2rem;-webkit-overflow-scrolling:touch;flex:1;min-height:0}
 .tour-gallery-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:.6rem}
 .tour-gallery-grid img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:var(--radius-sm);cursor:pointer;transition:transform var(--dur),box-shadow var(--dur)}
 .tour-gallery-grid img:hover{transform:scale(1.03);box-shadow:var(--shadow-md)}
