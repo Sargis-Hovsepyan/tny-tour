@@ -235,10 +235,8 @@
     "Parent": "Ծնող",
 
     /* --- contact --- */
+    "For detailed information": "Մանրամասն տեղեկատվության համար",
     "Get in touch": "Կապ հաստատեք",
-    "Ready to reserve your child's place?": "Պատրա՞ստ եք ամրագրել ձեր երեխայի տեղը",
-    "Talk to a real person before you decide. We answer every question.": "Որոշելուց առաջ խոսեք իրական մարդու հետ։ Մենք պատասխանում ենք յուրաքանչյուր հարցի։",
-    "Chat on WhatsApp": "Զրուցել WhatsApp-ով",
 
     /* --- footer --- */
     "Online and offline English education for students since 2014. Tour organized in partnership with Luna Tour.": "Առցանց և առկա անգլերենի կրթություն աշակերտների համար 2014 թվականից։ Ճամփորդությունը կազմակերպվում է Luna Tour-ի հետ համագործակցությամբ։",
