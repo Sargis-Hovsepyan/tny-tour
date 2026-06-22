@@ -416,8 +416,8 @@
   }
 
   var lang = (function () {
-    try { return localStorage.getItem('tny-lang') === 'am' ? 'am' : 'en'; }
-    catch (e) { return 'en'; }
+    try { return localStorage.getItem('tny-lang') === 'en' ? 'en' : 'am'; }
+    catch (e) { return 'am'; }
   })();
 
   var btn = null;
