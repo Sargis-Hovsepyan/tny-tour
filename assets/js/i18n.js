@@ -54,7 +54,7 @@
     /* --- itinerary day titles --- */
     "Arrival in Bucharest": "Ժամանում Բուխարեստ",
     "Bucharest guided city tour": "Բուխարեստի քաղաքային տուր",
-    "Slanic Salt Mine & transfer to Brașov": "Սլանիկի աղւ հանք և Բրաշով",
+    "Slanic Salt Mine & transfer to Brașov": "Սլանիկի աղի հանք և Բրաշով",
     "Bran Castle & Râșnov Fortress": "Բրանի ամրոց և Ռաշովի բերդ",
     "Peleș Castle & Sinaia": "Պելեշի ամրոց և Սինայա",
     "Parliament, art & culture": "Խորհրդարանի շենք, արվեստի թանգարան",
