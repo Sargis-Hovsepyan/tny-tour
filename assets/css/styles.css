@@ -451,6 +451,8 @@ p{margin:0 0 1rem}
 .price-box .eyebrow{color:var(--coral-soft)}
 .price-box h2{color:#fff;font-size:clamp(3rem,9vw,4.5rem);margin:.2rem 0 .5rem;font-variant-numeric:tabular-nums lining-nums;line-height:1}
 .price-box .lead{color:rgba(255,255,255,.85);margin:0;font-size:var(--fs-body)}
+.pricing-cta{text-align:center;margin-top:2rem}
+.pricing-cta .price-fine{margin-top:1rem}
 .price-fine{font-size:.82rem;color:var(--ink-muted);margin:0}
 
 /* ============================================================
@@ -466,19 +468,6 @@ p{margin:0 0 1rem}
 .testimonial cite{display:flex;flex-direction:column;font-style:normal}
 .testimonial cite strong{font-size:.95rem;color:var(--ink)}
 .testimonial cite span{font-size:var(--fs-small);color:var(--ink-muted)}
-
-/* ============================================================
-   FAQ
-   ============================================================ */
-.faq{max-width:800px;margin-inline:auto;display:flex;flex-direction:column;gap:.7rem}
-details.q{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-sm);padding:.1rem 1.3rem;transition:border-color var(--dur)}
-details.q[open]{border-color:var(--brand);border-left:3px solid var(--coral);padding-left:calc(1.3rem - 3px)}
-details.q summary{list-style:none;cursor:pointer;font-weight:600;padding:1.1rem 0;display:flex;justify-content:space-between;gap:1rem;align-items:center;font-size:1rem}
-details.q summary::-webkit-details-marker{display:none}
-.q-icon{flex:none;width:28px;height:28px;background:var(--teal-50);border-radius:8px;display:grid;place-items:center;color:var(--brand);transition:transform var(--dur) var(--ease-out),background var(--dur)}
-.q-icon svg{width:16px;height:16px}
-details.q[open] .q-icon{transform:rotate(45deg);background:var(--coral);color:#fff}
-details.q .a{color:var(--ink-light);padding-bottom:1.1rem;margin:0;line-height:1.65}
 
 /* ============================================================
    CONTACT
@@ -510,7 +499,6 @@ footer a{color:rgba(255,255,255,.7);transition:color var(--dur-fast)}
 footer a:hover{color:var(--coral-hover)}
 footer ul{display:flex;flex-direction:column;gap:.5rem}
 .foot-legal{border-top:1px solid rgba(255,255,255,.1);margin-top:2.4rem;padding-top:1.2rem;font-size:.8rem;color:rgba(255,255,255,.45)}
-.credits{font-size:.76rem;color:rgba(255,255,255,.35);margin-top:.8rem}
 @media(max-width:760px){.foot-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:460px){.foot-grid{grid-template-columns:1fr}}
 
