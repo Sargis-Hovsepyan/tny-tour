@@ -454,7 +454,7 @@ p{margin:0 0 1rem}
 /* ============================================================
    INCLUDES
    ============================================================ */
-.incl-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;align-items:start}
+.incl-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:1.5rem;align-items:stretch}
 .incl-col{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;box-shadow:var(--shadow-sm)}
 .incl-col h3{font-family:var(--sans);font-size:1.05rem;margin-bottom:1.1rem;display:flex;align-items:center;gap:.5rem}
 .incl-col ul{display:flex;flex-direction:column;gap:.65rem}
