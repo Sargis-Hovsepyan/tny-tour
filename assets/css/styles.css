@@ -422,7 +422,7 @@ p{margin:0 0 1rem}
 .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(1rem,2vw,1.8rem)}
 .team-card{text-align:center;display:flex;flex-direction:column;align-items:center;gap:.3rem}
 .team-avatar{width:88px;height:88px;border-radius:50%;background:rgba(255,255,255,.1);border:2px solid rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;margin-bottom:.5rem;overflow:hidden;flex-shrink:0}
-.team-avatar svg{width:48px;height:48px;color:#fff}
+.team-avatar img{width:100%;height:100%;object-fit:cover}
 .team-name{font-family:var(--sans);font-size:1rem;font-weight:600;color:#fff;line-height:1.2}
 .team-role{font-size:var(--fs-small);color:var(--coral-soft);font-weight:500}
 .team-org{font-size:var(--fs-small);color:rgba(255,255,255,.55)}
@@ -479,7 +479,7 @@ p{margin:0 0 1rem}
 .contact .lead{color:rgba(255,255,255,.85);margin-inline:auto;margin-bottom:2rem}
 .contact-person{display:flex;flex-direction:column;align-items:center;gap:.3rem;margin-bottom:2rem}
 .contact-avatar{width:96px;height:96px;border-radius:50%;background:rgba(255,255,255,.12);border:2px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;margin-bottom:.4rem;overflow:hidden}
-.contact-avatar svg{width:52px;height:52px;color:#fff}
+.contact-avatar img{width:100%;height:100%;object-fit:cover}
 .contact-name{font-family:var(--sans);font-size:1.1rem;color:#fff}
 .contact-role{font-size:var(--fs-small);color:var(--coral-soft)}
 .contact-btns{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
