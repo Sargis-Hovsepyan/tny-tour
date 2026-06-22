@@ -445,6 +445,11 @@ p{margin:0 0 1rem}
 /* ============================================================
    PRICING & INCLUDES
    ============================================================ */
+.price-box{max-width:480px;margin:0 auto clamp(2.5rem,5vw,4rem);text-align:center;background:var(--grad-teal);color:#fff;border-radius:var(--radius);padding:clamp(2rem,4vw,3rem) 2rem;box-shadow:var(--shadow-lg);position:relative;overflow:hidden}
+.price-box::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 75% 25%,rgba(255,111,94,.15),transparent 60%);pointer-events:none}
+.price-box .eyebrow{color:var(--coral-soft)}
+.price-box h2{color:#fff;font-size:clamp(3rem,9vw,4.5rem);margin:.2rem 0 .5rem;font-variant-numeric:tabular-nums lining-nums;line-height:1}
+.price-box .lead{color:rgba(255,255,255,.85);margin:0;font-size:var(--fs-body)}
 .price-fine{font-size:.82rem;color:var(--ink-muted);margin:0}
 
 /* ============================================================
