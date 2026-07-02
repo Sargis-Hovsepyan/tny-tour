@@ -329,6 +329,7 @@ p{margin:0 0 1rem}
 .showcase-text{position:relative;z-index:2;color:#fff;max-width:600px;padding:clamp(2rem,5vw,4rem)}
 .showcase-panel:nth-child(even) .showcase-text{margin-left:auto;text-align:right}
 .showcase-text .eyebrow{color:var(--coral-soft);margin-bottom:.7rem}
+html[lang="hy"] .showcase-head .eyebrow{text-transform:none;letter-spacing:.05em}
 .showcase-text h2{font-size:clamp(2rem,1.4rem + 3vw,3.4rem);margin:0 0 .8rem;color:#fff;line-height:1.06;text-shadow:0 3px 24px rgba(0,0,0,.45)}
 .showcase-text p{font-size:var(--fs-lead);color:rgba(255,255,255,.92);margin:0 0 1.3rem;line-height:1.6;max-width:46ch;text-shadow:0 1px 8px rgba(0,0,0,.4)}
 .showcase-panel:nth-child(even) .showcase-text p{margin-left:auto}

@@ -137,7 +137,7 @@
     "Flight home": "Թռիչք տուն",
 
     /* --- destinations heading --- */
-    "Where you'll go": "ՈՒՐ ԷՔ ԳՆԱԼՈՒ",
+    "Where you'll go": "Ու՞ր եք գնալու",
 
     /* --- destinations panels --- */
     "Days 1–2, 5–8": "Օրեր 1–2, 5–8",
@@ -151,7 +151,7 @@
     "Palace of the Parliament": "Խորհրդարանի պալատ",
     "Bucharest Old Town": "Բուխարեստի Հին քաղաք",
     "View gallery": "Տեսնել պատկերասրահը",
-    "Belle Époque boulevards, the colossal Parliament and a café-filled Old Town. Your base for five of the eight nights.": "«Belle Époque»-ի նրբաճաշակ ճարտարապետությունը, լայն պողոտաները և աշխուժ եվրոպական մթնոլորտը Բուխարեստը դարձնում են Ռումինիայի ամենահմայիճ քաղաքներից մեկը։",
+    "Belle Époque boulevards, the colossal Parliament and a café-filled Old Town. Your base for five of the eight nights.": "«Belle Époque»-ի նրբաճաշակ ճարտարապետությունը, լայն պողոտաները և աշխույժ եվրոպական մթնոլորտը Բուխարեստը դարձնում են Ռումինիայի ամենահմայիճ քաղաքներից մեկը։",
     "A cathedral of salt 200 metres underground, with a planetarium, sculptures and an illuminated lake.": "Սլանիկի աղի հանքը — Եվրոպայի ամենատպավորիճ ստորգետնյա հրաշալիքներից մեկը, որտեղ հսկայական աղե սրահները, յուրահատուկ միկրոկլիման և անսովոր տեսարանները ստեղծում են անմոռանալի փորձառություն։",
     "A medieval Saxon town under Tâmpa mountain. Pastel squares, Gothic spires and a lively promenade.": "Բրասով — Ռումինիայի ամենագեղեցիկ քաղաքներից մեկը, որտեղ միջնադարյան ճարտարապետությունը, սալահատակ փողոցներն ու Կարպատյան լեռների հիասքանչ տեսարանները ստեղծում են յուրահատուկ եվրոպական մթնոլորտ։",
     "Romania's fairy-tale royal palace in the Carpathian forests above Sinaia.": "Պելեշ ամրոց — Ռումինիայի թագավորական գոհարը։ Կարպատյան լեռների գրկում գտնվող այս շքեղ պալատը հիացնում է իր նրբաճաշակ ճարտարապետությամբ, հարուստ պատմությամբ և հեքիաթային գեղեցկությամբ։",
