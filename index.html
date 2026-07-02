@@ -700,9 +700,12 @@
       track.style.animationDuration=dur+'s';
       track.style.animationDelay=(-(idx/cols)*dur)+'s';
     });
-    requestAnimationFrame(function(){wall.classList.add('in');});
+    requestAnimationFrame(function(){wall.classList.add('in'); syncTriggers();});
   }
-  function destroyWall(){if(wall){wall.remove();wall=null;} grid.style.display='';}
+  function destroyWall(){if(wall){wall.remove();wall=null;} grid.style.display=''; syncTriggers();}
+  // Swapping the tall grid for the fixed-height wall changes page height, so
+  // recompute ScrollTrigger start points or sections below stay hidden.
+  function syncTriggers(){if(window.ScrollTrigger)window.ScrollTrigger.refresh();}
 
   if(!reduce){
     var io=new IntersectionObserver(function(ents){
