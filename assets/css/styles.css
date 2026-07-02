@@ -486,6 +486,14 @@ html[lang="hy"] .showcase-head .eyebrow{text-transform:none;letter-spacing:.05em
 .review-shot{display:block;width:100%;padding:.4rem;border:1px solid var(--line);background:var(--card);font:inherit;color:inherit;position:relative;margin:0 0 clamp(.9rem,2vw,1.4rem);break-inside:avoid;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);cursor:zoom-in}
 .review-shot:focus-visible{outline:none;box-shadow:var(--ring)}
 .review-shot img{width:100%;height:auto;display:block;border-radius:var(--radius-sm)}
+/* auto-scroll wall: fixed window, columns loop upward, faded top/bottom edges */
+.review-wall{position:relative;display:flex;gap:clamp(.9rem,2vw,1.4rem);justify-content:center;max-width:1040px;margin-inline:auto;height:clamp(440px,74vh,660px);overflow:hidden;opacity:0;transition:opacity var(--dur-slow) var(--ease-out);-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%);mask-image:linear-gradient(to bottom,transparent 0,#000 13%,#000 87%,transparent 100%)}
+.review-wall.in{opacity:1}
+.rv-col{flex:1 1 0;min-width:0;max-width:330px}
+.rv-track{display:block;will-change:transform;animation-name:rv-rise;animation-timing-function:linear;animation-iteration-count:infinite}
+.rv-col:hover .rv-track,.rv-col:focus-within .rv-track{animation-play-state:paused}
+@keyframes rv-rise{from{transform:translateY(0)}to{transform:translateY(-50%)}}
+@media (prefers-reduced-motion:reduce){.rv-track{animation:none}}
 
 /* ============================================================
    CONTACT

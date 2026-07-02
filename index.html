@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=101">
+<link rel="stylesheet" href="assets/css/styles.css?v=102">
 </head>
 <body>
 
@@ -491,7 +491,7 @@
     <div class="sec-head" style="text-align:center;margin-inline:auto" data-reveal>
       <h2>Parents who were nervous, and glad they said yes</h2>
     </div>
-    <div class="review-grid" data-reveal>
+    <div class="review-grid" id="reviewGrid" data-reveal>
       <button class="review-shot" type="button"><img src="assets/img/reviews/01.jpg" alt="Parent review — Tatev" width="943" height="1200" loading="lazy" decoding="async"></button>
       <button class="review-shot" type="button"><img src="assets/img/reviews/02.jpg" alt="Parent review — Arpine Hayk Sargsyan's mother" width="1200" height="723" loading="lazy" decoding="async"></button>
       <button class="review-shot" type="button"><img src="assets/img/reviews/03.jpg" alt="Parent review — Hripsime Alex's Mother" width="1200" height="909" loading="lazy" decoding="async"></button>
@@ -649,24 +649,89 @@
 </div>
 <script>
 (function(){
-  var triggers=[].slice.call(document.querySelectorAll('.review-shot')),
-      shots=triggers.map(function(t){return t.querySelector('img');}),
-      lb=document.getElementById('rvLightbox'),
+  var section=document.getElementById('reviews'),
+      grid=document.getElementById('reviewGrid');
+  if(!section||!grid)return;
+
+  // Source of truth: the 11 static cards. Capture src/alt + intrinsic size so
+  // built cards reserve height (aspect-ratio) before their images load.
+  var IMAGES=[].slice.call(grid.querySelectorAll('.review-shot')).map(function(b,i){
+    var im=b.querySelector('img');
+    b.dataset.rvIndex=i;
+    return {src:im.getAttribute('src'),alt:im.getAttribute('alt')||'',w:im.getAttribute('width'),h:im.getAttribute('height')};
+  });
+  if(!IMAGES.length)return;
+  var multi=IMAGES.length>1;
+
+  /* ---------------- auto-scroll wall ---------------- */
+  var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var wall=null, lastCols=-1, SPEED=30; // px/sec
+
+  function colCount(){var w=window.innerWidth;return w>=900?3:(w>=600?2:1);}
+  function makeCard(im,index,track){
+    var b=document.createElement('button');
+    b.type='button'; b.className='review-shot'; b.dataset.rvIndex=index;
+    var img=document.createElement('img');
+    img.src=im.src; img.alt=im.alt; if(im.w)img.width=im.w; if(im.h)img.height=im.h;
+    img.decoding='async';
+    b.appendChild(img); track.appendChild(b);
+  }
+  function buildWall(){
+    var cols=colCount(); lastCols=cols;
+    wall=document.createElement('div'); wall.className='review-wall';
+    var tracks=[];
+    for(var c=0;c<cols;c++){
+      var col=document.createElement('div'); col.className='rv-col';
+      var track=document.createElement('div'); track.className='rv-track';
+      col.appendChild(track); wall.appendChild(col); tracks.push(track);
+    }
+    IMAGES.forEach(function(im,i){makeCard(im,i,tracks[i%cols]);});   // round-robin
+    tracks.forEach(function(track){                                   // duplicate set for seamless loop
+      [].slice.call(track.children).forEach(function(card){
+        var clone=card.cloneNode(true);
+        clone.setAttribute('aria-hidden','true'); clone.tabIndex=-1;
+        track.appendChild(clone);
+      });
+    });
+    grid.style.display='none';
+    grid.parentNode.insertBefore(wall,grid.nextSibling);
+    tracks.forEach(function(track,idx){                              // uniform speed + desync phase
+      var oneSet=track.scrollHeight/2, dur=Math.max(24,oneSet/SPEED);
+      track.style.animationDuration=dur+'s';
+      track.style.animationDelay=(-(idx/cols)*dur)+'s';
+    });
+    requestAnimationFrame(function(){wall.classList.add('in');});
+  }
+  function destroyWall(){if(wall){wall.remove();wall=null;} grid.style.display='';}
+
+  if(!reduce){
+    var io=new IntersectionObserver(function(ents){
+      if(ents[0].isIntersecting){io.disconnect(); buildWall();}
+    },{rootMargin:'400px 0px'});
+    io.observe(section);
+    var rt;
+    window.addEventListener('resize',function(){
+      clearTimeout(rt); rt=setTimeout(function(){
+        if(wall&&colCount()!==lastCols){destroyWall(); buildWall();}
+      },200);
+    });
+  }
+
+  /* ---------------- lightbox (delegated by data-rv-index) ---------------- */
+  var lb=document.getElementById('rvLightbox'),
       lbImg=document.getElementById('rvLbImg'),
       back=document.getElementById('rvBack'),
       prevBtn=document.getElementById('rvPrev'),
       nextBtn=document.getElementById('rvNext'),
       countEl=document.getElementById('rvCount'),
       cur=0, lastFocus=null;
-  if(!shots.length)return;
-  var multi=shots.length>1;
   if(!multi){prevBtn.hidden=true;nextBtn.hidden=true;}
 
   function render(){
-    var img=shots[cur];
-    lbImg.src=img.src; lbImg.alt=img.alt||'';
-    if(countEl)countEl.textContent=(cur+1)+' / '+shots.length;
-    if(multi){[(cur+1)%shots.length,(cur-1+shots.length)%shots.length].forEach(function(i){var p=new Image();p.src=shots[i].src;});}
+    var im=IMAGES[cur];
+    lbImg.src=im.src; lbImg.alt=im.alt;
+    if(countEl)countEl.textContent=(cur+1)+' / '+IMAGES.length;
+    if(multi){[(cur+1)%IMAGES.length,(cur-1+IMAGES.length)%IMAGES.length].forEach(function(i){var p=new Image();p.src=IMAGES[i].src;});}
   }
   function openAt(i){
     cur=i; lastFocus=document.activeElement;
@@ -683,12 +748,15 @@
     if(window._lenis)window._lenis.start();
     if(lastFocus&&lastFocus.focus)lastFocus.focus();
   }
-  function go(d){cur=(cur+d+shots.length)%shots.length;render();}
+  function go(d){cur=(cur+d+IMAGES.length)%IMAGES.length;render();}
 
   lb.addEventListener('wheel',function(e){e.stopPropagation()},{passive:true});
   lb.addEventListener('touchmove',function(e){e.stopPropagation()},{passive:true});
   lbImg.addEventListener('error',function(){lbImg.alt='Image unavailable';});
-  triggers.forEach(function(t,i){t.addEventListener('click',function(){openAt(i)});});
+  section.addEventListener('click',function(e){
+    var card=e.target.closest('.review-shot'); if(!card)return;
+    openAt(+card.dataset.rvIndex);
+  });
   back.addEventListener('click',close);
   lb.addEventListener('click',function(e){if(e.target===lb)close()});
   prevBtn.addEventListener('click',function(){go(-1)});
@@ -765,7 +833,7 @@
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
-<script defer src="assets/js/main.js?v=101"></script>
-<script defer src="assets/js/i18n.js?v=101"></script>
+<script defer src="assets/js/main.js?v=102"></script>
+<script defer src="assets/js/i18n.js?v=102"></script>
 </body>
 </html>
