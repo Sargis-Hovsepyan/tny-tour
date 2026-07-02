@@ -10,8 +10,10 @@
      cedilla) so lookups match regardless of which form the source used. */
   function norm(s) {
     return s
-      .replace(/ș/g, 'ş').replace(/Ș/g, 'Ş')   // ș Ș
-      .replace(/ț/g, 'ţ').replace(/Ț/g, 'Ţ');  // ț Ț
+      .replace(/ș/g, 'ş').replace(/Ș/g, 'Ş')       // ș Ș
+      .replace(/ț/g, 'ţ').replace(/Ț/g, 'Ţ')       // ț Ț
+      .replace(/[\u2018\u2019]/g, "'")            // curly apostrophes -> '
+      .replace(/[\u201C\u201D]/g, '"');           // curly quotes -> "
   }
 
   /* AM dictionary: key = exact English (as rendered), value = Armenian. */
@@ -327,7 +329,20 @@
     "Close menu": "Փակել մենյուն",
     "Close gallery": "Փակել պատկերասրահը",
     "Previous photo": "Նախորդ լուսանկարը",
-    "Next photo": "Հաջորդ լուսանկարը"
+    "Next photo": "Հաջորդ լուսանկարը",
+
+    /* --- UI buttons, landmarks & gallery alts (audit) --- */
+    "Back": "Հետ",
+    "Next": "Հաջորդ",
+    "Previous": "Նախորդ",
+    "Primary": "Հիմնական",
+    "Trip facts": "Ճամփորդության տվյալներ",
+    "Group at castle ruins": "Խումբը ամրոցի ավերակների մոտ",
+    "Group at palace": "Խումբը պալատի մոտ",
+    "Scenic European town": "Գեղատեսիլ եվրոպական քաղաք",
+    "European rooftops": "Եվրոպական տանիքներ",
+    "Friends": "Ընկերներ",
+    "Town square": "Քաղաքի հրապարակ"
   };
 
   /* Build a normalized lookup so diacritic codepoint variants still match. */
