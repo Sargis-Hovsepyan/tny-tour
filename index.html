@@ -14,7 +14,7 @@
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2317A2A2'/%3E%3Ctext x='50' y='68' font-size='44' text-anchor='middle' fill='%23fff' font-family='Georgia'%3ETNY%3C/text%3E%3C/svg%3E">
 <link rel="preload" href="assets/fonts/fraunces-700.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/styles.css?v=98">
+<link rel="stylesheet" href="assets/css/styles.css?v=99">
 </head>
 <body>
 
@@ -492,17 +492,17 @@
       <h2>Parents who were nervous, and glad they said yes</h2>
     </div>
     <div class="review-grid" data-reveal>
-      <figure class="review-shot"><img src="assets/img/reviews/01.jpg" alt="Message from a parent" width="943" height="1200" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/02.jpg" alt="Message from a parent" width="1200" height="723" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/03.jpg" alt="Message from a parent" width="1200" height="909" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/04.jpg" alt="Message from a parent" width="1200" height="769" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/05.jpg" alt="Message from a parent" width="1200" height="1005" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/06.jpg" alt="Message from a parent" width="1200" height="816" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/07.jpg" alt="Message from a parent" width="742" height="1200" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/08.jpg" alt="Message from a parent" width="736" height="1200" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/09.jpg" alt="Message from a parent" width="1133" height="1200" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/10.jpg" alt="Message from a parent" width="1084" height="1200" loading="lazy" decoding="async"></figure>
-      <figure class="review-shot"><img src="assets/img/reviews/11.jpg" alt="Message from a parent" width="1200" height="1108" loading="lazy" decoding="async"></figure>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/01.jpg" alt="Parent review — Tatev" width="943" height="1200" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/02.jpg" alt="Parent review — Arpine Hayk Sargsyan's mother" width="1200" height="723" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/03.jpg" alt="Parent review — Hripsime Alex's Mother" width="1200" height="909" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/04.jpg" alt="Parent review — Eva Samvel Khmelyan's mother" width="1200" height="769" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/05.jpg" alt="Parent review — Sasun Khachatryan's mother" width="1200" height="1005" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/06.jpg" alt="Parent review — Marine Davit Vardanyan's mother" width="1200" height="816" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/07.jpg" alt="Parent review — Laura Alexi Mama" width="742" height="1200" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/08.jpg" alt="Parent review — Marina Barseghyan" width="736" height="1200" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/09.jpg" alt="Parent review — Aelita's Mother Ani" width="1133" height="1200" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/10.jpg" alt="Parent review — Inga Harutyunyan (Yeva)" width="1084" height="1200" loading="lazy" decoding="async"></button>
+      <button class="review-shot" type="button"><img src="assets/img/reviews/11.jpg" alt="Parent review — Lidia" width="1200" height="1108" loading="lazy" decoding="async"></button>
     </div>
   </div>
 </section>
@@ -638,8 +638,9 @@
 </script>
 
 <!-- Reviews lightbox -->
-<div class="tg-lightbox" id="rvLightbox" hidden>
+<div class="tg-lightbox" id="rvLightbox" role="dialog" aria-modal="true" aria-label="Parent reviews" hidden>
   <button class="tg-lb-back" id="rvBack"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg> Back</button>
+  <span class="tg-lb-count" id="rvCount" aria-hidden="true"></span>
   <div class="tg-lb-stage">
     <button class="tg-lb-arrow tg-lb-prev" id="rvPrev" aria-label="Previous"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
     <img id="rvLbImg" src="" alt="">
@@ -648,45 +649,73 @@
 </div>
 <script>
 (function(){
-  var shots=[].slice.call(document.querySelectorAll('.review-shot img')),
+  var triggers=[].slice.call(document.querySelectorAll('.review-shot')),
+      shots=triggers.map(function(t){return t.querySelector('img');}),
       lb=document.getElementById('rvLightbox'),
       lbImg=document.getElementById('rvLbImg'),
       back=document.getElementById('rvBack'),
       prevBtn=document.getElementById('rvPrev'),
       nextBtn=document.getElementById('rvNext'),
-      cur=0;
+      countEl=document.getElementById('rvCount'),
+      cur=0, lastFocus=null;
   if(!shots.length)return;
   var multi=shots.length>1;
-  if(!multi){prevBtn.style.display='none';nextBtn.style.display='none';}
+  if(!multi){prevBtn.hidden=true;nextBtn.hidden=true;}
 
+  function render(){
+    var img=shots[cur];
+    lbImg.src=img.src; lbImg.alt=img.alt||'';
+    if(countEl)countEl.textContent=(cur+1)+' / '+shots.length;
+    if(multi){[(cur+1)%shots.length,(cur-1+shots.length)%shots.length].forEach(function(i){var p=new Image();p.src=shots[i].src;});}
+  }
   function openAt(i){
-    cur=i;lbImg.src=shots[cur].src;lb.hidden=false;
+    cur=i; lastFocus=document.activeElement;
+    render(); lb.hidden=false;
     if(window._lenis)window._lenis.stop();
     document.body.style.overflow='hidden';
     document.documentElement.style.overflow='hidden';
+    (multi?nextBtn:back).focus();
   }
   function close(){
     lb.hidden=true;
     document.body.style.overflow='';
     document.documentElement.style.overflow='';
     if(window._lenis)window._lenis.start();
+    if(lastFocus&&lastFocus.focus)lastFocus.focus();
   }
-  function prev(){cur=(cur-1+shots.length)%shots.length;lbImg.src=shots[cur].src;}
-  function next(){cur=(cur+1)%shots.length;lbImg.src=shots[cur].src;}
+  function go(d){cur=(cur+d+shots.length)%shots.length;render();}
 
   lb.addEventListener('wheel',function(e){e.stopPropagation()},{passive:true});
   lb.addEventListener('touchmove',function(e){e.stopPropagation()},{passive:true});
-  shots.forEach(function(img,i){img.style.cursor='zoom-in';img.addEventListener('click',function(){openAt(i)});});
+  lbImg.addEventListener('error',function(){lbImg.alt='Image unavailable';});
+  triggers.forEach(function(t,i){t.addEventListener('click',function(){openAt(i)});});
   back.addEventListener('click',close);
   lb.addEventListener('click',function(e){if(e.target===lb)close()});
-  prevBtn.addEventListener('click',prev);
-  nextBtn.addEventListener('click',next);
-  document.addEventListener('keydown',function(e){
-    if(lb.hidden)return;
-    if(e.key==='Escape'){close();e.preventDefault();}
-    if(multi&&e.key==='ArrowLeft'){prev();e.preventDefault();}
-    if(multi&&e.key==='ArrowRight'){next();e.preventDefault();}
+  prevBtn.addEventListener('click',function(){go(-1)});
+  nextBtn.addEventListener('click',function(){go(1)});
+
+  lb.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){close();e.preventDefault();return;}
+    if(multi&&e.key==='ArrowLeft'){go(-1);e.preventDefault();return;}
+    if(multi&&e.key==='ArrowRight'){go(1);e.preventDefault();return;}
+    if(e.key==='Tab'){
+      var f=[back,prevBtn,nextBtn].filter(function(el){return el&&!el.hidden;}),
+          first=f[0], last=f[f.length-1];
+      if(e.shiftKey&&document.activeElement===first){last.focus();e.preventDefault();}
+      else if(!e.shiftKey&&document.activeElement===last){first.focus();e.preventDefault();}
+    }
   });
+
+  function markClipped(){
+    triggers.forEach(function(t){
+      var img=t.querySelector('img');
+      t.classList.toggle('is-clipped', img.offsetHeight > t.clientHeight + 2);
+    });
+  }
+  window.addEventListener('load',markClipped);
+  window.addEventListener('resize',markClipped);
+  shots.forEach(function(img){if(!img.complete)img.addEventListener('load',markClipped);});
+  markClipped();
 })();
 </script>
 
@@ -747,7 +776,7 @@
 <script defer src="assets/js/vendor/gsap.min.js"></script>
 <script defer src="assets/js/vendor/ScrollTrigger.min.js"></script>
 <script defer src="assets/js/vendor/lenis.min.js"></script>
-<script defer src="assets/js/main.js?v=98"></script>
-<script defer src="assets/js/i18n.js?v=98"></script>
+<script defer src="assets/js/main.js?v=99"></script>
+<script defer src="assets/js/i18n.js?v=99"></script>
 </body>
 </html>

@@ -215,7 +215,6 @@
 
         /* --- testimonials --- */
     "Parents who were nervous, and glad they said yes": "Կարծիքներ մեր նախորդ տուրի մասնակիցներից",
-    "Message from a parent": "Ծնողի հաղորդագրություն",
 
     /* --- contact --- */
     "For detailed information": "Մանրամասն տեղեկատվության համար",
@@ -326,6 +325,7 @@
     "Menu": "Մենյու",
     "Close menu": "Փակել մենյուն",
     "Close gallery": "Փակել պատկերասրահը",
+    "Parent reviews": "Ծնողների կարծիքներ",
     "Previous photo": "Նախորդ լուսանկարը",
     "Next photo": "Հաջորդ լուսանկարը",
 
