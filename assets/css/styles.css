@@ -476,18 +476,15 @@ html[lang="hy"] .showcase-head .eyebrow{text-transform:none;letter-spacing:.05em
 .price-fine{font-size:.82rem;color:var(--ink-muted);margin:0}
 
 /* ============================================================
-   TESTIMONIALS
+   REVIEWS (parent message screenshots)
    ============================================================ */
-.testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.3rem}
-.testimonial{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:2rem 1.8rem;box-shadow:var(--shadow-sm);position:relative;overflow:hidden;transition:transform var(--dur),box-shadow var(--dur)}
-.testimonial:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
-.testimonial::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--coral),var(--coral-hover));transform:scaleX(0);transform-origin:left;transition:transform var(--dur)}
-.testimonial:hover::before{transform:scaleX(1)}
-.testimonial::after{content:"\201C";position:absolute;top:.6rem;right:1.2rem;font-family:var(--display);font-size:4rem;color:var(--teal-50);line-height:1;pointer-events:none}
-.testimonial p{font-size:1.02rem;font-style:italic;color:var(--ink-light);margin:0 0 1.2rem;line-height:1.6;position:relative}
-.testimonial cite{display:flex;flex-direction:column;font-style:normal}
-.testimonial cite strong{font-size:.95rem;color:var(--ink)}
-.testimonial cite span{font-size:var(--fs-small);color:var(--ink-muted)}
+.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,300px));justify-content:center;gap:clamp(1rem,2.5vw,1.6rem);align-items:start}
+.review-shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--dur),box-shadow var(--dur);cursor:pointer}
+.review-shot:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.review-shot img{width:100%;height:auto;display:block}
+.review-shot figcaption{display:flex;flex-direction:column;padding:.7rem 1rem 1rem}
+.review-shot figcaption strong{font-size:.95rem;color:var(--ink)}
+.review-shot figcaption span{font-size:var(--fs-small);color:var(--ink-muted)}
 
 /* ============================================================
    CONTACT

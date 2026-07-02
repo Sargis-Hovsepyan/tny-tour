@@ -215,9 +215,8 @@
 
         /* --- testimonials --- */
     "Parents who were nervous, and glad they said yes": "Կարծիքներ մեր նախորդ տուրի մասնակիցներից",
-    "I was nervous about sending my 15-year-old abroad, but the daily WhatsApp photos and nightly check-ins meant I never worried for a second. Worth every penny.": "Անհանգստանում էի 15-ամյա երեխայիս արտերկիր ուղարկելու համար, բայց ամենօրյա WhatsApp լուսանկարներն ու ամենգիշերյա կապը նշանակում էին, որ ոչ մի վայրկյան չանհանգստացա։ Արժե յուրաքանչյուր կոպեկը։",
-    "Everything was organised down to the hour. The guides were knowledgeable and genuinely cared about the kids.": "Ամեն ինչ կազմակերպված էր ժամ առ ժամ։ Գիդերը գիտակ էին և անկեղծորեն հոգ էին տանում երեխաների մասին։",
     "Parent": "Ծնող",
+    "Message from a parent": "Ծնողի հաղորդագրություն",
 
     /* --- contact --- */
     "For detailed information": "Մանրամասն տեղեկատվության համար",
