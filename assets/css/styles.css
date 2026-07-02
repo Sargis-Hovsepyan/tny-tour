@@ -478,13 +478,10 @@ html[lang="hy"] .showcase-head .eyebrow{text-transform:none;letter-spacing:.05em
 /* ============================================================
    REVIEWS (parent message screenshots)
    ============================================================ */
-.review-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,300px));justify-content:center;gap:clamp(1rem,2.5vw,1.6rem);align-items:start}
-.review-shot{margin:0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-sm);transition:transform var(--dur),box-shadow var(--dur);cursor:pointer}
-.review-shot:hover{transform:translateY(-3px);box-shadow:var(--shadow-md)}
+.review-grid{column-width:290px;column-gap:clamp(.9rem,2vw,1.4rem);max-width:1000px;margin-inline:auto}
+.review-shot{margin:0 0 clamp(.9rem,2vw,1.4rem);break-inside:avoid;border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-md);cursor:zoom-in;transition:transform var(--dur),box-shadow var(--dur)}
+.review-shot:hover{transform:translateY(-3px);box-shadow:var(--shadow-lg)}
 .review-shot img{width:100%;height:auto;display:block}
-.review-shot figcaption{display:flex;flex-direction:column;padding:.7rem 1rem 1rem}
-.review-shot figcaption strong{font-size:.95rem;color:var(--ink)}
-.review-shot figcaption span{font-size:var(--fs-small);color:var(--ink-muted)}
 
 /* ============================================================
    CONTACT

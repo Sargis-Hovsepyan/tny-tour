@@ -215,7 +215,6 @@
 
         /* --- testimonials --- */
     "Parents who were nervous, and glad they said yes": "Կարծիքներ մեր նախորդ տուրի մասնակիցներից",
-    "Parent": "Ծնող",
     "Message from a parent": "Ծնողի հաղորդագրություն",
 
     /* --- contact --- */
